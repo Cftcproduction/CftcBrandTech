@@ -38,6 +38,23 @@ function copyHtmlFiles() {
 }
 
 copyHtmlFiles();
+
+// PORTFOLIO STATIK SAYFALAR
+function copyStaticPage(sourceFile, outputFolder) {
+  const sourcePath = path.join(__dirname, sourceFile);
+  const targetFolder = path.join(__dirname, "dist", outputFolder);
+
+  fs.mkdirSync(targetFolder, { recursive: true });
+
+  const html = fs.readFileSync(sourcePath, "utf8");
+
+  fs.writeFileSync(path.join(targetFolder, "index.html"), html, "utf8");
+
+  console.log(`${outputFolder} build tamamlandı ✅`);
+}
+
+copyStaticPage("portfolio.html", "portfolio");
+copyStaticPage("portfolio-slide.html", "portfolio-slide");
 // klasör oluştur
 fs.mkdirSync(distPath, { recursive: true });
 
