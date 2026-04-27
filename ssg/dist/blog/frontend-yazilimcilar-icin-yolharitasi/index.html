@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <!-- Temel -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frontend Yazılımcılar İçin Yol Haritası | CFTC BrandTech Makaleler</title>
+  <meta name="description" content="Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer." />
+
+  <!-- Kanonik -->
+  <link rel="canonical" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" />
+
+  <!-- Çok dillilik -->
+  <link rel="alternate" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" hreflang="tr-TR" />
+  <link rel="alternate" href="https://www.cftcbrandtech.com/en/blog/frontend-yazilimcilar-icin-yolharitasi/" hreflang="en-US" />
+  <link rel="alternate" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" hreflang="x-default" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="CFTC BrandTech" />
+  <meta property="og:title" content="Frontend Yazılımcılar İçin Yol Haritası | CFTC BrandTech Makaleler" />
+  <meta property="og:description" content="Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" />
+  <meta property="og:image" content="https://www.cftcbrandtech.com/img/blog/Kaankurs2.jpg" />
+  <meta property="og:image:alt" content="Frontend Yazılımcılar İçin Yol Haritası" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Frontend Yazılımcılar İçin Yol Haritası | CFTC BrandTech Makaleler" />
+  <meta name="twitter:description" content="Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer." />
+  <meta name="twitter:image" content="https://www.cftcbrandtech.com/img/blog/Kaankurs2.jpg" />
+
+  <!-- Tema rengi -->
+  <meta name="theme-color" content="#0f0f10" />
+
+  <!-- Favicon & App ikonları -->
+  <link rel="icon" href="/img/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/img/icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/img/icons/favicon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+
+  <!-- Performans -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" href="/css/style.css" as="style" />
+  <link rel="stylesheet" href="/css/plugins/bootstrap-grid.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/plugins/swiper.min.css" />
+  <link rel="stylesheet" href="/css/plugins/fancybox.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Vercel Speed Insights -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <!-- Schema.org: Organization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.cftcbrandtech.com/#organization",
+      "name": "CFTC BrandTech",
+      "url": "https://www.cftcbrandtech.com/",
+      "logo": "https://www.cftcbrandtech.com/img/partners/cftc-logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/cftcbrandtech",
+        "https://www.instagram.com/cftcbrandtech/",
+        "https://x.com/cftcbrandtech"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@cftcbrandtech.com",
+          "telephone": "+90-542-295-7990",
+          "areaServed": "TR",
+          "availableLanguage": ["tr", "en"]
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sokak Adı No: X",
+        "addressLocality": "İstanbul",
+        "postalCode": "34XXX",
+        "addressCountry": "TR"
+      }
+    }
+  </script>
+
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Frontend Yazılımcılar İçin Yol Haritası",
+      "description": "Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer.",
+      "image": ["https://www.cftcbrandtech.com/img/blog/Kaankurs2.jpg"],
+      "author": {
+        "@type": "Person",
+        "name": "KAAN DOĞAN"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CFTC BrandTech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.cftcbrandtech.com/img/partners/cftc-logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/"
+      },
+      "datePublished": "22 Ağustos 2025"
+    }
+  </script>
+</head>
+
+<body>
+  <div class="mil-wrapper" id="top">
+    <div class="mil-progress-track">
+      <div class="mil-progress"></div>
+    </div>
+
+    <div class="mil-menu-frame">
+      <div class="mil-frame-top">
+        <a href="/index.html" class="mil-logo" data-no-swup>CFTC</a>
+        <div class="mil-menu-btn">
+          <span></span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="mil-menu-content">
+          <div class="row">
+            <div class="col-xl-5">
+              <nav class="mil-main-menu" id="swupMenu" aria-label="Ana menü">
+                <ul>
+                  <li class="mil-has-children">
+                    <a href="/index.html" class="mil-current">Anasayfa</a>
+                  </li>
+
+                  <li class="mil-has-children">
+                    <button class="mil-submenu-button" aria-expanded="false"
+                      aria-controls="menu-hizmetler">Hizmetler</button>
+                    <ul id="menu-hizmetler" class="mil-submenu" aria-hidden="false">
+                      <li><a href="/branding.html">Markalaşma</a></li>
+                      <li><a href="/website-development.html">Web Tasarım ve Geliştirme</a></li>
+                      <li><a href="/digital-marketing.html">Dijital Pazarlama</a></li>
+                      <li><a href="/consultancy.html">Danışmanlık</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="mil-has-children">
+                    <button class="mil-submenu-button" aria-expanded="false"
+                      aria-controls="menu-portfoy">Portföy</button>
+                    <ul id="menu-portfoy" class="mil-submenu" aria-hidden="false">
+                      <li><a href="/portfolio.html">Portföy Liste Görünüm</a></li>
+                      <li><a href="/portfolio-slide.html">Portföy Slayt Görünüm</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="mil-has-children">
+                    <a href="/contact.html" data-no-swup>İletişim</a>
+                  </li>
+
+                  <li class="mil-has-children">
+                    <a href="/blog/">Blog</a>
+                  </li>
+
+                  <li class="mil-has-children">
+                    <button class="mil-submenu-button" aria-expanded="false" aria-controls="diger-sayfalar">Diğer
+                      sayfalar</button>
+                    <ul id="diger-sayfalar">
+                      <li><a href="/kvkk.html" class="mil-light-soft">GİZLİLİK POLİTİKASI</a></li>
+                      <li><a href="/terms-conditions.html" class="mil-light-soft">ŞARTLAR ve KOŞULLAR</a></li>
+                      <li><a href="/team.html" class="mil-light-soft">TAKIM</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-xl-7">
+              <div class="mil-menu-right-frame">
+                <div class="mil-animation-in" aria-hidden="false">
+                  <div class="mil-animation-frame">
+                    <div class="mil-animation mil-position-1 mil-scale" data-value-1="2" data-value-2="2"></div>
+                  </div>
+                </div>
+
+                <nav class="mil-menu-right" aria-label="Site menüsü">
+                  <div class="row">
+                    <section class="col-lg-8 mil-mb-60" aria-labelledby="projelerimiz">
+                      <h5 id="projelerimiz" class="mil-muted mil-mb-30">Projelerimiz</h5>
+                      <ul class="mil-menu-list" role="list">
+                        <li><a href="/projects.html?slug=cftc-smarttech-frontend" class="mil-light-soft">Front-End
+                            Development</a></li>
+                        <li><a href="/projects.html?slug=villavillage-website-redesign"
+                            class="mil-light-soft">Full-Stack Development</a></li>
+                        <li><a href="/projects.html?slug=siempretour-website-redesign" class="mil-light-soft">Full-Stack
+                            Development</a></li>
+                      </ul>
+                    </section>
+
+                    <section class="col-lg-4 mil-mb-60" aria-labelledby="diger-sayfalar-footer">
+                      <h5 id="diger-sayfalar-footer" class="mil-muted mil-mb-30">Diğer Sayfalar</h5>
+                      <ul class="mil-menu-list" role="list">
+                        <li><a href="/kvkk.html" class="mil-light-soft">Gizlilik Politikası</a></li>
+                        <li><a href="/terms-conditions.html" class="mil-light-soft">Şartlar ve Koşullar</a></li>
+                        <li><a href="/team.html" class="mil-light-soft">Ekibimiz</a></li>
+                        <li><a href="/404.html" class="mil-light-soft" rel="nofollow">404</a></li>
+                      </ul>
+                    </section>
+                  </div>
+
+                  <div class="mil-divider mil-mb-60"></div>
+
+                  <div class="row justify-content-between" aria-label="Ofisler">
+                    <section class="col-lg-4 mil-mb-60" aria-labelledby="istanbul-ofis">
+                      <h6 id="istanbul-ofis" class="mil-muted mil-mb-30">Türkiye – İstanbul</h6>
+                      <address class="mil-light-soft mil-up">
+                        Balaban Sk, Cevizli, Kartal, İstanbul<br />
+                        <a class="mil-no-wrap" href="https://wa.me/905422957990" target="_blank"
+                          rel="noopener noreferrer" data-no-swup>+90 542 295 7990</a><br />
+                        <br />
+                        <b>Erkan Çiftçi</b>
+                      </address>
+                    </section>
+
+                    <section class="col-lg-4 mil-mb-60" aria-labelledby="bursa-ofis">
+                      <h6 id="bursa-ofis" class="mil-muted mil-mb-30">Türkiye – Bursa</h6>
+                      <address class="mil-light-soft">
+                        Mustafa Kemal Paşa Mah, İznik, Bursa<br />
+                        <a class="mil-no-wrap" href="https://wa.me/905347111631" target="_blank"
+                          rel="noopener noreferrer" data-no-swup>+90 534 711 1631</a><br />
+                        <b>Kaan Doğan</b>
+                      </address>
+                    </section>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mil-curtain"></div>
+
+    <div class="mil-frame">
+      <div class="mil-frame-top">
+        <a href="/index.html" class="mil-logo">CFTC</a>
+        <div class="mil-menu-btn">
+          <span></span>
+        </div>
+      </div>
+      <div class="mil-frame-bottom">
+        <div class="mil-current-page"></div>
+        <div class="mil-back-to-top">
+          <a href="#top" class="mil-link mil-dark mil-arrow-place">
+            <span>Yukarı Çık</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="publicationRoot" class="mil-content">
+      <main class="main">
+        <div id="swupMain" class="mil-main-transition">
+
+          <div class="container mil-p-120-90">
+            <div class="container">
+              <ul class="mil-breadcrumbs mil-mb-60 pt-5">
+                <li><a href="/index.html">Anasayfa</a></li>
+                <li><a href="/ssg/dist/blog/">Blog</a></li>
+                <li><a href="#">Frontend Yazılımcılar İçin Yol Haritası</a></li>
+              </ul>
+
+              <h1 class="mil-mb-60 mil-medium">Frontend Yazılımcılar İçin Yol Haritası</h1>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div class="mil-image-frame mil-horizontal mil-up">
+                  <img src="/img/blog/Kaankurs2.jpg" alt="Frontend Yazılımcılar İçin Yol Haritası" class="mil-scale" data-value-1=".90" data-value-2="1.15">
+                </div>
+
+                <div class="mil-info mil-up mil-mb-90">
+                  <div>Kategori: &nbsp;<span class="mil-dark">Yazılım</span></div>
+                  <div>Tarih: &nbsp;<span class="mil-dark">22 Ağustos 2025</span></div>
+                  <div>Yazar: <span class="mil-accent">KAAN DOĞAN</span></div>
+                </div>
+              </div>
+
+              <div id="article" class="col-lg-8">
+                <blockquote class="mil-up mil-mb-60">"Bir Öğrencinin Teknik ve Yönetimsel Perspektifi.” – Kaan Doğan"</blockquote><h5 class="mil-up mil-mb-30">Frontend Nedir ve Neden Önemlidir?</h5><p class="mil-up mil-mb-60">Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer. Kullanıcıların bir üründen memnun kalması çoğu zaman backend’in gücü kadar, frontend’in sadeliğine ve işlevselliğine bağlıdır.</p><h5 class="mil-up mil-mb-30">Hangi Teknolojilerle Başlamak Gerekir?</h5><p class="mil-up mil-mb-60">Diller: HTML, CSS, JavaScript → Temel yapı taşları<br/>Frameworkler ve Kütüphaneler: React, Vue.js, Angular<br/>Araçlar: Git, Webpack, npm/yarn<br/>Tasarım & UX Bilgisi: Figma, Adobe XD<br/>Benim yolculuğumda React en çok deneyim kazandığım kütüphane oldu. Ama tavsiyem: Önce JavaScript’i derinlemesine öğrenin, sonra framework’lere geçin.</p><h5 class="mil-up mil-mb-30">Frontend’de Başarı İçin Gereken Beceriler</h5><p class="mil-up mil-mb-60">Responsive Tasarım → Her cihazda uyumlu arayüzler.<br/>Performans Optimizasyonu → Hızlı yüklenen sayfalar kullanıcı memnuniyetini artırır.<br/>UI/UX Bilinci → Sadece güzel değil, aynı zamanda kullanılabilir arayüzler.<br/>Ekip İletişimi → Backend ve tasarım ekipleriyle doğru iletişim.<br/>Agile & Proje Yönetimi → (Management bakışı) Kod yazmak kadar, işin organizasyonu da kritik.</p><h5 class="mil-up mil-mb-30">Gerçek Projelerle Deneyim Kazanmak</h5><p class="mil-up mil-mb-60">Frontend öğrenmenin en iyi yolu gerçek projeler geliştirmektir:<br/>Kişisel portföy sitesi<br/>Basit bir blog uygulaması<br/>E-ticaret arayüzü<br/>Tasarımcılarla ortak bir proje<br/>Ben, yönetim bakış açım sayesinde proje süreçlerinde sadece kod yazmayı değil; iş hedeflerini anlamayı, kullanıcı ihtiyaçlarını analiz etmeyi ve ürün geliştirme sürecini bütünsel görmeyi öğrendim.</p><h5 class="mil-up mil-mb-30">Gelecekte Frontend Geliştiricileri Neler Bekliyor?</h5><p class="mil-up mil-mb-60">Web3 ve blockchain tabanlı arayüzler<br/>Yapay zekâ destekli tasarımlar<br/>Progressive Web Apps (PWA)<br/>AR/VR destekli kullanıcı deneyimleri<br/>Frontend, teknolojinin gelişmesiyle sürekli dönüşüyor. Bu yüzden sadece bugünün trendlerine değil, geleceğin teknolojilerine de hazırlıklı olmak gerekiyor.</p><p class="mil-up mil-mb-60">Frontend geliştirme, hem teknik yaratıcılık hem de stratejik bakış açısı gerektirir. Kodun satırları arasında kaybolurken, kullanıcıyı ve iş hedeflerini unutmamak çok önemlidir.</p><blockquote class="mil-up mil-mb-60">“Frontend sadece kod değil; insanlarla teknoloji arasında köprü kurma sanatıdır.”</blockquote><p class="mil-up mil-mb-30">Frontend geliştirme, sadece görsel bir yüz değil; kullanıcıyla ürün arasındaki en güçlü bağdır. Doğru teknolojileri öğrenip, tasarım ve iş hedeflerini gözeterek çalıştığında, ürettiğin her satır kod insanların hayatına dokunur.</p><p class="mil-up mil-mb-30">“Frontend, teknolojiyi insanlara dokunur hale getirmenin sanatıdır.”</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="mil-dark-bg">
+      <div class="mi-invert-fix">
+        <div class="container mil-p-120-60">
+          <div class="row justify-content-between">
+            <div class="col-md-4 col-lg-4 mil-mb-60">
+              <div class="mil-muted mil-logo mil-up mil-mb-30">
+                <img src="/img/partners/cftc-logo.svg" alt="cftcbrandtech logo" loading="lazy" />
+              </div>
+
+              <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
+
+              <form class="mil-subscribe-form">
+                <input type="text" placeholder="Mail adresinizi giriniz" />
+                <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+              </form>
+            </div>
+
+            <div class="col-md-7 col-lg-6">
+              <div class="row justify-content-end">
+                <div class="col-md-6 col-lg-7">
+                  <nav class="mil-footer-menu mil-mb-60">
+                    <ul>
+                      <li class="mil-up mil-active"><a href="/index.html">Anasayfa</a></li>
+                      <li class="mil-up"><a href="/full-service.html">Hizmetler</a></li>
+                      <li class="mil-up"><a href="/portfolio.html">Portföy</a></li>
+                      <li class="mil-up"><a href="/contact.html" data-no-swup>İletişim</a></li>
+                      <li class="mil-up"><a href="/blog/">Blog</a></li>
+                    </ul>
+                  </nav>
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+                  <ul class="mil-menu-list mil-up mil-mb-60">
+                    <li><a href="/kvkk.html" class="mil-light-soft">Gizlilik Politikası</a></li>
+                    <li><a href="/terms-conditions.html" class="mil-light-soft">Şartlar ve Koşullar</a></li>
+                    <li><a href="/team.html" class="mil-light-soft">Ekibimiz</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-between flex-sm-row-reverse">
+            <div class="col-md-7 col-lg-6">
+              <div class="row justify-content-between">
+                <section class="col-md-6 col-lg-5 mil-mb-60" aria-labelledby="istanbul-ofis-footer">
+                  <h6 id="istanbul-ofis-footer" class="mil-muted mil-mb-30">Türkiye – İstanbul</h6>
+                  <address class="mil-light-soft mil-up">
+                    Balaban Sk, Cevizli, Kartal, İstanbul<br />
+                    <a class="mil-no-wrap" href="https://wa.me/905422957990" target="_blank" rel="noopener noreferrer"
+                      data-no-swup>+90 542 295 7990</a><br />
+                    <b>Erkan Çiftçi</b>
+                  </address>
+                </section>
+
+                <section class="col-md-6 col-lg-5 mil-mb-60" aria-labelledby="bursa-ofis-footer">
+                  <h6 id="bursa-ofis-footer" class="mil-muted mil-mb-30">Türkiye – Bursa</h6>
+                  <address class="mil-light-soft">
+                    Mustafa Kemal Paşa Mah, İznik, Bursa<br />
+                    <a class="mil-no-wrap" href="https://wa.me/905347111631" target="_blank" rel="noopener noreferrer"
+                      data-no-swup>+90 534 711 1631</a><br />
+                    <b>Kaan Doğan</b>
+                  </address>
+                </section>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-6 mil-mb-60">
+              <div class="mil-vert-between">
+                <div class="mil-mb-30">
+                  <ul class="mil-social-icons mil-up">
+                    <li>
+                      <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
+                        class="social-icon" data-no-swup>
+                        <img class="icons" src="/img/icons/instagram.svg" alt="instagram icon">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/cftcbrandtech" target="_blank" rel="noopener"
+                        class="social-icon" data-no-swup><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/cftcbrandtech" target="_blank" rel="noopener" class="social-icon"
+                        data-no-swup><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/cftcbrandtech/" target="_blank" rel="noopener"
+                        class="social-icon" data-no-swup><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                  </ul>
+                </div>
+
+                <p class="mil-light-soft mil-up">©CFTC BrandTech Copyright 2026 - Tüm hakları saklıdır.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="mil-hidden-elements">
+      <div class="mil-dodecahedron">
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mil-pentagon">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
+        <path
+          d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
+      </svg>
+
+      <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-lines">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z"
+          class="mil-move" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z"
+          class="mil-move" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 0L150 1404L149 1404L149 0L150 0Z" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z"
+          class="mil-move" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M300 1175H0V1174H300V1175Z" class="mil-move" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z"
+          class="mil-move" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z"
+          class="mil-move" />
+      </svg>
+    </div>
+  </div>
+
+  <script src="/js/plugins/jquery.min.js" defer></script>
+  <script src="/js/plugins/swup.min.js" defer></script>
+  <script src="/js/plugins/swup-utils.js" defer></script>
+  <script src="/js/plugins/swiper.min.js" defer></script>
+  <script src="/js/plugins/fancybox.min.js" defer></script>
+  <script src="/js/plugins/gsap.min.js" defer></script>
+  <script src="/js/plugins/smooth-scroll.js" defer></script>
+  <script src="/js/plugins/ScrollTrigger.min.js" defer></script>
+  <script src="/js/plugins/ScrollTo.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/plugins/projects.js" defer></script>
+</body>
+
+</html>

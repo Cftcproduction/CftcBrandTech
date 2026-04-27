@@ -1,0 +1,121 @@
+[
+  {
+    "slug": "cftc-smarttech-frontend",
+    "breadcrumb": "CFTC SmartTech",
+    "titleMain": "Akıllı Ev Sistemleri",
+    "titleThin": "Websitesi",
+    "client": "CFTC SmartTech",
+    "date": "NİSAN 2025",
+    "owner": "CFTC BrandTech EKİP",
+    "cover": "img/works/1/1.jpg",
+    "gallery": ["img/works/1/2.jpg", "img/works/1/3.jpg", "img/works/1/4.jpg", "img/works/1/5.jpg", "img/works/1/6.jpg", "img/works/1/7.jpg"],
+    "link": "https://www.cftcsmarttech.com",
+    "sectionTitle": "Sadelik, Şıklık, Güvenlik",
+    "content": [
+      {
+        "type": "p",
+        "html": "<b>CFTC SmartTech,</b>  akıllı ev teknolojilerini modern yaşamla buluşturarak güvenliği, konforu ve verimliliği yeniden tanımlar. Akıllı Geçiş Kontrol sistemlerinden aydınlatmaya, sensörlerden kontrol gruplarına kadar sunduğumuz tüm çözümler, günlük yaşamınızı daha kolay, güvenli ve keyifli hale getirmek için tasarlanmıştır."
+      },
+      {
+        "type": "p",
+        "html": "Her ürün, yüksek teknoloji ve kullanıcı dostu tasarımın birleşimi olarak öne çıkar. Enerji tasarrufu, uzaktan erişim ve otomasyon özellikleri sayesinde hem evinizde hem de iş yerinizde modern yaşamın ihtiyaçlarını karşılamanıza yardımcı olur."
+      },
+      {
+        "type": "p",
+        "html": "<b class='mil-dark'>CFTC SmartTech çözümleri ile:</b>"
+      },
+      {
+        "type": "ul",
+        "items": ["<u>Güvenlik:</u> Geçiş kontrol sistemleri ve sensörler ile yaşam alanlarınızı koruyun.", "<u>Konfor:</u> Akıllı aydınlatma ve kontrol grupları ile her anı kişiselleştirin.", "<u>Verimlilik:</u> Enerji tasarrufu sağlayan akıllı cihazlarla hem doğayı hem bütçenizi koruyun.", "<u> Akıllı ev sistemleri:</u> Artık lüks değil, modern yaşamın yeni standardı. CFTC SmartTech ile evinizi geleceğe taşıyın."]
+      }
+    ]
+  },
+  {
+    "slug": "villavillage-website-redesign",
+    "breadcrumb": "Villa Village",
+    "titleMain": "Villa Kiralama",
+    "titleThin": "Websitesi",
+    "client": "Villa Village",
+    "date": "Mayıs 2025",
+    "owner": "CFTC BrandTech EKİP",
+    "cover": "img/works/2/villavillage-2.webp",
+    "gallery": [ "img/works/2/2.jpg", "img/works/2/3.jpg", "img/works/2/4.jpg"],
+    "video" : "https://www.youtube.com/embed/nZWrxCczS9Q?si=4BaBMEnI1GgLTGg6",
+    "link" :"https://www.villavillage.tr",
+    "sectionTitle": "Sadelik, Zarafet, Yenilik",
+    "content": [
+      {
+        "type": "p",
+        "html": "<b>VillaVillage,</b> için geliştirdiğimiz web sitesi; kullanıcı deneyimini ön planda tutan, sade ama etkili bir tasarımla hayata geçirildi. Amacımız, VillaVillage’ın sunduğu lüks ve doğayla iç içe tatil deneyimini dijital ortamda da aynı zarafetle yansıtmak oldu."
+      },
+      {
+        "type": "p",
+        "html": "Site tasarımında; kolay rezervasyon adımları, mobil uyumlu arayüz ve şık görsel düzenler öne çıkarıldı. Kullanıcıların aradıkları bilgiye hızlıca ulaşabilmesi için net bilgi mimarisi ve modern UI/UX çözümleri uygulandı."
+      },
+      {
+        "type": "p",
+        "html": "Ayrıca site, farklı cihazlarda sorunsuz çalışacak şekilde optimize edildi ve SEO uyumlu altyapı ile desteklendi. Böylece VillaVillage’ın dijital görünürlüğü artırılırken, marka kimliği de güçlendirildi."
+      }
+      
+    ]
+  },
+  {
+    "slug": "siempretour-website-redesign",
+    "breadcrumb": "Siempretour",
+    "titleMain": "Tur Kiralama",
+    "titleThin": "Websitesi",
+    "client": "Murat Gökyokuş",
+    "date": "Ekim 2025",
+    "owner": "Murat Gökyokuş",
+    "cover": "img/works/3/3-1.jpg",
+    "gallery": ["img/works/3/3-2.jpg", "img/works/3/3-3.jpg", "img/works/3/3-4.jpg"],
+    "link": "https://www.siempretour.cpm",
+    "sectionTitle": "Keşif, Özgürlük, Deneyim",
+    "content": [
+      {
+        "type": "p",
+        "html": "<b>Siempretour</b>  için tasarladığımız dijital marka deneyiminde; seyahat etmenin verdiği özgürlüğü, dünyanın dört bir yanındaki keşif ruhunu ve modern kullanıcının beklentilerini bir araya getirdik. Amacımız, Siempretour’un sunduğu dünya standartlarındaki tur ayrıcalığını dijital ortamda aynı ilham verici atmosferle sunmaktı."
+      },
+      {
+        "type": "p",
+        "html": "Site tasarımında; en çok tercih edilen lokasyonlara hızlı erişim, net filtreleme adımları ve kullanıcı dostu bir rezervasyon akışı oluşturuldu. Kullanıcıların dünyanın neresinde olursa olsun aradıkları tura rahatlıkla ulaşabilmeleri için sade bir bilgi mimarisi, güçlü görsel hikâyeler ve modern UI/UX çözümleri uygulandı."
+      },
+      {
+        "type": "p",
+        "html": "Ayrıca platform, farklı cihazlarda hızlı ve sorunsuz çalışacak şekilde optimize edildi. SEO uyumlu altyapı, çok dillilik ve uluslararası hedef kitle için ölçeklenebilir yapı desteklendi. Böylece Siempretour’un global görünürlüğü artırılırken, markanın profesyonel ve güven veren kimliği dijitalde daha da güçlendirildi."
+      }
+    ]
+  },
+  {
+    "slug": "zckolaylı-lawyer-website",
+    "breadcrumb": "ZCKolaylı",
+    "titleMain": "Avukat Özel",
+    "titleThin": "Websitesi",
+    "client": "Zeynep Cansu Kolaylı Çiftçi",
+    "date": "Aralık 2025",
+    "owner": "Zeynep Cansu Kolaylı Çiftçi",
+    "cover": "img/works/4/1.jpg",
+    "gallery": ["img/works/4/2.jpg", "img/works/4/3.jpg", "img/works/4/4.jpg"],
+    "video" : "https://www.youtube.com/embed/60uPdODp3HY?si=HyxKB9zm2ZBTO2q_",
+    "link": "https://www.zckolayli.com",
+    "sectionTitle": "Dijitalde Sadelik, Güven ve İşlevsellik",
+    "content": [
+      {
+        "type": "p",
+        "html": "<b>CFTC BrandTech olarak,</b> yalnızca web sitesi tasarlayan bir ajans değiliz. İşletmelerin ihtiyacına göre düşünen, sektöre özel çözümler üreten ve dijital süreçleri uçtan uca yöneten bir teknoloji ve tasarım ekibiyiz. Her projeye aynı şablonla değil; markanın yapısını, hedef kitlesini ve iş modelini analiz ederek başlarız.Tasarım, yazılım ve kullanıcı deneyimi bizim için ayrı ayrı değil, bir bütündür."
+      },
+      {
+        "type": "p",
+        "html": "Her ürün, yüksek teknoloji ve kullanıcı dostu tasarımın birleşimi olarak öne çıkar. Enerji tasarrufu, uzaktan erişim ve otomasyon özellikleri sayesinde hem evinizde hem de iş yerinizde modern yaşamın ihtiyaçlarını karşılamanıza yardımcı olur."
+      },
+      {
+        "type": "p",
+        "html": "Her ürün, yüksek teknoloji ve kullanıcı dostu tasarımın birleşimi olarak öne çıkar. Enerji tasarrufu, uzaktan erişim ve otomasyon özellikleri sayesinde hem evinizde hem de iş yerinizde modern yaşamın ihtiyaçlarını karşılamanıza yardımcı olur. <br>Hukuk büroları gibi güvenin kritik olduğu alanlarda,sadece estetik değil; şeffaf, anlaşılır ve güven veren dijital deneyimler tasarlarız. <br> <br><ul><li> Kurumsal avukatlık web siteleri</li><li> Online danışmanlık ve ödeme alabilen sistemler</li><li> Dosya, vaka veya borç sorgulama altyapıları</li><li> Kredi kartı, IBAN ve QR destekli ödeme ekranları</li></ul>"
+      },
+      {
+        "type": "p",
+        "html": "<b class='mil-dark'>Neyi Farklı Yapıyoruz?</b> <ul><li> Hazır tema değil, ihtiyaca özel tasarım</li> <li> Gerçek kullanıcı davranışına göre UX kurgusu</li><li> Online ödeme ve güvenli altyapı entegrasyonları</li><li> Mobil, tablet ve masaüstünde kusursuz deneyim</li> <li> SEO, hız ve güvenlik odaklı geliştirme</li></ul> <br><br> Her detay, ziyaretçinin siteye girdiği ilk saniyeden, işlemini tamamladığı ana kadar planlanır.<br><br> <b>Tasarım Biter, İş Başlar</b><br><br> Bizim için bir web sitesi yayına girdiğinde iş bitmez. Asıl hedef; sitenin iş üretmesi, güven vermesi ve dönüşüm sağlamasıdır. Bu yüzden projelerimiz; Sadece “güzel görünen” değil Kullanan, anlayan ve işlem yapan sistemlerdir."
+      }
+    ]
+  }
+]
