@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <!-- Kurumsal / Genel -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/about.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/services.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/team.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/contact.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <!-- Hizmet Sayfaları -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/branding.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/website-development.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/digital-marketing.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/consultancy.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/full-service.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <!-- Portfolyo / Projeler -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/projects.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/portfolio.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/portfolio-slide.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/blog.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <!-- Makale şablonu (slug ile içerik yükleniyorsa bu sadece “template”tir) -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/publication.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <!-- Yasal -->
+  <url>
+    <loc>https://www.cftcbrandtech.com/terms-conditions.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.cftcbrandtech.com/kvkk.html</loc>
+    <lastmod>2026-01-16</lastmod>
+  </url>
+
+</urlset>
