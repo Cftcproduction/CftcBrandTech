@@ -50,7 +50,7 @@ fs.copyFileSync(projectJsonSource, path.join(projectJsonTargetDir, "projects.jso
 
 console.log("projects.json kopyalandı ✅");
 function copyStaticPage(sourceFile, outputFolder) {
-  const sourcePath = path.join(__dirname, sourceFile);
+  const sourcePath = path.join(__dirname, "..", sourceFile);
   const targetFolder = path.join(__dirname, "dist", outputFolder);
 
   fs.mkdirSync(targetFolder, { recursive: true });
