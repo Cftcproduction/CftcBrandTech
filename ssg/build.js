@@ -40,6 +40,15 @@ function copyHtmlFiles() {
 copyHtmlFiles();
 
 // PORTFOLIO STATIK SAYFALAR
+// PROJECT JSON KOPYALA
+const projectJsonSource = path.join(__dirname, "projects.json");
+const projectJsonTargetDir = path.join(__dirname, "dist", "data");
+
+fs.mkdirSync(projectJsonTargetDir, { recursive: true });
+
+fs.copyFileSync(projectJsonSource, path.join(projectJsonTargetDir, "projects.json"));
+
+console.log("projects.json kopyalandı ✅");
 function copyStaticPage(sourceFile, outputFolder) {
   const sourcePath = path.join(__dirname, sourceFile);
   const targetFolder = path.join(__dirname, "dist", outputFolder);
