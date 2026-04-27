@@ -11,7 +11,33 @@ const distPath = path.join(__dirname, "dist", "blog");
 const posts = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 const detailTemplate = fs.readFileSync(detailTemplatePath, "utf8");
 const listTemplate = fs.readFileSync(listTemplatePath, "utf8");
+const projectRoot = path.join(__dirname, "..");
+const distRoot = path.join(__dirname, "dist");
 
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dest, { recursive: true });
+
+  for (const item of fs.readdirSync(src)) {
+    const srcPath = path.join(src, item);
+    const destPath = path.join(dest, item);
+
+    if (fs.statSync(srcPath).isDirectory()) {
+      copyDir(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+function copyHtmlFiles() {
+  for (const file of fs.readdirSync(projectRoot)) {
+    if (file.endsWith(".html")) {
+      fs.copyFileSync(path.join(projectRoot, file), path.join(distRoot, file));
+    }
+  }
+}
+
+copyHtmlFiles();
 // klasör oluştur
 fs.mkdirSync(distPath, { recursive: true });
 
@@ -114,3 +140,7 @@ const listHtml = listTemplate.replace("{{popularPosts}}", popularPostsHtml).repl
 fs.writeFileSync(path.join(distPath, "index.html"), listHtml, "utf8");
 
 console.log("Blog build tamamlandı 🚀");
+copyDir(path.join(projectRoot, "css"), path.join(distRoot, "css"));
+copyDir(path.join(projectRoot, "js"), path.join(distRoot, "js"));
+copyDir(path.join(projectRoot, "img"), path.join(distRoot, "img"));
+copyDir(path.join(projectRoot, "fonts"), path.join(distRoot, "fonts"));
