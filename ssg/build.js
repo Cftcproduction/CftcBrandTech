@@ -41,7 +41,7 @@ copyHtmlFiles();
 
 // PORTFOLIO STATIK SAYFALAR
 // PROJECT JSON KOPYALA
-const projectJsonSource = path.join(__dirname, "projects.json");
+const projectJsonSource = path.join(__dirname, "data", "projects.json");
 const projectJsonTargetDir = path.join(__dirname, "dist", "data");
 
 fs.mkdirSync(projectJsonTargetDir, { recursive: true });
