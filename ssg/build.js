@@ -1,22 +1,34 @@
 const fs = require("fs");
 const path = require("path");
 
-// paths
-const dataPath = path.join(__dirname, "data", "blog.json");
-const detailTemplatePath = path.join(__dirname, "templates", "blog-detail.html");
-const listTemplatePath = path.join(__dirname, "templates", "blog.html");
-const distPath = path.join(__dirname, "dist", "blog");
-
-// data
-const posts = JSON.parse(fs.readFileSync(dataPath, "utf8"));
-const detailTemplate = fs.readFileSync(detailTemplatePath, "utf8");
-const listTemplate = fs.readFileSync(listTemplatePath, "utf8");
 const projectRoot = path.join(__dirname, "..");
 const distRoot = path.join(__dirname, "dist");
 
+const blogDataPath = path.join(__dirname, "data", "blog.json");
+const blogDetailTemplatePath = path.join(__dirname, "templates", "blog-detail.html");
+const blogListTemplatePath = path.join(__dirname, "templates", "blog.html");
+const blogDistPath = path.join(distRoot, "blog");
+
+const projectsDataPath = path.join(__dirname, "data", "projects.json");
+const projectTemplatePath = path.join(projectRoot, "projects.html");
+const projectsDistPath = path.join(distRoot, "projects");
+
+function ensureDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+function cleanDist() {
+  if (fs.existsSync(distRoot)) {
+    fs.rmSync(distRoot, { recursive: true, force: true });
+  }
+
+  ensureDir(distRoot);
+}
+
 function copyDir(src, dest) {
   if (!fs.existsSync(src)) return;
-  fs.mkdirSync(dest, { recursive: true });
+
+  ensureDir(dest);
 
   for (const item of fs.readdirSync(src)) {
     const srcPath = path.join(src, item);
@@ -29,30 +41,93 @@ function copyDir(src, dest) {
     }
   }
 }
-function copyHtmlFiles() {
+
+function copyAssets() {
+  ["css", "js", "img", "fonts"].forEach((folder) => {
+    copyDir(path.join(projectRoot, folder), path.join(distRoot, folder));
+  });
+}
+
+function normalizeImagePath(src = "") {
+  return "/" + String(src).replace(/^\/+/, "");
+}
+
+function normalizeCategory(value = "") {
+  return value.toString().trim().toLowerCase().replace(/i̇/g, "i");
+}
+
+function stripHtml(html = "") {
+  return String(html)
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function removeClientProjectScript(html = "") {
+  return String(html).replace(/\s*<script\s+src="\/?js\/plugins\/projects\.js"\s+defer><\/script>\s*/g, "\n");
+}
+
+function normalizeInternalLinks(html = "") {
+  return removeClientProjectScript(
+    String(html)
+      .replaceAll("projects.html?slug=", "/projects/")
+      .replaceAll('href="projects/', 'href="/projects/')
+      .replaceAll("href='projects/", "href='/projects/")
+      .replaceAll("/portfolio.html", "/portfolio/")
+      .replaceAll("/portfolio-slide.html", "/portfolio-slide/")
+      .replace(/href="\/projects\/([^"\/#?]+)\/?"/g, 'href="/projects/$1/"')
+      .replace(/src="js\//g, 'src="/js/')
+      .replace(/href="css\//g, 'href="/css/')
+      .replace(/src="img\//g, 'src="/img/')
+      .replace(/href="img\//g, 'href="/img/'),
+  );
+}
+
+function copyHtmlFile(sourceFile, targetFile) {
+  const sourcePath = path.join(projectRoot, sourceFile);
+  const targetPath = path.join(distRoot, targetFile || sourceFile);
+
+  if (!fs.existsSync(sourcePath)) return;
+
+  const html = normalizeInternalLinks(fs.readFileSync(sourcePath, "utf8"));
+
+  ensureDir(path.dirname(targetPath));
+  fs.writeFileSync(targetPath, html, "utf8");
+}
+
+function copyRootHtmlFiles() {
   for (const file of fs.readdirSync(projectRoot)) {
-    if (file.endsWith(".html")) {
-      fs.copyFileSync(path.join(projectRoot, file), path.join(distRoot, file));
-    }
+    if (!file.endsWith(".html")) continue;
+    if (["portfolio.html", "portfolio-slide.html", "projects.html"].includes(file)) continue;
+
+    copyHtmlFile(file, file);
   }
 }
 
-copyHtmlFiles();
+function buildPortfolioPages() {
+  copyHtmlFile("portfolio.html", "portfolio/index.html");
+  copyHtmlFile("portfolio-slide.html", "portfolio-slide/index.html");
 
-// PORTFOLIO STATIK SAYFALAR
-// PROJECT DETAIL SAYFALARI
-const projectsDataPath = path.join(__dirname, "data", "projects.json");
-const projectTemplatePath = path.join(__dirname, "..", "projects.html");
-const projectsDistPath = path.join(__dirname, "dist", "projects");
+  // Eski linkler/search sonuçları kırılmasın diye .html sürümleri de üretiliyor.
+  copyHtmlFile("portfolio.html", "portfolio.html");
+  copyHtmlFile("portfolio-slide.html", "portfolio-slide.html");
 
-const projects = JSON.parse(fs.readFileSync(projectsDataPath, "utf8"));
-const projectTemplate = fs.readFileSync(projectTemplatePath, "utf8");
+  console.log("Portfolio sayfaları build tamamlandı ✅");
+}
 
 function renderProjectContent(content = []) {
   return content
     .map((block) => {
       if (block.type === "p") {
-        return `<p class="mil-up mil-mb-30">${block.html}</p>`;
+        return `<p class="mil-up mil-mb-30">${block.html || ""}</p>`;
       }
 
       if (block.type === "ul") {
@@ -70,93 +145,90 @@ function renderProjectContent(content = []) {
 
 function renderGallery(project) {
   return (project.gallery || [])
-    .map(
-      (img) => `
-        <div class="col-lg-6">
-          <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-            <img src="/${img.replace(/^\/+/, "")}" alt="${project.titleMain} ${project.titleThin}" />
-          </div>
-        </div>
-      `,
-    )
+    .map((img, index) => {
+      const src = normalizeImagePath(img);
+      const alt = escapeHtml(`${project.titleMain || "Proje"} ${project.titleThin || ""} görsel ${index + 1}`.trim());
+
+      return `
+                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
+                  <img src="${src}" alt="${alt}" />
+                  <a href="${src}" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
+                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
+                  </a>
+                </div>
+      `;
+    })
     .join("");
 }
 
-projects.forEach((project) => {
-  let html = projectTemplate
-    .replaceAll("Project Title", `${project.titleMain || ""} <span class="mil-thin">${project.titleThin || ""}</span>`)
-    .replaceAll("MÜŞTERİ: -", `MÜŞTERİ: ${project.client || "-"}`)
-    .replaceAll("TARİH: -", `TARİH: ${project.date || "-"}`)
-    .replaceAll("YETKİLİ: -", `YETKİLİ: ${project.owner || "-"}`)
-    .replaceAll('src="" alt="cover image"', `src="/${project.cover}" alt="${project.titleMain}"`)
-    .replaceAll("{{projectTitle}}", `${project.titleMain || ""} ${project.titleThin || ""}`)
-    .replaceAll("{{breadcrumb}}", project.breadcrumb || "")
-    .replaceAll("{{client}}", project.client || "")
-    .replaceAll("{{date}}", project.date || "")
-    .replaceAll("{{owner}}", project.owner || "")
-    .replaceAll("{{cover}}", `/${project.cover || ""}`)
-    .replaceAll("{{sectionTitle}}", project.sectionTitle || "")
-    .replaceAll("{{content}}", renderProjectContent(project.content))
-    .replaceAll("{{gallery}}", renderGallery(project))
-    .replaceAll("{{link}}", project.link || "#")
-    .replaceAll("{{videoBlock}}", renderVideo(project));
-
-  html = html.replaceAll("projects.html?slug=", "/projects/");
-  html = html.replaceAll('href="projects/', 'href="/projects/');
-  html = html.replaceAll("href='projects/", "href='/projects/");
-
-  const folder = path.join(projectsDistPath, project.slug);
-  fs.mkdirSync(folder, { recursive: true });
-
-  fs.writeFileSync(path.join(folder, "index.html"), html, "utf8");
-});
-
-console.log("Project detail sayfaları build tamamlandı ✅");
 function renderVideo(project) {
   if (!project.video) return "";
 
   return `
-    <div class="col-lg-12">
-      <iframe
-        class="ratio ratio-16x9 mt-4"
-        width="100%"
-        height="350"
-        src="${project.video}"
-        title="${project.titleMain || "Project video"}"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-        data-no-swup>
-      </iframe>
-    </div>
+                <div class="col-lg-12">
+                  <iframe
+                    class="ratio ratio-16x9 mt-4"
+                    width="100%"
+                    height="350"
+                    src="${project.video}"
+                    title="${escapeHtml(project.titleMain || "Project video")}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    data-no-swup>
+                  </iframe>
+                </div>
   `;
 }
 
-function copyStaticPage(sourceFile, outputFolder) {
-  const sourcePath = path.join(__dirname, "..", sourceFile);
-  const targetFolder = path.join(__dirname, "dist", outputFolder);
-
-  fs.mkdirSync(targetFolder, { recursive: true });
-
-  const html = fs.readFileSync(sourcePath, "utf8");
-
-  fs.writeFileSync(path.join(targetFolder, "index.html"), html, "utf8");
-
-  console.log(`${outputFolder} build tamamlandı ✅`);
+function getProjectDescription(project) {
+  const firstParagraph = (project.content || []).find((block) => block.type === "p")?.html || "";
+  return stripHtml(firstParagraph).slice(0, 155) || "CFTC BrandTech proje çalışması.";
 }
 
-copyStaticPage("portfolio.html", "portfolio");
-copyStaticPage("portfolio-slide.html", "portfolio-slide");
-// klasör oluştur
-fs.mkdirSync(distPath, { recursive: true });
+function buildProjectPages() {
+  const projects = JSON.parse(fs.readFileSync(projectsDataPath, "utf8"));
+  const projectTemplate = fs.readFileSync(projectTemplatePath, "utf8");
 
-function normalizeImagePath(src = "") {
-  return "/" + src.replace(/^\/+/, "");
-}
+  ensureDir(projectsDistPath);
 
-function normalizeCategory(value = "") {
-  return value.toString().trim().toLowerCase().replace(/i̇/g, "i");
+  projects.forEach((project, index) => {
+    const prev = projects[(index - 1 + projects.length) % projects.length];
+    const next = projects[(index + 1) % projects.length];
+
+    const projectTitlePlain = `${project.titleMain || ""} ${project.titleThin || ""}`.trim();
+    const cover = normalizeImagePath(project.cover || "");
+
+    let html = projectTemplate
+      .replaceAll("{{slug}}", project.slug || "")
+      .replaceAll("{{projectTitlePlain}}", escapeHtml(projectTitlePlain))
+      .replaceAll("{{projectDescription}}", escapeHtml(getProjectDescription(project)))
+      .replaceAll("{{breadcrumb}}", escapeHtml(project.breadcrumb || project.titleMain || "Proje"))
+      .replaceAll("{{titleMain}}", escapeHtml(project.titleMain || ""))
+      .replaceAll("{{titleThin}}", escapeHtml(project.titleThin || ""))
+      .replaceAll("{{client}}", escapeHtml(project.client || "-"))
+      .replaceAll("{{date}}", escapeHtml(project.date || "-"))
+      .replaceAll("{{owner}}", escapeHtml(project.owner || "-"))
+      .replaceAll("{{cover}}", cover)
+      .replaceAll("{{sectionTitle}}", escapeHtml(project.sectionTitle || ""))
+      .replaceAll("{{content}}", renderProjectContent(project.content))
+      .replaceAll("{{gallery}}", renderGallery(project))
+      .replaceAll("{{link}}", project.link || "#")
+      .replaceAll("{{videoBlock}}", renderVideo(project))
+      .replaceAll("{{video}}", project.video || "")
+      .replaceAll("{{prevProjectUrl}}", `/projects/${prev.slug}/`)
+      .replaceAll("{{nextProjectUrl}}", `/projects/${next.slug}/`);
+
+    html = normalizeInternalLinks(html);
+
+    const folder = path.join(projectsDistPath, project.slug);
+
+    ensureDir(folder);
+    fs.writeFileSync(path.join(folder, "index.html"), html, "utf8");
+  });
+
+  console.log("Project detail sayfaları build tamamlandı ✅");
 }
 
 function renderPost(post) {
@@ -166,14 +238,14 @@ function renderPost(post) {
   <div class="col-lg-12 js-post-item" data-category="${normalizeCategory(category)}">
     <a href="/blog/${post.slug}/" class="mil-blog-card mil-blog-card-hori mil-more mil-mb-60">
       <div class="mil-cover-frame mil-up">
-        <img src="${normalizeImagePath(post.cover)}" alt="${post.title}" />
+        <img src="${normalizeImagePath(post.cover)}" alt="${escapeHtml(post.title || "")}" />
       </div>
       <div class="mil-post-descr">
         <div class="mil-labels mil-up mil-mb-30">
           <div class="mil-label mil-upper mil-accent">${category}</div>
-          <div class="mil-label mil-upper">${post.date}</div>
+          <div class="mil-label mil-upper">${post.date || ""}</div>
         </div>
-        <h4 class="mil-up mil-mb-30">${post.title}</h4>
+        <h4 class="mil-up mil-mb-30">${post.title || ""}</h4>
         <p class="mil-post-text mil-up mil-mb-30">${post.excerpt || ""}</p>
         <div class="mil-link mil-dark mil-arrow-place mil-up">
           <span>Daha fazla</span>
@@ -191,14 +263,14 @@ function renderPopularPost(post) {
   <div class="col-lg-6">
     <a href="/blog/${post.slug}/" class="mil-blog-card mil-mb-60">
       <div class="mil-cover-frame mil-up">
-        <img src="${normalizeImagePath(post.cover)}" alt="${post.title}" />
+        <img src="${normalizeImagePath(post.cover)}" alt="${escapeHtml(post.title || "")}" />
       </div>
       <div class="mil-post-descr">
         <div class="mil-labels mil-up mil-mb-30">
           <div class="mil-label mil-upper mil-accent">${category}</div>
-          <div class="mil-label mil-upper">${post.date}</div>
+          <div class="mil-label mil-upper">${post.date || ""}</div>
         </div>
-        <h4 class="mil-up mil-mb-30">${post.title}</h4>
+        <h4 class="mil-up mil-mb-30">${post.title || ""}</h4>
         <p class="mil-post-text mil-up mil-mb-30">${post.excerpt || ""}</p>
         <div class="mil-link mil-dark mil-arrow-place mil-up">
           <span>Daha fazla</span>
@@ -216,41 +288,53 @@ function shuffle(array) {
     .map(({ value }) => value);
 }
 
-// DETAIL SAYFALAR
-posts.forEach((post) => {
-  const seoTitle = post.seo?.title || post.title || "";
-  const seoDescription = post.seo?.description || post.excerpt || "";
-  const image = normalizeImagePath(post.seo?.image || post.cover || "");
+function buildBlogPages() {
+  const posts = JSON.parse(fs.readFileSync(blogDataPath, "utf8"));
+  const detailTemplate = fs.readFileSync(blogDetailTemplatePath, "utf8");
+  const listTemplate = fs.readFileSync(blogListTemplatePath, "utf8");
 
-  let html = detailTemplate
-    .replaceAll("{{slug}}", post.slug || "")
-    .replaceAll("{{title}}", post.title || "")
-    .replaceAll("{{category}}", post.category || "")
-    .replaceAll("{{date}}", post.date || "")
-    .replaceAll("{{author}}", post.author || "")
-    .replaceAll("{{readingMinutes}}", String(post.readingMinutes || ""))
-    .replaceAll("{{seoTitle}}", seoTitle)
-    .replaceAll("{{seoDescription}}", seoDescription)
-    .replaceAll("{{image}}", image)
-    .replaceAll("{{content}}", post.contentHtml || "");
+  ensureDir(blogDistPath);
 
-  const folder = path.join(distPath, post.slug);
-  fs.mkdirSync(folder, { recursive: true });
+  posts.forEach((post) => {
+    const seoTitle = post.seo?.title || post.title || "";
+    const seoDescription = post.seo?.description || post.excerpt || "";
+    const image = normalizeImagePath(post.seo?.image || post.cover || "");
 
-  fs.writeFileSync(path.join(folder, "index.html"), html, "utf8");
-});
+    let html = detailTemplate
+      .replaceAll("{{slug}}", post.slug || "")
+      .replaceAll("{{title}}", post.title || "")
+      .replaceAll("{{category}}", post.category || "")
+      .replaceAll("{{date}}", post.date || "")
+      .replaceAll("{{author}}", post.author || "")
+      .replaceAll("{{readingMinutes}}", String(post.readingMinutes || ""))
+      .replaceAll("{{seoTitle}}", seoTitle)
+      .replaceAll("{{seoDescription}}", seoDescription)
+      .replaceAll("{{image}}", image)
+      .replaceAll("{{content}}", post.contentHtml || "");
 
-// LIST SAYFASI
-const postsHtml = posts.map(renderPost).join("");
-const randomPosts = shuffle(posts).slice(0, 2);
-const popularPostsHtml = randomPosts.map(renderPopularPost).join("");
+    html = normalizeInternalLinks(html);
 
-const listHtml = listTemplate.replace("{{popularPosts}}", popularPostsHtml).replace("{{posts}}", postsHtml);
+    const folder = path.join(blogDistPath, post.slug);
 
-fs.writeFileSync(path.join(distPath, "index.html"), listHtml, "utf8");
+    ensureDir(folder);
+    fs.writeFileSync(path.join(folder, "index.html"), html, "utf8");
+  });
 
-console.log("Blog build tamamlandı 🚀");
-copyDir(path.join(projectRoot, "css"), path.join(distRoot, "css"));
-copyDir(path.join(projectRoot, "js"), path.join(distRoot, "js"));
-copyDir(path.join(projectRoot, "img"), path.join(distRoot, "img"));
-copyDir(path.join(projectRoot, "fonts"), path.join(distRoot, "fonts"));
+  const postsHtml = posts.map(renderPost).join("");
+  const popularPostsHtml = shuffle(posts).slice(0, 2).map(renderPopularPost).join("");
+
+  const listHtml = normalizeInternalLinks(
+    listTemplate.replace("{{popularPosts}}", popularPostsHtml).replace("{{posts}}", postsHtml),
+  );
+
+  fs.writeFileSync(path.join(blogDistPath, "index.html"), listHtml, "utf8");
+
+  console.log("Blog build tamamlandı 🚀");
+}
+
+cleanDist();
+copyAssets();
+copyRootHtmlFiles();
+buildPortfolioPages();
+buildProjectPages();
+buildBlogPages();

@@ -302,11 +302,11 @@
                 <li><a href="/index.html">Anasayfa</a></li>
                 <li><a href="/portfolio/">Portföy</a></li>
 
-                <!-- JSON’dan dolacak -->
+                
                 <li><a href="/projects/{{slug}}/" id="projectBreadcrumb">{{breadcrumb}}</a></li>
               </ul>
 
-              <!-- JSON’dan dolacak -->
+              
               <h1 class="mil-mb-60" id="projectTitle">{{titleMain}} <span class="mil-thin">{{titleThin}}</span></h1>
 
               <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
@@ -334,7 +334,7 @@
                   <!-- TÜM YAZI BURAYA GELECEK -->
                   <div id="sectionContent">{{content}}</div>
 
-                  <a id="webSiteLink" href="{{link}}" target="_blank" data-no-swup
+                  <a id="webSiteLink" href="/{{link}}" target="_blank" data-no-swup
                     class="mil-link mil-dark mil-up mil-arrow-place">
                     <span>Siteye Git</span>
                   </a>
@@ -347,29 +347,22 @@
               <div class="col-lg-6">
                 <!-- COVER -->
                 <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="coverImg" src="{{cover}}" alt="{{projectTitlePlain}}" />
-                  <a id="coverZoom" href="{{cover}}" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
+                  <img id="coverImg" src="/{{cover}}" alt="{{projectTitlePlain}}" />
+                  <a id="coverZoom" href="/{{cover}}" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
                     <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
                   </a>
                 </div>
 
                 <!-- GALLERY -->
                 {{gallery}}
-
-                <div class="col-lg-12">
-                  <iframe class="ratio ratio-16x9 mt-4" id="projectVideo" width="100%" height="350" src="{{video}}"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-no-swup>
-                  </iframe>
-                </div>
+                {{videoBlock}}
               </div>
               <!-- ========== /RIGHT ========== -->
             </div>
 
             <!-- ========== NAVIGATION ========== -->
             <div class="mil-works-nav mil-up">
-              <a id="prevProject" href="{{prevProjectUrl}}" class="mil-link mil-dark mil-arrow-place mil-icon-left">
+              <a id="prevProject" href="/{{prevProjectUrl}}" class="mil-link mil-dark mil-arrow-place mil-icon-left">
                 <span>Önceki Proje</span>
               </a>
 
@@ -377,7 +370,7 @@
                 <span>Tüm Projeler</span>
               </a>
 
-              <a id="nextProject" href="{{nextProjectUrl}}" class="mil-link mil-dark mil-arrow-place">
+              <a id="nextProject" href="/{{nextProjectUrl}}" class="mil-link mil-dark mil-arrow-place">
                 <span>Sonraki Proje</span>
               </a>
             </div>
