@@ -102,6 +102,8 @@ projects.forEach((project) => {
     .replaceAll("{{videoBlock}}", renderVideo(project));
 
   html = html.replaceAll("projects.html?slug=", "/projects/");
+  html = html.replaceAll('href="projects/', 'href="/projects/');
+  html = html.replaceAll("href='projects/", "href='/projects/");
 
   const folder = path.join(projectsDistPath, project.slug);
   fs.mkdirSync(folder, { recursive: true });
