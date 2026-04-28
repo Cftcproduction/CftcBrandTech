@@ -40,15 +40,76 @@ function copyHtmlFiles() {
 copyHtmlFiles();
 
 // PORTFOLIO STATIK SAYFALAR
-// PROJECT JSON KOPYALA
-const projectJsonSource = path.join(__dirname, "data", "projects.json");
-const projectJsonTargetDir = path.join(__dirname, "dist", "data");
+// PROJECT DETAIL SAYFALARI
+const projectsDataPath = path.join(__dirname, "data", "projects.json");
+const projectTemplatePath = path.join(__dirname, "..", "projects.html");
+const projectsDistPath = path.join(__dirname, "dist", "projects");
 
-fs.mkdirSync(projectJsonTargetDir, { recursive: true });
+const projects = JSON.parse(fs.readFileSync(projectsDataPath, "utf8"));
+const projectTemplate = fs.readFileSync(projectTemplatePath, "utf8");
 
-fs.copyFileSync(projectJsonSource, path.join(projectJsonTargetDir, "projects.json"));
+function renderProjectContent(content = []) {
+  return content
+    .map((block) => {
+      if (block.type === "p") {
+        return `<p class="mil-up mil-mb-30">${block.html}</p>`;
+      }
 
-console.log("projects.json kopyalandı ✅");
+      if (block.type === "ul") {
+        return `
+          <ul class="mil-list mil-dark mil-up mil-mb-30">
+            ${(block.items || []).map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+        `;
+      }
+
+      return "";
+    })
+    .join("");
+}
+
+function renderGallery(project) {
+  return (project.gallery || [])
+    .map(
+      (img) => `
+        <div class="col-lg-6">
+          <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
+            <img src="/${img.replace(/^\/+/, "")}" alt="${project.titleMain} ${project.titleThin}" />
+          </div>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+projects.forEach((project) => {
+  let html = projectTemplate
+    .replaceAll("Project Title", `${project.titleMain || ""} <span class="mil-thin">${project.titleThin || ""}</span>`)
+    .replaceAll("MÜŞTERİ: -", `MÜŞTERİ: ${project.client || "-"}`)
+    .replaceAll("TARİH: -", `TARİH: ${project.date || "-"}`)
+    .replaceAll("YETKİLİ: -", `YETKİLİ: ${project.owner || "-"}`)
+    .replaceAll('src="" alt="cover image"', `src="/${project.cover}" alt="${project.titleMain}"`)
+    .replaceAll("{{projectTitle}}", `${project.titleMain || ""} ${project.titleThin || ""}`)
+    .replaceAll("{{breadcrumb}}", project.breadcrumb || "")
+    .replaceAll("{{client}}", project.client || "")
+    .replaceAll("{{date}}", project.date || "")
+    .replaceAll("{{owner}}", project.owner || "")
+    .replaceAll("{{cover}}", `/${project.cover || ""}`)
+    .replaceAll("{{sectionTitle}}", project.sectionTitle || "")
+    .replaceAll("{{content}}", renderProjectContent(project.content))
+    .replaceAll("{{gallery}}", renderGallery(project))
+    .replaceAll("{{link}}", project.link || "#");
+
+  html = html.replaceAll("projects.html?slug=", "/projects/");
+
+  const folder = path.join(projectsDistPath, project.slug);
+  fs.mkdirSync(folder, { recursive: true });
+
+  fs.writeFileSync(path.join(folder, "index.html"), html, "utf8");
+});
+
+console.log("Project detail sayfaları build tamamlandı ✅");
+
 function copyStaticPage(sourceFile, outputFolder) {
   const sourcePath = path.join(__dirname, "..", sourceFile);
   const targetFolder = path.join(__dirname, "dist", outputFolder);
