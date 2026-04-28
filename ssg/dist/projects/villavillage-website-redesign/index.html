@@ -5,12 +5,11 @@
   <!-- Temel -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CFTC BrandTech | Branding, Teknoloji ve Dijital Strateji Uzmanı</title>
-  <meta name="description"
-    content="CFTC BrandTech, dijital reklam, UX tasarım ve teknoloji stratejilerini birleştirerek markaların büyümesini hızlandırır. Yaratıcılıkla sonuç odaklı çözümler üretir." />
+  <title>{{projectTitlePlain}} | CFTC BrandTech</title>
+  <meta name="description" content="{{projectDescription}}" />
 
   <!-- Kanonik -->
-  <link rel="canonical" href="https://www.cftcbrandtech.com/projects.html" />
+  <link rel="canonical" href="https://www.cftcbrandtech.com/projects/{{slug}}/" />
 
   <!-- Çok dillilik -->
   <link rel="alternate" href="https://www.cftcbrandtech.com/" hreflang="tr-TR" />
@@ -19,23 +18,21 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="CFTC BrandTech" />
-  <meta property="og:title" content="CFTC BrandTech | Branding, Teknoloji ve Dijital Strateji Uzmanı" />
-  <meta property="og:description"
-    content="Yaratıcılık ve teknolojiyi birleştirerek markanı geleceğe taşıyoruz. CFTC BrandTech ile tanış." />
+  <meta property="og:title" content="{{projectTitlePlain}} | CFTC BrandTech" />
+  <meta property="og:description" content="{{projectDescription}}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.cftcbrandtech.com/" />
+  <meta property="og:url" content="https://www.cftcbrandtech.com/projects/{{slug}}/" />
   <!-- PNG/JPG önerilir, 1200x630 -->
-  <meta property="og:image" content="https://www.cftcbrandtech.com/img/og/og-image-1200x630.jpg" />
+  <meta property="og:image" content="https://www.cftcbrandtech.com/img/works/2/villavillage-2.webp" />
   <meta property="og:image:alt" content="CFTC BrandTech — Yaratıcılık ve teknolojiyle büyüyen markalar" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:locale:alternate" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CFTC BrandTech | Branding, Teknoloji ve Dijital Strateji Uzmanı" />
-  <meta name="twitter:description"
-    content="Yaratıcılık ve teknolojiyi birleştirerek markanı geleceğe taşıyoruz. CFTC BrandTech ile tanış." />
-  <meta name="twitter:image" content="https://www.cftcbrandtech.com/img/og/og-image-1200x630.jpg" />
+  <meta name="twitter:title" content="{{projectTitlePlain}} | CFTC BrandTech" />
+  <meta name="twitter:description" content="{{projectDescription}}" />
+  <meta name="twitter:image" content="https://www.cftcbrandtech.com/img/works/2/villavillage-2.webp" />
 
   <!-- Tema rengi -->
   <meta name="theme-color" content="#0f0f10" />
@@ -179,8 +176,8 @@
                     <button class="mil-submenu-button" aria-expanded="false"
                       aria-controls="menu-portfoy">Portföy</button>
                     <ul id="menu-portfoy" class="mil-submenu" aria-hidden="false">
-                      <li><a href="/portfolio.html">Portföy Liste Görünüm</a></li>
-                      <li><a href="/portfolio-slide.html">Portföy Slayt Görünüm</a></li>
+                      <li><a href="/portfolio/">Portföy Liste Görünüm</a></li>
+                      <li><a href="/portfolio-slide/">Portföy Slayt Görünüm</a></li>
                     </ul>
                   </li>
                   <li class="mil-has-children">
@@ -214,13 +211,13 @@
                     <section class="col-lg-8 mil-mb-60" aria-labelledby="projelerimiz">
                       <h5 id="projelerimiz" class="mil-muted mil-mb-30">Projelerimiz</h5>
                       <ul class="mil-menu-list" role="list">
-                        <li><a href="projects/cftc-smarttech-frontend/" class="mil-light-soft">Akıllı Ev
+                        <li><a href="/projects/cftc-smarttech-frontend/" class="mil-light-soft">Akıllı Ev
                             Sistemleri Websitesi</a></li>
-                        <li><a href="projects/villavillage-website-redesign/" class="mil-light-soft">Villa
+                        <li><a href="/projects/villavillage-website-redesign/" class="mil-light-soft">Villa
                             Kiralama Websitesi</a></li>
-                        <li><a href="projects/siempretour-website-redesign/" class="mil-light-soft">Tur
+                        <li><a href="/projects/siempretour-website-redesign/" class="mil-light-soft">Tur
                             Kiralama Websitesi</a></li>
-                        <li><a href="projects/zckolaylı-lawyer-website/" class="mil-light-soft">Avukat Özel
+                        <li><a href="/projects/zckolaylı-lawyer-website/" class="mil-light-soft">Avukat Özel
                             Websitesi</a></li>
                       </ul>
                     </section>
@@ -303,14 +300,14 @@
             <div class="container">
               <ul class="mil-breadcrumbs mil-mb-60">
                 <li><a href="/index.html">Anasayfa</a></li>
-                <li><a href="/portfolio.html">Portföy</a></li>
+                <li><a href="/portfolio/">Portföy</a></li>
 
                 <!-- JSON’dan dolacak -->
-                <li><a href="/projects/" id="projectBreadcrumb">PROJE</a></li>
+                <li><a href="/projects/{{slug}}/" id="projectBreadcrumb">Villa Village</a></li>
               </ul>
 
               <!-- JSON’dan dolacak -->
-              <h1 class="mil-mb-60" id="projectTitle">Project <span class="mil-thin">Title</span></h1>
+              <h1 class="mil-mb-60" id="projectTitle">{{titleMain}} <span class="mil-thin">{{titleThin}}</span></h1>
 
               <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
                 <span>Bilgi için</span>
@@ -327,17 +324,17 @@
               <div class="col-lg-6">
                 <div class="mil-p-0-120">
                   <ul class="mil-service-list mil-dark mil-mb-60">
-                    <li class="mil-up">Müşteri: <span id="clientName">-</span></li>
-                    <li class="mil-up">Tarih: <span id="projectDate">-</span></li>
-                    <li class="mil-up">Yetkili: <span id="projectOwner">-</span></li>
+                    <li class="mil-up">Müşteri: <span id="clientName">Villa Village</span></li>
+                    <li class="mil-up">Tarih: <span id="projectDate">Mayıs 2025</span></li>
+                    <li class="mil-up">Yetkili: <span id="projectOwner">CFTC BrandTech EKİP</span></li>
                   </ul>
 
-                  <h5 class="mil-up mil-mb-30" id="sectionTitle">-</h5>
+                  <h5 class="mil-up mil-mb-30" id="sectionTitle">Sadelik, Zarafet, Yenilik</h5>
 
                   <!-- TÜM YAZI BURAYA GELECEK -->
-                  <div id="sectionContent"></div>
+                  <div id="sectionContent"><p class="mil-up mil-mb-30"><b>VillaVillage,</b> için geliştirdiğimiz web sitesi; kullanıcı deneyimini ön planda tutan, sade ama etkili bir tasarımla hayata geçirildi. Amacımız, VillaVillage’ın sunduğu lüks ve doğayla iç içe tatil deneyimini dijital ortamda da aynı zarafetle yansıtmak oldu.</p><p class="mil-up mil-mb-30">Site tasarımında; kolay rezervasyon adımları, mobil uyumlu arayüz ve şık görsel düzenler öne çıkarıldı. Kullanıcıların aradıkları bilgiye hızlıca ulaşabilmesi için net bilgi mimarisi ve modern UI/UX çözümleri uygulandı.</p><p class="mil-up mil-mb-30">Ayrıca site, farklı cihazlarda sorunsuz çalışacak şekilde optimize edildi ve SEO uyumlu altyapı ile desteklendi. Böylece VillaVillage’ın dijital görünürlüğü artırılırken, marka kimliği de güçlendirildi.</p></div>
 
-                  <a id="webSiteLink" href="#" target="_blank" data-no-swup
+                  <a id="webSiteLink" href="https://www.villavillage.tr" target="_blank" data-no-swup
                     class="mil-link mil-dark mil-up mil-arrow-place">
                     <span>Siteye Git</span>
                   </a>
@@ -350,56 +347,35 @@
               <div class="col-lg-6">
                 <!-- COVER -->
                 <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="coverImg" src="/img/works/2/villavillage-2.webp" alt="Villa Kiralama" />
-                  <a id="coverZoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
+                  <img id="coverImg" src="/img/works/2/villavillage-2.webp" alt="{{projectTitlePlain}}" />
+                  <a id="coverZoom" href="/img/works/2/villavillage-2.webp" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
                     <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
                   </a>
                 </div>
 
                 <!-- GALLERY -->
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="g2Img" src="" alt="" />
-                  <a id="g2Zoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" />
-                  </a>
-                </div>
+                
+        <div class="col-lg-6">
+          <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
+            <img src="/img/works/2/2.jpg" alt="Villa Kiralama Websitesi" />
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
+            <img src="/img/works/2/3.jpg" alt="Villa Kiralama Websitesi" />
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
+            <img src="/img/works/2/4.jpg" alt="Villa Kiralama Websitesi" />
+          </div>
+        </div>
+      
 
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="g3Img" src="" alt="" />
-                  <a id="g3Zoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" />
-                  </a>
-                </div>
-
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="g4Img" src="" alt="" />
-                  <a id="g4Zoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" />
-                  </a>
-                </div>
-
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="g5Img" src="" alt="" />
-                  <a id="g5Zoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" />
-                  </a>
-                </div>
-
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="g6Img" src="" alt="" />
-                  <a id="g6Zoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" />
-                  </a>
-                </div>
-
-                <div class="mil-image-frame mil-horizontal mil-up">
-                  <img id="g7Img" src="" alt="" />
-                  <a id="g7Zoom" href="" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" />
-                  </a>
-                </div>
                 <div class="col-lg-12">
-                  <iframe class="ratio ratio-16x9 mt-4" id="projectVideo" width="100%" height="350" src=""
+                  <iframe class="ratio ratio-16x9 mt-4" id="projectVideo" width="100%" height="350" src="{{video}}"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen data-no-swup>
@@ -411,15 +387,15 @@
 
             <!-- ========== NAVIGATION ========== -->
             <div class="mil-works-nav mil-up">
-              <a id="prevProject" href="#" class="mil-link mil-dark mil-arrow-place mil-icon-left">
+              <a id="prevProject" href="{{prevProjectUrl}}" class="mil-link mil-dark mil-arrow-place mil-icon-left">
                 <span>Önceki Proje</span>
               </a>
 
-              <a href="/portfolio.html" class="mil-link mil-dark">
+              <a href="/portfolio/" class="mil-link mil-dark">
                 <span>Tüm Projeler</span>
               </a>
 
-              <a id="nextProject" href="#" class="mil-link mil-dark mil-arrow-place">
+              <a id="nextProject" href="{{nextProjectUrl}}" class="mil-link mil-dark mil-arrow-place">
                 <span>Sonraki Proje</span>
               </a>
             </div>
@@ -592,10 +568,10 @@
                           <a href="/index.html">Anasayfa</a>
                         </li>
                         <li class="mil-up">
-                          <a href="full-service.html">Hizmetler</a>
+                          <a href="/full-service.html">Hizmetler</a>
                         </li>
                         <li class="mil-up">
-                          <a href="/portfolio.html">Portföy</a>
+                          <a href="/portfolio/">Portföy</a>
                         </li>
                         <li class="mil-up">
                           <a href="/contact.html" data-no-swup>İletişim</a>
@@ -677,24 +653,24 @@
   <!-- wrapper end -->
 
   <!-- jQuery js -->
-  <script src="js/plugins/jquery.min.js" defer></script>
+  <script src="/js/plugins/jquery.min.js" defer></script>
   <!-- swup js -->
-  <script src="js/plugins/swup.min.js" defer></script>
+  <script src="/js/plugins/swup.min.js" defer></script>
   <!-- swiper js -->
-  <script src="js/plugins/swiper.min.js" defer></script>
+  <script src="/js/plugins/swiper.min.js" defer></script>
   <!-- fancybox js -->
-  <script src="js/plugins/fancybox.min.js" defer></script>
+  <script src="/js/plugins/fancybox.min.js" defer></script>
   <!-- gsap js -->
-  <script src="js/plugins/gsap.min.js" defer></script>
+  <script src="/js/plugins/gsap.min.js" defer></script>
   <!-- scroll smoother -->
-  <script src="js/plugins/smooth-scroll.js" defer></script>
+  <script src="/js/plugins/smooth-scroll.js" defer></script>
   <!-- scroll trigger js -->
-  <script src="js/plugins/ScrollTrigger.min.js" defer></script>
+  <script src="/js/plugins/ScrollTrigger.min.js" defer></script>
   <!-- scroll to js -->
-  <script src="js/plugins/ScrollTo.min.js" defer></script>
+  <script src="/js/plugins/ScrollTo.min.js" defer></script>
   <!-- ashley js -->
-  <script src="js/main.js" defer></script>
-  <script src="js/plugins/swup-utils.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/plugins/swup-utils.js" defer></script>
 
 
 
