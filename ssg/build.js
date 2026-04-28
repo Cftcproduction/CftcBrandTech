@@ -98,7 +98,8 @@ projects.forEach((project) => {
     .replaceAll("{{sectionTitle}}", project.sectionTitle || "")
     .replaceAll("{{content}}", renderProjectContent(project.content))
     .replaceAll("{{gallery}}", renderGallery(project))
-    .replaceAll("{{link}}", project.link || "#");
+    .replaceAll("{{link}}", project.link || "#")
+    .replaceAll("{{videoBlock}}", renderVideo(project));
 
   html = html.replaceAll("projects.html?slug=", "/projects/");
 
@@ -109,6 +110,26 @@ projects.forEach((project) => {
 });
 
 console.log("Project detail sayfaları build tamamlandı ✅");
+function renderVideo(project) {
+  if (!project.video) return "";
+
+  return `
+    <div class="col-lg-12">
+      <iframe
+        class="ratio ratio-16x9 mt-4"
+        width="100%"
+        height="350"
+        src="${project.video}"
+        title="${project.titleMain || "Project video"}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        data-no-swup>
+      </iframe>
+    </div>
+  `;
+}
 
 function copyStaticPage(sourceFile, outputFolder) {
   const sourcePath = path.join(__dirname, "..", sourceFile);
