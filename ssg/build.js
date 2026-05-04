@@ -1,16 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 
+// build.js dosyası /ssg içinde duruyorsa:
+const ssgRoot = __dirname;
 const projectRoot = path.join(__dirname, "..");
-const distRoot = path.join(__dirname, "dist");
+const distRoot = path.join(ssgRoot, "dist");
 
-const blogDataPath = path.join(__dirname, "data", "blog.json");
-const blogDetailTemplatePath = path.join(__dirname, "templates", "blog-detail.html");
-const blogListTemplatePath = path.join(__dirname, "templates", "blog.html");
-const blogDistPath = path.join(distRoot, "blog");
+const blogDataPath = path.join(ssgRoot, "data", "blog.json");
+const projectsDataPath = path.join(ssgRoot, "data", "projects.json");
 
-const projectsDataPath = path.join(__dirname, "data", "projects.json");
+const blogListTemplatePath = path.join(ssgRoot, "templates", "blog.html");
+const blogDetailTemplatePath = path.join(ssgRoot, "templates", "blog-detail.html");
+
+// Proje detay sayfası ana dizindeki projects.html dosyasını template olarak kullanıyor
 const projectTemplatePath = path.join(projectRoot, "projects.html");
+
+const blogDistPath = path.join(distRoot, "blog");
 const projectsDistPath = path.join(distRoot, "projects");
 
 function ensureDir(dir) {
@@ -64,11 +69,7 @@ function stripHtml(html = "") {
 }
 
 function escapeHtml(value = "") {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
+  return String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
 
 function removeClientProjectScript(html = "") {
@@ -323,9 +324,7 @@ function buildBlogPages() {
   const postsHtml = posts.map(renderPost).join("");
   const popularPostsHtml = shuffle(posts).slice(0, 2).map(renderPopularPost).join("");
 
-  const listHtml = normalizeInternalLinks(
-    listTemplate.replace("{{popularPosts}}", popularPostsHtml).replace("{{posts}}", postsHtml),
-  );
+  const listHtml = normalizeInternalLinks(listTemplate.replace("{{popularPosts}}", popularPostsHtml).replace("{{posts}}", postsHtml));
 
   fs.writeFileSync(path.join(blogDistPath, "index.html"), listHtml, "utf8");
 
