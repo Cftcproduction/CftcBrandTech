@@ -330,6 +330,71 @@ function buildBlogPages() {
 
   console.log("Blog build tamamlandı 🚀");
 }
+function formatDate(date = new Date()) {
+  return new Date(date).toISOString().split("T")[0];
+}
+
+function createSitemapUrl(loc, lastmod = formatDate()) {
+  return `
+  <url>
+    <loc>${loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>`;
+}
+
+function buildSitemap() {
+  const today = formatDate();
+
+  const posts = fs.existsSync(blogDataPath) ? JSON.parse(fs.readFileSync(blogDataPath, "utf8")) : [];
+
+  const projects = fs.existsSync(projectsDataPath) ? JSON.parse(fs.readFileSync(projectsDataPath, "utf8")) : [];
+
+  const staticUrls = staticPages
+    .map((page) => {
+      const url = page === "" ? `${SITE_URL}/` : `${SITE_URL}/${page}`;
+      return createSitemapUrl(url, today);
+    })
+    .join("");
+
+  const blogUrls = posts
+    .filter((post) => post.slug)
+    .map((post) => {
+      const lastmod = post.updatedAt || post.date || today;
+      return createSitemapUrl(`${SITE_URL}/blog/${post.slug}/`, lastmod);
+    })
+    .join("");
+
+  const projectUrls = projects
+    .filter((project) => project.slug)
+    .map((project) => {
+      const lastmod = project.updatedAt || project.date || today;
+      return createSitemapUrl(`${SITE_URL}/projects/${project.slug}/`, lastmod);
+    })
+    .join("");
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${staticUrls}
+${blogUrls}
+${projectUrls}
+</urlset>`;
+
+  fs.writeFileSync(path.join(distRoot, "sitemap.xml"), sitemap.trim(), "utf8");
+
+  console.log("sitemap.xml otomatik üretildi ✅");
+}
+
+function buildRobotsTxt() {
+  const robots = `User-agent: *
+Disallow:
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+
+  fs.writeFileSync(path.join(distRoot, "robots.txt"), robots, "utf8");
+
+  console.log("robots.txt otomatik üretildi ✅");
+}
 
 cleanDist();
 copyAssets();
@@ -337,3 +402,7 @@ copyRootHtmlFiles();
 buildPortfolioPages();
 buildProjectPages();
 buildBlogPages();
+buildSitemap();
+buildRobotsTxt();
+
+console.log("Tüm build işlemi tamamlandı 🚀");
