@@ -332,14 +332,60 @@ function buildBlogPages() {
   console.log("Blog build tamamlandı 🚀");
 }
 function formatDate(date = new Date()) {
-  return new Date(date).toISOString().split("T")[0];
-}
+  if (!date) return new Date().toISOString().split("T")[0];
 
+  const value = String(date).trim();
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return value;
+  }
+
+  const monthsTR = {
+    ocak: "01",
+    şubat: "02",
+    subat: "02",
+    mart: "03",
+    nisan: "04",
+    mayıs: "05",
+    mayis: "05",
+    haziran: "06",
+    temmuz: "07",
+    ağustos: "08",
+    agustos: "08",
+    eylül: "09",
+    eylul: "09",
+    ekim: "10",
+    kasım: "11",
+    kasim: "11",
+    aralık: "12",
+    aralik: "12",
+  };
+
+  const parts = value.split(/\s+/);
+
+  if (parts.length === 3) {
+    const day = parts[0].padStart(2, "0");
+    const month = monthsTR[parts[1].toLowerCase()];
+    const year = parts[2];
+
+    if (month && /^\d{4}$/.test(year)) {
+      return `${year}-${month}-${day}`;
+    }
+  }
+
+  const parsed = new Date(value);
+
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.toISOString().split("T")[0];
+  }
+
+  return new Date().toISOString().split("T")[0];
+}
 function createSitemapUrl(loc, lastmod = formatDate()) {
   return `
   <url>
     <loc>${loc}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${formatDate(lastmod)}</lastmod>
   </url>`;
 }
 function buildSitemap() {
@@ -359,7 +405,7 @@ function buildSitemap() {
   const blogUrls = posts
     .filter((post) => post.slug)
     .map((post) => {
-      const lastmod = post.updatedAt || post.date || today;
+      const lastmod = formatDate(post.updatedAt || post.date || today);
       return createSitemapUrl(`${SITE_URL}/blog/${post.slug}/`, lastmod);
     })
     .join("");
@@ -367,7 +413,7 @@ function buildSitemap() {
   const projectUrls = projects
     .filter((project) => project.slug)
     .map((project) => {
-      const lastmod = project.updatedAt || project.date || today;
+      const lastmod = formatDate(project.updatedAt || project.date || today);
       return createSitemapUrl(`${SITE_URL}/projects/${project.slug}/`, lastmod);
     })
     .join("");
