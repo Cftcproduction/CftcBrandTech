@@ -17,7 +17,8 @@ const projectTemplatePath = path.join(projectRoot, "projects.html");
 
 const blogDistPath = path.join(distRoot, "blog");
 const projectsDistPath = path.join(distRoot, "projects");
-
+const SITE_URL = "https://www.cftcbrandtech.com";
+const staticPages = ["", "about.html", "services.html", "team.html", "contact.html", "branding.html", "website-development.html", "digital-marketing.html", "consultancy.html", "full-service.html", "portfolio/", "portfolio-slide/", "blog/", "terms-conditions.html", "kvkk.html"];
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
@@ -341,7 +342,6 @@ function createSitemapUrl(loc, lastmod = formatDate()) {
     <lastmod>${lastmod}</lastmod>
   </url>`;
 }
-
 function buildSitemap() {
   const today = formatDate();
 
