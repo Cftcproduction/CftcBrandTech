@@ -23,9 +23,7 @@ $(function () {
     linkSelector: "a:not([data-no-swup])",
     animationSelector: '[class="mil-main-transition"]',
   };
-  const swup = new Swup({
-    plugins: [new SwupHeadPlugin()],
-  });
+  const swup = new Swup(options);
 
   /***************************
 
