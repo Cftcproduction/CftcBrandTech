@@ -5,11 +5,11 @@
   <!-- Temel -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Villa Kiralama Websitesi | CFTC BrandTech</title>
-  <meta name="description" content="VillaVillage, için geliştirdiğimiz web sitesi; kullanıcı deneyimini ön planda tutan, sade ama etkili bir tasarımla hayata geçirildi. Amacımız, VillaVillage" />
+  <title>{{projectTitlePlain}} | CFTC BrandTech</title>
+  <meta name="description" content="{{projectDescription}}" />
 
   <!-- Kanonik -->
-  <link rel="canonical" href="https://www.cftcbrandtech.com/projects/villavillage-website-redesign/" />
+  <link rel="canonical" href="https://www.cftcbrandtech.com/projects/villavillage-website-redesign/"> https://www.cftcbrandtech.com/projects/{{slug}}/" />
 
   <!-- Çok dillilik -->
   <link rel="alternate" href="https://www.cftcbrandtech.com/" hreflang="tr-TR" />
@@ -18,30 +18,30 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="CFTC BrandTech" />
-  <meta property="og:title" content="Villa Kiralama Websitesi | CFTC BrandTech" />
-  <meta property="og:description" content="VillaVillage, için geliştirdiğimiz web sitesi; kullanıcı deneyimini ön planda tutan, sade ama etkili bir tasarımla hayata geçirildi. Amacımız, VillaVillage" />
+  <meta property="og:title" content="{{projectTitlePlain}} | CFTC BrandTech" />
+  <meta property="og:description" content="{{projectDescription}}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.cftcbrandtech.com/projects/villavillage-website-redesign/" />
+  <meta property="og:url" content="https://www.cftcbrandtech.com/projects/{{slug}}/" />
   <!-- PNG/JPG önerilir, 1200x630 -->
-  <meta property="og:image" content="https://www.cftcbrandtech.com/img/works/2/villavillage-2.webp" />
+  <meta property="og:image" content="https://www.cftcbrandtech.com{{cover}}" />
   <meta property="og:image:alt" content="CFTC BrandTech — Yaratıcılık ve teknolojiyle büyüyen markalar" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:locale:alternate" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Villa Kiralama Websitesi | CFTC BrandTech" />
-  <meta name="twitter:description" content="VillaVillage, için geliştirdiğimiz web sitesi; kullanıcı deneyimini ön planda tutan, sade ama etkili bir tasarımla hayata geçirildi. Amacımız, VillaVillage" />
-  <meta name="twitter:image" content="https://www.cftcbrandtech.com/img/works/2/villavillage-2.webp" />
+  <meta name="twitter:title" content="{{projectTitlePlain}} | CFTC BrandTech" />
+  <meta name="twitter:description" content="{{projectDescription}}" />
+  <meta name="twitter:image" content="https://www.cftcbrandtech.com{{cover}}" />
 
   <!-- Tema rengi -->
   <meta name="theme-color" content="#0f0f10" />
 
   <!-- Favicon & App ikonları -->
-  <link rel="icon" href="/img/icons/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/img/icons/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="/img/icons/favicon-192.png" sizes="192x192" type="image/png" />
-  <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+  <link rel="icon" href="img/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="img/icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="img/icons/favicon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png" />
   <!-- PWA kullanıyorsan aç -->
   <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
@@ -303,7 +303,7 @@
                 <li><a href="/portfolio/">Portföy</a></li>
 
 
-                <li><a href="/projects/villavillage-website-redesign/" id="projectBreadcrumb">Villa Village</a></li>
+                <li><a href="/projects/{{slug}}/" id="projectBreadcrumb">{{breadcrumb}}</a></li>
               </ul>
 
 
@@ -324,17 +324,17 @@
               <div class="col-lg-6">
                 <div class="mil-p-0-120">
                   <ul class="mil-service-list mil-dark mil-mb-60">
-                    <li class="mil-up">Müşteri: <span id="clientName">Villa Village</span></li>
-                    <li class="mil-up">Tarih: <span id="projectDate">Mayıs 2025</span></li>
-                    <li class="mil-up">Yetkili: <span id="projectOwner">CFTC BrandTech EKİP</span></li>
+                    <li class="mil-up">Müşteri: <span id="clientName">{{client}}</span></li>
+                    <li class="mil-up">Tarih: <span id="projectDate">{{date}}</span></li>
+                    <li class="mil-up">Yetkili: <span id="projectOwner">{{owner}}</span></li>
                   </ul>
 
-                  <h5 class="mil-up mil-mb-30" id="sectionTitle">Sadelik, Zarafet, Yenilik</h5>
+                  <h5 class="mil-up mil-mb-30" id="sectionTitle">{{sectionTitle}}</h5>
 
                   <!-- TÜM YAZI BURAYA GELECEK -->
-                  <div id="sectionContent"><p class="mil-up mil-mb-30"><b>VillaVillage,</b> için geliştirdiğimiz web sitesi; kullanıcı deneyimini ön planda tutan, sade ama etkili bir tasarımla hayata geçirildi. Amacımız, VillaVillage’ın sunduğu lüks ve doğayla iç içe tatil deneyimini dijital ortamda da aynı zarafetle yansıtmak oldu.</p><p class="mil-up mil-mb-30">Site tasarımında; kolay rezervasyon adımları, mobil uyumlu arayüz ve şık görsel düzenler öne çıkarıldı. Kullanıcıların aradıkları bilgiye hızlıca ulaşabilmesi için net bilgi mimarisi ve modern UI/UX çözümleri uygulandı.</p><p class="mil-up mil-mb-30">Ayrıca site, farklı cihazlarda sorunsuz çalışacak şekilde optimize edildi ve SEO uyumlu altyapı ile desteklendi. Böylece VillaVillage’ın dijital görünürlüğü artırılırken, marka kimliği de güçlendirildi.</p></div>
+                  <div id="sectionContent">{{content}}</div>
 
-                  <a id="webSiteLink" href="/https://www.villavillage.tr" target="_blank" data-no-swup
+                  <a id="webSiteLink" href="/{{link}}" target="_blank" data-no-swup
                     class="mil-link mil-dark mil-up mil-arrow-place">
                     <span>Siteye Git</span>
                   </a>
@@ -347,58 +347,22 @@
               <div class="col-lg-6">
                 <!-- COVER -->
                 <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="coverImg" src="/img/works/2/villavillage-2.webp" alt="Villa Kiralama Websitesi" />
-                  <a id="coverZoom" href="//img/works/2/villavillage-2.webp" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
+                  <img id="coverImg" src="{{cover}}" alt="{{projectTitlePlain}}" />
+                  <a id="coverZoom" href="/{{cover}}" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
+                    <img class="icons" src="img/icons/zoom.svg" alt="zoom" />
                   </a>
                 </div>
 
                 <!-- GALLERY -->
-                
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img src="/img/works/2/2.jpg" alt="Villa Kiralama Websitesi görsel 1" />
-                  <a href="/img/works/2/2.jpg" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
-                  </a>
-                </div>
-      
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img src="/img/works/2/3.jpg" alt="Villa Kiralama Websitesi görsel 2" />
-                  <a href="/img/works/2/3.jpg" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
-                  </a>
-                </div>
-      
-                <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img src="/img/works/2/4.jpg" alt="Villa Kiralama Websitesi görsel 3" />
-                  <a href="/img/works/2/4.jpg" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
-                  </a>
-                </div>
-      
-                
-                <div class="col-lg-12">
-                  <iframe
-                    class="ratio ratio-16x9 mt-4"
-                    width="100%"
-                    height="350"
-                    src="https://www.youtube.com/embed/nZWrxCczS9Q?si=4BaBMEnI1GgLTGg6"
-                    title="Villa Kiralama"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                    data-no-swup>
-                  </iframe>
-                </div>
-  
+                {{gallery}}
+                {{videoBlock}}
               </div>
               <!-- ========== /RIGHT ========== -->
             </div>
 
             <!-- ========== NAVIGATION ========== -->
             <div class="mil-works-nav mil-up">
-              <a id="prevProject" href="/projects/cftc-smarttech-frontend/" class="mil-link mil-dark mil-arrow-place mil-icon-left">
+              <a id="prevProject" href="{{prevProjectUrl}}" class="mil-link mil-dark mil-arrow-place mil-icon-left">
                 <span>Önceki Proje</span>
               </a>
 
@@ -406,7 +370,7 @@
                 <span>Tüm Projeler</span>
               </a>
 
-              <a id="nextProject" href="/projects/siempretour-website-redesign/" class="mil-link mil-dark mil-arrow-place">
+              <a id="nextProject" href="{{nextProjectUrl}}" class="mil-link mil-dark mil-arrow-place">
                 <span>Sonraki Proje</span>
               </a>
             </div>
@@ -560,7 +524,7 @@
           <div class="container mil-p-120-60">
             <div class="row justify-content-between">
               <div class="col-md-4 col-lg-4 mil-mb-60">
-                <div class="mil-muted mil-logo mil-up mil-mb-30"><img src="/img/partners/cftc-logo.svg"
+                <div class="mil-muted mil-logo mil-up mil-mb-30"><img src="img/partners/cftc-logo.svg"
                     alt="cftcbrandtech logo" loading="lazy" /></div>
 
                 <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
@@ -633,7 +597,7 @@
                     <ul class="mil-social-icons mil-up">
                       <li>
                         <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
-                          class="social-icon" data-no-swup><img class="icons" src="/img/icons/instagram.svg"
+                          class="social-icon" data-no-swup><img class="icons" src="img/icons/instagram.svg"
                             alt="instagram icon"></a>
                       </li>
                       <li>

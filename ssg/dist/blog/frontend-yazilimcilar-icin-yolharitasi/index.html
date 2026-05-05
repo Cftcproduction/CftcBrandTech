@@ -9,19 +9,19 @@
   <meta name="description" content="Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer." />
 
   <!-- Kanonik -->
-  <link rel="canonical" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" />
+  <link rel="canonical" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/"> https://www.cftcbrandtech.com/blog/{{slug}}/" />
 
   <!-- Çok dillilik -->
-  <link rel="alternate" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" hreflang="tr-TR" />
-  <link rel="alternate" href="https://www.cftcbrandtech.com/en/blog/frontend-yazilimcilar-icin-yolharitasi/" hreflang="en-US" />
-  <link rel="alternate" href="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" hreflang="x-default" />
+  <link rel="alternate" href="https://www.cftcbrandtech.com/blog/{{slug}}/" hreflang="tr-TR" />
+  <link rel="alternate" href="https://www.cftcbrandtech.com/en/blog/{{slug}}/" hreflang="en-US" />
+  <link rel="alternate" href="https://www.cftcbrandtech.com/blog/{{slug}}/" hreflang="x-default" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="CFTC BrandTech" />
   <meta property="og:title" content="Frontend Yazılımcılar İçin Yol Haritası | CFTC BrandTech Makaleler" />
   <meta property="og:description" content="Frontend, bir yazılım ürününün kullanıcıya dokunan yüzüdür. Görsel tasarım, kullanıcı deneyimi (UX) ve interaktif özellikler, frontend geliştiricilerin sorumluluk alanına girer." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/" />
+  <meta property="og:url" content="https://www.cftcbrandtech.com/blog/{{slug}}/" />
   <meta property="og:image" content="https://www.cftcbrandtech.com/img/blog/Kaankurs2.jpg" />
   <meta property="og:image:alt" content="Frontend Yazılımcılar İçin Yol Haritası" />
   <meta property="og:locale" content="tr_TR" />
@@ -37,10 +37,10 @@
   <meta name="theme-color" content="#0f0f10" />
 
   <!-- Favicon & App ikonları -->
-  <link rel="icon" href="/img/icons/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/img/icons/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="/img/icons/favicon-192.png" sizes="192x192" type="image/png" />
-  <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+  <link rel="icon" href="img/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="img/icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="img/icons/favicon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png" />
 
   <!-- Performans -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
@@ -103,7 +103,7 @@
       "image": ["https://www.cftcbrandtech.com/img/blog/Kaankurs2.jpg"],
       "author": {
         "@type": "Person",
-        "name": "KAAN DOĞAN"
+        "name": "{{author}}"
       },
       "publisher": {
         "@type": "Organization",
@@ -115,9 +115,9 @@
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.cftcbrandtech.com/blog/frontend-yazilimcilar-icin-yolharitasi/"
+        "@id": "https://www.cftcbrandtech.com/blog/{{slug}}/"
       },
-      "datePublished": "22 Ağustos 2025"
+      "datePublished": "{{date}}"
     }
   </script>
 </head>
@@ -292,9 +292,9 @@
                 </div>
 
                 <div class="mil-info mil-up mil-mb-90">
-                  <div>Kategori: &nbsp;<span class="mil-dark">Yazılım</span></div>
-                  <div>Tarih: &nbsp;<span class="mil-dark">22 Ağustos 2025</span></div>
-                  <div>Yazar: <span class="mil-accent">KAAN DOĞAN</span></div>
+                  <div>Kategori: &nbsp;<span class="mil-dark">{{category}}</span></div>
+                  <div>Tarih: &nbsp;<span class="mil-dark">{{date}}</span></div>
+                  <div>Yazar: <span class="mil-accent">{{author}}</span></div>
                 </div>
               </div>
 
@@ -314,7 +314,7 @@
           <div class="row justify-content-between">
             <div class="col-md-4 col-lg-4 mil-mb-60">
               <div class="mil-muted mil-logo mil-up mil-mb-30">
-                <img src="/img/partners/cftc-logo.svg" alt="cftcbrandtech logo" loading="lazy" />
+                <img src="img/partners/cftc-logo.svg" alt="cftcbrandtech logo" loading="lazy" />
               </div>
 
               <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
@@ -382,7 +382,7 @@
                     <li>
                       <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
                         class="social-icon" data-no-swup>
-                        <img class="icons" src="/img/icons/instagram.svg" alt="instagram icon">
+                        <img class="icons" src="img/icons/instagram.svg" alt="instagram icon">
                       </a>
                     </li>
                     <li>
@@ -533,6 +533,7 @@
   <script src="/js/plugins/ScrollTrigger.min.js" defer></script>
   <script src="/js/plugins/ScrollTo.min.js" defer></script>
   <script src="/js/main.js" defer></script>
+  <script src="/js/plugins/projects.js" defer></script>
 </body>
 
 </html>
