@@ -24,9 +24,11 @@ $(function () {
     animationSelector: '[class="mil-main-transition"]',
   };
   const swup = new Swup({
-    containers: ["main"], // or whatever your content container is
-    updateHead: ['meta[property="og:url"]', 'link[rel="canonical"]', 'meta[name="description"]'],
-    // list all head selectors that should be updated per page
+    containers: ["#swupMain", "#swupMenu"],
+    animateHistoryBrowsing: true,
+    linkSelector: "a:not([data-no-swup])",
+    animationSelector: '[class="mil-main-transition"]',
+    updateHead: ['meta[property="og:url"]', 'link[rel="canonical"]', 'meta[name="description"]', 'meta[name="og:title"]', 'meta[name="og:description"]'],
   });
   /***************************
 
