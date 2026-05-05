@@ -53,6 +53,44 @@ function copyAssets() {
     copyDir(path.join(projectRoot, f), path.join(distRoot, f));
   });
 }
+function copyHtmlFile(sourceFile, targetFile = sourceFile) {
+  const sourcePath = path.join(projectRoot, sourceFile);
+  const targetPath = path.join(distRoot, targetFile);
+
+  if (!fs.existsSync(sourcePath)) {
+    console.warn(`HTML bulunamadı: ${sourceFile}`);
+    return;
+  }
+
+  let html = fs.readFileSync(sourcePath, "utf8");
+  html = normalizeLinks(html);
+
+  ensureDir(path.dirname(targetPath));
+  fs.writeFileSync(targetPath, html, "utf8");
+}
+
+function copyStaticHtmlPages() {
+  for (const file of fs.readdirSync(projectRoot)) {
+    if (!file.endsWith(".html")) continue;
+
+    // Bunlar özel build ediliyor, direkt kopyalanmasın
+    if (["projects.html", "portfolio.html", "portfolio-slide.html"].includes(file)) {
+      continue;
+    }
+
+    copyHtmlFile(file);
+  }
+
+  // Clean URL versiyonları
+  copyHtmlFile("portfolio.html", "portfolio/index.html");
+  copyHtmlFile("portfolio-slide.html", "portfolio-slide/index.html");
+
+  // Eski .html URL'ler kırılmasın diye ayrıca kopyala
+  copyHtmlFile("portfolio.html", "portfolio.html");
+  copyHtmlFile("portfolio-slide.html", "portfolio-slide.html");
+
+  console.log("Static HTML sayfalar kopyalandı ✅");
+}
 
 // ---------- HELPERS ----------
 function normalizeImagePath(src = "") {
@@ -64,7 +102,14 @@ function escapeHtml(str = "") {
 }
 
 function normalizeLinks(html = "") {
-  return String(html).replaceAll("projects.html?slug=", "/projects/").replaceAll("/portfolio.html", "/portfolio/").replaceAll("/portfolio-slide.html", "/portfolio-slide/");
+  return String(html)
+    .replaceAll("projects.html?slug=", "/projects/")
+    .replaceAll("/portfolio.html", "/portfolio/")
+    .replaceAll("/portfolio-slide.html", "/portfolio-slide/")
+    .replace(/src="js\//g, 'src="/js/')
+    .replace(/href="css\//g, 'href="/css/')
+    .replace(/src="img\//g, 'src="/img/')
+    .replace(/href="img\//g, 'href="/img/');
 }
 
 // ---------- BLOG ----------
@@ -163,6 +208,7 @@ Sitemap: ${SITE_URL}/sitemap.xml`,
 // ---------- RUN ----------
 cleanDist();
 copyAssets();
+copyStaticHtmlPages();
 buildBlogPages();
 buildProjectPages();
 buildSitemap();
