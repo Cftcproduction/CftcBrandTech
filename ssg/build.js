@@ -53,6 +53,12 @@ function copyAssets() {
     copyDir(path.join(projectRoot, f), path.join(distRoot, f));
   });
 }
+function cleanStaticCanonicalPath(file) {
+  if (file === "index.html") return "/";
+  if (file.endsWith("/index.html")) return "/" + file.replace(/index\.html$/, "");
+  return "/" + file;
+}
+
 function copyHtmlFile(sourceFile, targetFile = sourceFile) {
   const sourcePath = path.join(projectRoot, sourceFile);
   const targetPath = path.join(distRoot, targetFile);
@@ -62,7 +68,12 @@ function copyHtmlFile(sourceFile, targetFile = sourceFile) {
     return;
   }
 
+  const canonicalPath = cleanStaticCanonicalPath(targetFile);
+
   let html = fs.readFileSync(sourcePath, "utf8");
+
+  html = html.replaceAll("{{canonical}}", `${SITE_URL}${canonicalPath}`).replaceAll("{{siteUrl}}", SITE_URL);
+
   html = normalizeLinks(html);
 
   ensureDir(path.dirname(targetPath));
