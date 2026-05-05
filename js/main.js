@@ -23,7 +23,21 @@ $(function () {
     linkSelector: "a:not([data-no-swup])",
     animationSelector: '[class="mil-main-transition"]',
   };
-  const swup = new Swup(options);
+  const swup = new Swup();
+
+  swup.hooks.on("page:view", () => {
+    fetch(window.location.href)
+      .then((res) => res.text())
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        document.querySelector('link[rel="canonical"]').href = doc.querySelector('link[rel="canonical"]').href;
+
+        document.querySelector('meta[property="og:url"]').content = doc.querySelector('meta[property="og:url"]').content;
+
+        document.title = doc.title;
+      });
+  });
 
   /***************************
 
