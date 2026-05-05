@@ -30,6 +30,13 @@ $(function () {
     animationSelector: '[class="mil-main-transition"]',
     updateHead: ['meta[property="og:url"]', 'link[rel="canonical"]', 'meta[name="description"]', 'meta[name="og:title"]', 'meta[name="og:description"]'],
   });
+
+  swup.on('contentReplaced', () => {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.href = window.location.href.replace(/\/index\.html$/, '/');
+    }
+  });
   /***************************
 
     register gsap plugins
