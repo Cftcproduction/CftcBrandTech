@@ -23,8 +23,11 @@ $(function () {
     linkSelector: "a:not([data-no-swup])",
     animationSelector: '[class="mil-main-transition"]',
   };
-  const swup = new Swup(options);
-
+  const swup = new Swup({
+    containers: ["main"], // or whatever your content container is
+    updateHead: ['meta[property="og:url"]', 'link[rel="canonical"]', 'meta[name="description"]'],
+    // list all head selectors that should be updated per page
+  });
   /***************************
 
     register gsap plugins
