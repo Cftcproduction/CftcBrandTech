@@ -547,6 +547,18 @@ function buildRobotsTxt() {
 Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 `;
 
   fs.writeFileSync(path.join(distRoot, "robots.txt"), robots, "utf8");
