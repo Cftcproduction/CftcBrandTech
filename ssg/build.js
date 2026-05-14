@@ -180,6 +180,125 @@ function readJson(filePath, fallback = []) {
   if (!fs.existsSync(filePath)) return fallback;
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
+function getProjectTitle(project) {
+  return `${project.titleMain || ""} ${project.titleThin || ""}`.replace(/\s+/g, " ").trim() || "Proje";
+}
+
+function getProjectCover(project) {
+  if (project.portfolioCover) return normalizeImagePath(project.portfolioCover);
+  if (project.cover) return normalizeImagePath(project.cover);
+  if (Array.isArray(project.gallery) && project.gallery[0]) return normalizeImagePath(project.gallery[0]);
+  return "/img/placeholder.jpg";
+}
+
+function getProjectCategory(project) {
+  return project.category || project.service || "Web Tasarım ve GELİŞTİRME";
+}
+
+function renderPortfolioListProject(project, index) {
+  const isNarrow = index % 4 === 0 || index % 4 === 3;
+  const colClass = isNarrow ? "col-lg-5" : "col-lg-6";
+  const frameClass = isNarrow ? "mil-vert" : "mil-hori";
+  const parallaxClass = isNarrow ? "" : " mil-parallax";
+  const parallaxAttrs = isNarrow ? "" : ' data-value-1="60" data-value-2="-60"';
+  const title = getProjectTitle(project);
+
+  return `
+              <div class="${colClass}">
+                <a href="/projects/${project.slug}/" class="mil-portfolio-item mil-more${parallaxClass} mil-mb-60"${parallaxAttrs}>
+                  <div class="mil-cover-frame ${frameClass} mil-up">
+                    <div class="mil-cover">
+                      <img src="${getProjectCover(project)}" alt="${escapeHtml(title)}" />
+                    </div>
+                  </div>
+                  <div class="mil-descr">
+                    <div class="mil-labels mil-up mil-mb-15">
+                      <div class="mil-label mil-upper mil-accent">${escapeHtml(getProjectCategory(project))}</div>
+                      <div class="mil-label mil-upper">${escapeHtml(project.date || "")}</div>
+                    </div>
+                    <h4 class="mil-up">${escapeHtml(title)}</h4>
+                  </div>
+                </a>
+              </div>`;
+}
+
+function renderPortfolioSlideProject(project) {
+  const title = getProjectTitle(project);
+
+  return `
+                    <div class="swiper-slide">
+                      <div class="mil-portfolio-item mil-slider-item" data-swiper-parallax="-30">
+                        <div class="mil-cover-frame mil-drag">
+                          <div class="mil-cover" data-swiper-parallax-scale="1.3">
+                            <a href="/projects/${project.slug}/"><img src="${getProjectCover(project)}" alt="${escapeHtml(title)}" /></a>
+                          </div>
+                        </div>
+                        <div class="mil-descr" data-swiper-parallax-x="104%" data-swiper-parallax-opacity="0">
+                          <div class="mil-descr-text" data-swiper-parallax-y="100%" data-swiper-parallax-opacity="0">
+                            <div class="mil-labels mil-mb-15">
+                              <div class="mil-label mil-upper mil-accent">${escapeHtml(getProjectCategory(project))}</div>
+                              <div class="mil-label mil-upper">${escapeHtml(project.date || "")}</div>
+                            </div>
+                            <h5>${escapeHtml(title)}</h5>
+                          </div>
+                          <div data-swiper-parallax-y="100%" data-swiper-parallax-opacity="0">
+                            <a href="/projects/${project.slug}/" class="mil-button mil-arrow-place">
+                              <span>Projeyİ Gör</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>`;
+}
+
+function renderMenuProjects(projects = []) {
+  return projects
+    .filter((project) => project.slug)
+    .map((project) => `<li><a href="/projects/${project.slug}/" class="mil-light-soft">${escapeHtml(getProjectTitle(project))}</a></li>`)
+    .join("\n                        ");
+}
+
+function injectMenuProjects(html, projects = []) {
+  const menuHtml = renderMenuProjects(projects);
+  if (!menuHtml) return html;
+
+  return String(html).replace(/(<h5 id="projelerimiz" class="mil-muted mil-mb-30">Projelerimiz<\/h5>\s*<ul class="mil-menu-list" role="list">)[\s\S]*?(<\/ul>)/, `$1\n                        ${menuHtml}\n                      $2`);
+}
+
+function injectPortfolioList(html, projects = []) {
+  const portfolioHtml = projects
+    .filter((project) => project.slug)
+    .map(renderPortfolioListProject)
+    .join("\n");
+  if (!portfolioHtml) return html;
+
+  return String(html).replace(/(<section id="portfolio">[\s\S]*?<div class="row justify-content-between align-items-center">)[\s\S]*?(\s*<\/div>\s*<\/div>\s*<\/section>\s*<!-- portfolio end -->)/, `$1\n${portfolioHtml}\n            $2`);
+}
+
+function injectPortfolioSlider(html, projects = []) {
+  const slidesHtml = projects
+    .filter((project) => project.slug)
+    .map(renderPortfolioSlideProject)
+    .join("\n");
+  if (!slidesHtml) return html;
+
+  return String(html).replace(/(<div class="swiper-wrapper">)[\s\S]*?(\s*<\/div>\s*<\/div>\s*<\/div>\s*<div class="col-lg-3 mil-relative">)/, `$1\n${slidesHtml}\n                  $2`);
+}
+
+function injectPortfolioData(html, sourceFile) {
+  const projects = readJson(projectsDataPath, []);
+  let nextHtml = injectMenuProjects(html, projects);
+
+  if (sourceFile === "portfolio.html") {
+    nextHtml = injectPortfolioList(nextHtml, projects);
+  }
+
+  if (sourceFile === "portfolio-slide.html") {
+    nextHtml = injectPortfolioSlider(nextHtml, projects);
+  }
+
+  return nextHtml;
+}
 
 function copyStaticHtmlPages() {
   staticPages.forEach((page) => {
@@ -197,7 +316,7 @@ function copyStaticHtmlPages() {
       canonical: `${SITE_URL}${page.url}`,
       siteUrl: SITE_URL,
     });
-
+    html = injectPortfolioData(html, page.source);
     html = normalizeInternalLinks(html);
 
     ensureDir(path.dirname(targetPath));

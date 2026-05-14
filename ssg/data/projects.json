@@ -43,8 +43,8 @@
     "client": "Villa Village",
     "date": "Mayıs 2025",
     "owner": "CFTC BrandTech EKİP",
-    "cover": "img/works/2/villavillage-2.webp",
-    "gallery": ["img/works/2/2.jpg", "img/works/2/3.jpg", "img/works/2/4.jpg"],
+    "cover": "img/works/2/2.jpg",
+    "gallery": ["img/works/2/villavillage-2.webp", "img/works/2/2.jpg", "img/works/2/3.jpg", "img/works/2/4.jpg"],
     "video": "https://www.youtube.com/embed/nZWrxCczS9Q?si=4BaBMEnI1GgLTGg6",
     "link": "https://www.villavillage.tr",
     "sectionTitle": "Sadelik, Zarafet, Yenilik",
@@ -119,6 +119,42 @@
       {
         "type": "p",
         "html": "<b class='mil-dark'>Neyi Farklı Yapıyoruz?</b> <ul><li> Hazır tema değil, ihtiyaca özel tasarım</li> <li> Gerçek kullanıcı davranışına göre UX kurgusu</li><li> Online ödeme ve güvenli altyapı entegrasyonları</li><li> Mobil, tablet ve masaüstünde kusursuz deneyim</li> <li> SEO, hız ve güvenlik odaklı geliştirme</li></ul> <br><br> Her detay, ziyaretçinin siteye girdiği ilk saniyeden, işlemini tamamladığı ana kadar planlanır.<br><br> <b>Tasarım Biter, İş Başlar</b><br><br> Bizim için bir web sitesi yayına girdiğinde iş bitmez. Asıl hedef; sitenin iş üretmesi, güven vermesi ve dönüşüm sağlamasıdır. Bu yüzden projelerimiz; Sadece “güzel görünen” değil Kullanan, anlayan ve işlem yapan sistemlerdir."
+      }
+    ]
+  },
+  {
+    "slug": "atlas-rotary-website",
+    "breadcrumb": "Atlas Rotary",
+    "titleMain": "Rotary Özel",
+    "titleThin": "Websitesi",
+    "client": "İstanbul Atlas Rotary Kulübü",
+    "date": "Şubat 2026",
+    "owner": "İstanbul Atlas Rotary Kulübü",
+    "cover": "img/works/5/6.jpg",
+    "gallery": ["img/works/5/1.jpg", "img/works/5/2.jpg", "img/works/5/3.jpg", "img/works/5/4.jpg", "img/works/5/5.jpg", "img/works/5/6.jpg"],
+    "video": "",
+    "link": "https://www.atlasrotary.org",
+    "sectionTitle": "Rotary’nin Değerlerini Dijital Dünyaya Taşıyoruz",
+    "content": [
+      {
+        "type": "p",
+        "html": "Atlas Rotary web sitesi, yalnızca etkinliklerin paylaşıldığı bir platform değil; Rotary’nin toplumsal fayda odaklı vizyonunu dijital ortamda sürdürülebilir şekilde aktaran kapsamlı bir iletişim alanıdır. Kulübün faaliyetlerini, projelerini, sosyal sorumluluk çalışmalarını ve organizasyonlarını düzenli olarak paylaşarak hem üyeler hem de ziyaretçiler için güncel ve erişilebilir bir bilgi merkezi oluşturur."
+      },
+      {
+        "type": "p",
+        "html": "Bu platform üzerinden gerçekleştirilen toplantılar, etkinlikler, projeler ve topluma katkı sağlayan çalışmalar detaylı içeriklerle yayınlanır. Her etkinlik; tarih, içerik, görseller ve açıklamalarla birlikte arşivlenerek hem ziyaretçilere şeffaf bir yapı sunar hem de Rotary’nin uzun vadeli dijital hafızasını oluşturur."
+      },
+      {
+        "type": "p",
+        "html": "Atlas Rotary’nin temel amacı; “Kendinden Önce Hizmet” anlayışını daha geniş kitlelere ulaştırmak, yeni nesillere Rotary kültürünü anlatmak ve yapılan çalışmaları sürdürülebilir bir dijital yapı içerisinde görünür hale getirmektir. Eğitimden çevre projelerine, sağlıktan toplumsal dayanışmaya kadar birçok farklı alandaki faaliyetler bu yapı sayesinde düzenli şekilde aktarılır."
+      },
+      {
+        "type": "p",
+        "html": "Web sitesi aynı zamanda güçlü bir içerik altyapısıyla çalışır. Yayınlanan etkinlikler ve projeler arama motorlarına uygun biçimde yapılandırılır; böylece Google ve diğer arama motorları tarafından indekslenerek daha fazla kişiye ulaşması sağlanır. Bu yaklaşım sayesinde yalnızca mevcut üyeler değil, Rotary hakkında bilgi edinmek isteyen ziyaretçiler, gönüllüler ve potansiyel katılımcılar da kulübün faaliyetlerine kolayca erişebilir."
+      },
+      {
+        "type": "p",
+        "html": "Modern kullanıcı deneyimi, hızlı erişim yapısı ve mobil uyumlu tasarımı sayesinde ziyaretçiler etkinliklere, duyurulara ve kulüp çalışmalarına her cihazdan rahatlıkla ulaşabilir. Atlas Rotary dijital platformu; güven veren, düzenli güncellenen ve toplumsal faydayı merkeze alan bir iletişim yapısı sunar."
       }
     ]
   }
