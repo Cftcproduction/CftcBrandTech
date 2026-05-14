@@ -11,12 +11,12 @@
   function normalizeImagePath(src = "") {
     if (!src) return "";
 
-    // dış linkse dokunma
-    if (src.startsWith("http://") || src.startsWith("https://")) {
+    src = String(src).trim();
+
+    if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
       return src;
     }
 
-    // başına / ekle
     return "/" + src.replace(/^\/+/, "");
   }
 
@@ -78,7 +78,10 @@
       // Görsel varsa: slotu görünür yap + src/href set et
       if (frame) frame.style.display = "";
       if (img) img.src = normalizedSrc;
-      if (zoom) zoom.href = normalizedSrc;
+      if (zoom) {
+        zoom.href = normalizedSrc;
+        zoom.dataset.src = normalizedSrc;
+      }
     }
 
     const params = new URLSearchParams(window.location.search);
@@ -126,10 +129,9 @@
     } else {
       if (coverFrame) coverFrame.style.display = "";
       if (coverImg) coverImg.src = normalizedCover;
-      if (coverZoom) coverZoom.href = normalizedCover;
-      if (zoom) {
-        zoom.href = normalizedSrc;
-        zoom.setAttribute("data-src", normalizedSrc);
+      if (coverZoom) {
+        coverZoom.href = normalizedCover;
+        coverZoom.dataset.src = normalizedCover;
       }
     }
 
