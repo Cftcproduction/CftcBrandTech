@@ -100,7 +100,7 @@ function stripHtml(html = "") {
 
 function normalizeImagePath(src = "") {
   if (!src) return "";
-  return "/" + String(src).replace(/^\/+/, "");
+  return "/" + src.replace(/^\/+/, "");
 }
 
 function normalizeCategory(value = "") {
