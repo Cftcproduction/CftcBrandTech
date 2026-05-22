@@ -302,7 +302,7 @@
                 <p class="mil-text-xl mil-dark mil-up mil-mb-60">Son yıllarda yapay zekâ destekli kod üretim araçları, yazılım dünyasında büyük bir dönüşüm başlattı. Özellikle Claude Code gibi sistemlerle birlikte geliştiriciler artık yalnızca birkaç komutla kompleks uygulamalar üretebiliyor. Bu durum üretim hızını dramatik şekilde artırırken, beraberinde ciddi riskleri de getiriyor. Peki bu araçlara ne kadar güvenebiliriz? Gelecekte bizi nasıl problemler bekliyor? Bu sorulara yüzeysel değil, sistematik ve gerçekçi bir perspektiften bakmak gerekiyor.</p><h5 class="mil-up mil-mb-30">1. “Çalışıyor ama neden?” problemi: Black Box Riski</h5>
 <p class="mil-up mil-mb-30">Yapay zekâ ile üretilen kodun en büyük problemi, geliştiricinin çoğu zaman kodun mantığını tam olarak anlamamasıdır.</p>
 <p class="mil-up mil-mb-30 mil-bold">Kod çalışıyor olabilir. Ancak:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Neden çalıştığını bilmiyorsanız</li>
   <li class="mil-mb-15">Hangi koşullarda bozulacağını öngöremiyorsanız</li>
   <li class="mil-mb-15">Sistem davranışını modelleyemiyorsanız</li>
@@ -312,14 +312,14 @@
 
 <h5 class="mil-up mil-mb-30">2. Güvenlik Açıkları: Görünmeyen Tehlike</h5>
 <p class="mil-up mil-mb-30 mil-bold">Yapay zekâ, çoğu zaman güvenlik konusunda yeterince derin düşünmez. Üretilen kodlar genellikle:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Yetersiz input doğrulama içerir</li>
   <li class="mil-mb-15">Zayıf kimlik doğrulama (auth) mekanizmaları barındırır</li>
   <li class="mil-mb-15">Rate limiting içermez</li>
   <li class="mil-mb-15">Hassas verileri yanlış yerde tutabilir</li>
 </ul>
 <p class="mil-up mil-mb-30 mil-bold">Bu durum şu riskleri doğurur:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">SQL injection saldırıları</li>
   <li class="mil-mb-15">API anahtarlarının sızması</li>
   <li class="mil-mb-15">Sahte ödeme işlemleri</li>
@@ -330,13 +330,13 @@
 <h5 class="mil-up mil-mb-30">3. Yanlış Ama İkna Edici Kod</h5>
 <p class="mil-up mil-mb-30">Yapay zekânın en tehlikeli özelliklerinden biri, hatalı kodu yüksek özgüvenle üretmesidir.</p>
 <p class="mil-up mil-mb-30 mil-bold">Kod:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Mantıklı görünür</li>
   <li class="mil-mb-15">Çalışıyor gibi davranır</li>
   <li class="mil-mb-15">Ama belirli senaryolarda hatalıdır</li>
 </ul>
 <p class="mil-up mil-mb-30 mil-bold">Bu tür hatalar genellikle:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Büyük veri setlerinde</li>
   <li class="mil-mb-15">Edge case’lerde</li>
   <li class="mil-mb-15">Yoğun kullanım altında ortaya çıkar</li>
@@ -345,7 +345,7 @@
 
 <h5 class="mil-up mil-mb-30">4. Teknik Borç: Hızlı Başlangıç, Zor Sürdürülebilirlik</h5>
 <p class="mil-up mil-mb-30 mil-bold">Yapay zekâ ile hızlı üretim, kısa vadede avantaj sağlar. Ancak uzun vadede şu sorunları doğurur:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Tutarsız kod yapıları</li>
   <li class="mil-mb-15">Farklı stil ve mimari kararlar</li>
   <li class="mil-mb-15">Gereksiz karmaşıklık</li>
@@ -355,7 +355,7 @@
 
 <h5 class="mil-up mil-mb-30">5. Bağımlılık ve Yetenek Erozyonu</h5>
 <p class="mil-up mil-mb-30 mil-bold">Sürekli yapay zekâya bağımlı çalışmak, geliştiricinin temel yeteneklerini zayıflatır:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Problem çözme becerisi azalır</li>
   <li class="mil-mb-15">Debug yeteneği düşer</li>
   <li class="mil-mb-15">Sistem tasarlama kabiliyeti kaybolur</li>
@@ -364,7 +364,7 @@
 
 <h5 class="mil-up mil-mb-30">6. Lisans ve Hukuki Riskler</h5>
 <p class="mil-up mil-mb-30 mil-bold">Yapay zekâ bazen:</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Lisanslı kod parçalarını yeniden üretir</li>
   <li class="mil-mb-15">Açık kaynak kurallarını ihlal eder</li>
   <li class="mil-mb-15">Patentli çözümleri taklit edebilir</li>
@@ -379,7 +379,7 @@
 
 <h5 class="mil-up mil-mb-30">9. Doğru Kullanım: Yapay Zekâyı Nasıl Konumlandırmalıyız?</h5>
 <p class="mil-up mil-mb-30">Yapay zekâ bir “yerine geçen” değil, bir “yardımcı”dır.</p>
-<ul class="mil-list mil-mb-30">
+<ul class="mil-list mil-mb-30 list-inside">
   <li class="mil-mb-15">Mimariyi siz kurun</li>
   <li class="mil-mb-15">Kodları mutlaka denetleyin (mantık, edge case, güvenlik)</li>
   <li class="mil-mb-15">Kritik sistemlerde manuel kontrol şart (ödeme, kimlik, veri yazma)</li>

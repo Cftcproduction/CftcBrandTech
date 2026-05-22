@@ -4565,3 +4565,6 @@ width: 25vh;
   background-color:#ff0000;
   color: rgb(0, 0, 0);
 }
+.list-inside{
+  list-style-position: inside !important;
+}
