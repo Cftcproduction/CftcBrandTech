@@ -19,8 +19,6 @@ const projectsDistPath = path.join(distRoot, "projects");
 
 const staticPages = [
   { source: "index.html", output: "index.html", url: "/" },
-  { source: "about.html", output: "about/index.html", url: "/about/" },
-  { source: "services.html", output: "services/index.html", url: "/services/" },
   { source: "team.html", output: "team/index.html", url: "/team/" },
   { source: "contact.html", output: "contact/index.html", url: "/contact/" },
   { source: "branding.html", output: "branding/index.html", url: "/branding/" },
@@ -83,8 +81,6 @@ function copyAssets() {
   ["css", "js", "img", "fonts"].forEach((folder) => {
     copyDir(path.join(projectRoot, folder), path.join(distRoot, folder));
   });
-
-  console.log("Asset dosyaları kopyalandı ✅");
 }
 
 function escapeHtml(value = "") {
@@ -124,11 +120,8 @@ function normalizeInternalLinks(html = "") {
       .replaceAll('href="index.html"', 'href="/"')
       .replaceAll('href="/index.html"', 'href="/"')
 
-      .replaceAll('href="about.html"', 'href="/about/"')
-      .replaceAll('href="/about.html"', 'href="/about/"')
-
-      .replaceAll('href="services.html"', 'href="/services/"')
-      .replaceAll('href="/services.html"', 'href="/services/"')
+      .replaceAll('href="full-service.html"', 'href="/full-service/"')
+      .replaceAll('href="/full-service.html"', 'href="/full-service/"')
 
       .replaceAll('href="team.html"', 'href="/team/"')
       .replaceAll('href="/team.html"', 'href="/team/"')
@@ -208,7 +201,7 @@ function renderPortfolioListProject(project, index) {
                 <a href="/projects/${project.slug}/" class="mil-portfolio-item mil-more${parallaxClass} mil-mb-60"${parallaxAttrs}>
                   <div class="mil-cover-frame ${frameClass} mil-up">
                     <div class="mil-cover">
-                      <img src="${getProjectCover(project)}" alt="${escapeHtml(title)}" />
+                      <img src="${getProjectCover(project)}" alt="${escapeHtml(title)}" loading="lazy" />
                     </div>
                   </div>
                   <div class="mil-descr">
@@ -230,7 +223,7 @@ function renderPortfolioSlideProject(project) {
                       <div class="mil-portfolio-item mil-slider-item" data-swiper-parallax="-30">
                         <div class="mil-cover-frame mil-drag">
                           <div class="mil-cover" data-swiper-parallax-scale="1.3">
-                            <a href="/projects/${project.slug}/"><img src="${getProjectCover(project)}" alt="${escapeHtml(title)}" /></a>
+                            <a href="/projects/${project.slug}/"><img src="${getProjectCover(project)}" alt="${escapeHtml(title)}" loading="lazy" /></a>
                           </div>
                         </div>
                         <div class="mil-descr" data-swiper-parallax-x="104%" data-swiper-parallax-opacity="0">
@@ -306,7 +299,6 @@ function copyStaticHtmlPages() {
     const targetPath = path.join(distRoot, page.output);
 
     if (!fs.existsSync(sourcePath)) {
-      console.warn(`Static sayfa bulunamadı: ${page.source}`);
       return;
     }
 
@@ -322,8 +314,6 @@ function copyStaticHtmlPages() {
     ensureDir(path.dirname(targetPath));
     fs.writeFileSync(targetPath, html, "utf8");
   });
-
-  console.log("Static clean URL sayfalar üretildi ✅");
 }
 
 function renderProjectContent(content = []) {
@@ -354,9 +344,9 @@ function renderGallery(project) {
 
       return `
         <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-          <img src="${src}" alt="${alt}" />
+          <img src="${src}" alt="${alt}" loading="lazy" />
           <a href="${src}" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-            <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
+            <img class="icons" src="/img/icons/zoom.svg" alt="zoom" loading="lazy" />
           </a>
         </div>
       `;
@@ -394,7 +384,6 @@ function buildProjectPages() {
   const projects = readJson(projectsDataPath, []);
 
   if (!fs.existsSync(projectTemplatePath)) {
-    console.warn("projects.html template bulunamadı, proje sayfaları atlandı.");
     return;
   }
 
@@ -441,8 +430,6 @@ function buildProjectPages() {
     ensureDir(folder);
     fs.writeFileSync(path.join(folder, "index.html"), html, "utf8");
   });
-
-  console.log("Project detail sayfaları build tamamlandı ✅");
 }
 
 function renderPost(post) {
@@ -452,7 +439,7 @@ function renderPost(post) {
     <div class="col-lg-12 js-post-item" data-category="${normalizeCategory(category)}">
       <a href="/blog/${post.slug}/" class="mil-blog-card mil-blog-card-hori mil-more mil-mb-60">
         <div class="mil-cover-frame mil-up">
-          <img src="${normalizeImagePath(post.cover)}" alt="${escapeHtml(post.title || "")}" />
+          <img src="${normalizeImagePath(post.cover)}" alt="${escapeHtml(post.title || "")}" loading="lazy" />
         </div>
         <div class="mil-post-descr">
           <div class="mil-labels mil-up mil-mb-30">
@@ -477,7 +464,7 @@ function renderPopularPost(post) {
     <div class="col-lg-6">
       <a href="/blog/${post.slug}/" class="mil-blog-card mil-mb-60">
         <div class="mil-cover-frame mil-up">
-          <img src="${normalizeImagePath(post.cover)}" alt="${escapeHtml(post.title || "")}" />
+          <img src="${normalizeImagePath(post.cover)}" alt="${escapeHtml(post.title || "")}" loading="lazy" />
         </div>
         <div class="mil-post-descr">
           <div class="mil-labels mil-up mil-mb-30">
@@ -506,12 +493,10 @@ function buildBlogPages() {
   const posts = readJson(blogDataPath, []);
 
   if (!fs.existsSync(blogDetailTemplatePath)) {
-    console.warn("blog-detail.html template bulunamadı, blog detayları atlandı.");
     return;
   }
 
   if (!fs.existsSync(blogListTemplatePath)) {
-    console.warn("blog.html template bulunamadı, blog liste sayfası atlandı.");
     return;
   }
 
@@ -563,8 +548,6 @@ function buildBlogPages() {
   listHtml = normalizeInternalLinks(listHtml);
 
   fs.writeFileSync(path.join(blogDistPath, "index.html"), listHtml, "utf8");
-
-  console.log("Blog build tamamlandı ✅");
 }
 
 function formatDate(date = new Date()) {
@@ -657,8 +640,6 @@ ${projectUrls}
 </urlset>`;
 
   fs.writeFileSync(path.join(distRoot, "sitemap.xml"), sitemap.trim(), "utf8");
-
-  console.log("sitemap.xml üretildi ✅");
 }
 
 function buildRobotsTxt() {
@@ -681,8 +662,6 @@ Allow: /
 `;
 
   fs.writeFileSync(path.join(distRoot, "robots.txt"), robots, "utf8");
-
-  console.log("robots.txt üretildi ✅");
 }
 
 cleanDist();
@@ -692,5 +671,3 @@ buildProjectPages();
 buildBlogPages();
 buildSitemap();
 buildRobotsTxt();
-
-console.log("Tüm build işlemi tamamlandı 🚀");

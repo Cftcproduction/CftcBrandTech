@@ -8,13 +8,8 @@
       "permanent": true
     },
     {
-      "source": "/about.html",
-      "destination": "/about/",
-      "permanent": true
-    },
-    {
-      "source": "/services.html",
-      "destination": "/services/",
+      "source": "/full-service.html",
+      "destination": "/full-service/",
       "permanent": true
     },
     {
