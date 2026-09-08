@@ -3129,7 +3129,8 @@ blog
 .mil-Kategori-list li:last-child {
   margin-right: 0;
 }
-.mil-Kategori-list li a {
+.mil-Kategori-list li a,
+.mil-Kategori-list li button {
   height: 40px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -3139,11 +3140,14 @@ blog
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-color: transparent;
+  border: 0;
   padding: 0 20px;
   border-radius: 40px;
   color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-family: inherit;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
@@ -3151,11 +3155,18 @@ blog
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
-.mil-Kategori-list li a:hover {
+.mil-Kategori-list li a:hover,
+.mil-Kategori-list li button:hover {
   background-color: rgb(229, 229, 229);
 }
-.mil-Kategori-list li a.mil-active {
+.mil-Kategori-list li a.mil-active,
+.mil-Kategori-list li button.mil-active {
   background-color: var(--bs-red);
+}
+.mil-Kategori-list li a:focus-visible,
+.mil-Kategori-list li button:focus-visible {
+  outline: 2px solid var(--bs-red);
+  outline-offset: 2px;
 }
 @media screen and (max-width: 768px) {
   .mil-Kategori-list {
@@ -3174,7 +3185,8 @@ blog
   .mil-Kategori-list li:last-child {
     margin-bottom: 0;
   }
-  .mil-Kategori-list li a {
+  .mil-Kategori-list li a,
+  .mil-Kategori-list li button {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;

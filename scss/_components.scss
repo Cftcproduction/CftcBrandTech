@@ -1875,15 +1875,19 @@ blog
             margin-right: 0;
         }
 
-        & a {
+        & a,
+        & button {
             height: 40px;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             background-color: transparent;
+            border: 0;
             padding: 0 20px;
             border-radius: 40px;
             color: $dark;
+            cursor: pointer;
+            font-family: inherit;
             text-transform: uppercase;
             font-size: 12px;
             font-weight: 500;
@@ -1896,6 +1900,11 @@ blog
 
             &.mil-active {
                 background-color: $accent;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $accent;
+                outline-offset: 2px;
             }
 
         }
@@ -1913,7 +1922,8 @@ blog
                 margin-bottom: 0;
             }
 
-            & a {
+            & a,
+            & button {
                 justify-content: flex-start;
             }
         }
