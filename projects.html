@@ -334,7 +334,7 @@
                   <!-- TÜM YAZI BURAYA GELECEK -->
                   <div id="sectionContent">{{content}}</div>
 
-                  <a id="webSiteLink" href="{{link}}" target="_blank" data-no-swup
+                  <a id="webSiteLink" href="{{link}}" target="_blank" rel="noopener noreferrer" data-no-swup
                     class="mil-link mil-dark mil-up mil-arrow-place">
                     <span>Siteye Git</span>
                   </a>
@@ -347,9 +347,9 @@
               <div class="col-lg-6">
                 <!-- COVER -->
                 <!-- <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="coverImg" src="{{cover}}" alt="{{projectTitlePlain}}" />
+                  <img id="coverImg" src="{{cover}}" alt="{{projectTitlePlain}}"  loading="lazy"/>
                   <a id="coverZoom" href="{{cover}}" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="img/icons/zoom.svg" alt="zoom" />
+                    <img class="icons" src="img/icons/zoom.svg" alt="zoom"  loading="lazy"/>
                   </a>
                 </div> -->
 
@@ -530,8 +530,11 @@
                 <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
 
                 <form class="mil-subscribe-form">
-                  <input type="text" placeholder="Mail adresinizi giriniz" />
-                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                  <label class="sr-only" for="projectSubscribeEmail">E-posta adresinizi giriniz</label>
+                  <input id="projectSubscribeEmail" type="email" name="email" placeholder="Mail adresinizi giriniz"
+                    aria-label="Mail adresinizi giriniz" />
+                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"
+                    aria-label="Abone ol"></button>
                 </form>
               </div>
               <div class="col-md-7 col-lg-6">
@@ -598,7 +601,7 @@
                       <li>
                         <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
                           class="social-icon" data-no-swup><img class="icons" src="img/icons/instagram.svg"
-                            alt="instagram icon"></a>
+                            alt="instagram icon" loading="lazy"></a>
                       </li>
                       <li>
                         <a href="https://www.facebook.com/cftcbrandtech" target="_blank" rel="noopener"

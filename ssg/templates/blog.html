@@ -342,11 +342,12 @@
                 <div class="col-lg-8 mil-mb-30">
                   <div class="mil-adaptive-right mil-up">
                     <ul class="mil-Kategori-list">
-                      <li><a href="#" data-category="tasarım">Tasarım</a></li>
-                      <li><a href="#" data-category="sanat">Sanat</a></li>
-                      <li><a href="#" data-category="yazılım">Yazılım</a></li>
-                      <li><a href="#" data-category="teknoloji">Teknoloji</a></li>
-                      <li><a href="#" data-category="all" class="js-clear-filters mil-active">TÜM KATEGORİLER</a></li>
+                      <li><button type="button" data-category="tasarım">Tasarım</button></li>
+                      <li><button type="button" data-category="sanat">Sanat</button></li>
+                      <li><button type="button" data-category="yazılım">Yazılım</button></li>
+                      <li><button type="button" data-category="teknoloji">Teknoloji</button></li>
+                      <li><button type="button" data-category="all" class="js-clear-filters mil-active">TÜM
+                          KATEGORİLER</button></li>
                     </ul>
                   </div>
                 </div>
@@ -390,7 +391,7 @@
               <div class="row justify-content-center mil-up">
                 <div class="col-lg-4">
                   <form class="mil-subscribe-form mil-subscribe-form-2 mil-up">
-                    <input type="text" placeholder="E-mail" />
+                    <input type="text" placeholder="E-mail" aria-label="E-mail" />
                     <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
                   </form>
                 </div>
@@ -403,13 +404,6 @@
         <!-- hidden elements -->
         <div class="mil-hidden-elements">
           <div class="mil-dodecahedron">
-            <div class="mil-pentagon">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
             <div class="mil-pentagon">
               <div></div>
               <div></div>
@@ -528,9 +522,12 @@
 
               <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
 
-              <form class="mil-subscribe-form">
-                <input type="text" placeholder="Mail adresinizi giriniz" />
-                <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+              <form class="mil-subscribe-form" aria-label="E-posta aboneliği">
+                <label class="sr-only" for="footer-newsletter-email">Mail adresinizi giriniz</label>
+                <input id="footer-newsletter-email" type="email" name="email" placeholder="Mail adresinizi giriniz"
+                  aria-label="Mail adresinizi giriniz" />
+                <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"
+                  aria-label="Abone ol"></button>
               </form>
             </div>
             <div class="col-md-7 col-lg-6">
@@ -597,7 +594,7 @@
                     <li>
                       <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
                         class="social-icon" data-no-swup><img class="icons" src="img/icons/instagram.svg"
-                          alt="instagram icon"></a>
+                          alt="instagram icon" loading="lazy"></a>
                     </li>
                     <li>
                       <a href="https://www.facebook.com/cftcbrandtech" target="_blank" rel="noopener"

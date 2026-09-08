@@ -279,7 +279,7 @@
               <ul class="mil-breadcrumbs mil-mb-60 pt-5">
                 <li><a href="/">Anasayfa</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="#">Web Sitesi Performansını Zirveye Taşıyan 4 Kritik Metrik</a></li>
+                <li aria-current="page">Web Sitesi Performansını Zirveye Taşıyan 4 Kritik Metrik</li>
               </ul>
 
               <h1 class="mil-mb-60 mil-medium">Web Sitesi Performansını Zirveye Taşıyan 4 Kritik Metrik</h1>
@@ -288,7 +288,8 @@
             <div class="row justify-content-center">
               <div class="col-lg-12">
                 <div class="mil-image-frame mil-horizontal mil-up">
-                  <img src="/img/blog/Kaankurs2.jpg" alt="Web Sitesi Performansını Zirveye Taşıyan 4 Kritik Metrik" class="mil-scale" data-value-1=".90" data-value-2="1.15">
+                  <img src="/img/blog/Kaankurs2.jpg" alt="Web Sitesi Performansını Zirveye Taşıyan 4 Kritik Metrik" class="mil-scale" data-value-1=".90" data-value-2="1.15"
+                    loading="lazy">
                 </div>
 
                 <div class="mil-info mil-up mil-mb-90">
@@ -311,7 +312,7 @@
 
 <h5 class="mil-up mil-mb-30">  1. Performance (Performans): Hız = Para</h5>
  
- <div class="row col-lg-12 "><img class="py-4" src="/img/blog/performance.webp" alt="performance"></div><p class="mil-up mil-mb-60">
+ <div class="row col-lg-12 "><img class="py-4" src="/img/blog/performance.webp" alt="performance" loading="lazy"></div><p class="mil-up mil-mb-60">
   Performance, sitenin ne kadar hızlı yüklendiğini ve kullanıcıya ne kadar çabuk etkileşim sunabildiğini ölçer. Yavaş bir site, en iyi tasarıma sahip olsa bile kullanıcıyı kaybeder.
 </p>
 
@@ -367,7 +368,7 @@
 
 <h5 class="mil-up mil-mb-30">3. Best Practices (En İyi Uygulamalar): Teknik Hijyen</h5>
  </p>
- <div class="row col-lg-12 "><img class="py-4" src="/img/blog/bestapps.webp" alt="bestpractices"></div><p class="mil-up mil-mb-60">
+ <div class="row col-lg-12 "><img class="py-4" src="/img/blog/bestapps.webp" alt="bestpractices" loading="lazy"></div><p class="mil-up mil-mb-60">
   Best Practices, sitenin modern web standartlarına ve güvenlik kurallarına ne kadar uygun olduğunu ölçer.
 </p>
 
@@ -396,7 +397,7 @@
 
 <h5 class="mil-up mil-mb-30">4. SEO: Görünürlük = Trafik</h5>
  </p>
- <div class="row col-lg-12 "><img class="py-4" src="/img/blog/seo.webp" alt="seo"></div><p class="mil-up mil-mb-60">
+ <div class="row col-lg-12 "><img class="py-4" src="/img/blog/seo.webp" alt="seo" loading="lazy"></div><p class="mil-up mil-mb-60">
   SEO, sitenin arama motorları tarafından ne kadar doğru ve etkili şekilde taranabildiğini ölçer.
 </p>
 
@@ -462,8 +463,11 @@
               <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
 
               <form class="mil-subscribe-form">
-                <input type="text" placeholder="Mail adresinizi giriniz" />
-                <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                <label class="sr-only" for="blogSubscribeEmail">E-posta adresinizi giriniz</label>
+                <input id="blogSubscribeEmail" type="email" name="email" placeholder="Mail adresinizi giriniz"
+                  aria-label="Mail adresinizi giriniz" />
+                <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"
+                  aria-label="Abone ol"></button>
               </form>
             </div>
 
@@ -524,7 +528,7 @@
                     <li>
                       <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
                         class="social-icon" data-no-swup>
-                        <img class="icons" src="/img/icons/instagram.svg" alt="instagram icon">
+                        <img class="icons" src="/img/icons/instagram.svg" alt="instagram icon" loading="lazy">
                       </a>
                     </li>
                     <li>

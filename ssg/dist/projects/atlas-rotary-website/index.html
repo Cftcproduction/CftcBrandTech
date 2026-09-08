@@ -334,7 +334,7 @@
                   <!-- TÜM YAZI BURAYA GELECEK -->
                   <div id="sectionContent"><p class="mil-up mil-mb-30">Atlas Rotary web sitesi, yalnızca etkinliklerin paylaşıldığı bir platform değil; Rotary’nin toplumsal fayda odaklı vizyonunu dijital ortamda sürdürülebilir şekilde aktaran kapsamlı bir iletişim alanıdır. Kulübün faaliyetlerini, projelerini, sosyal sorumluluk çalışmalarını ve organizasyonlarını düzenli olarak paylaşarak hem üyeler hem de ziyaretçiler için güncel ve erişilebilir bir bilgi merkezi oluşturur.</p><p class="mil-up mil-mb-30">Bu platform üzerinden gerçekleştirilen toplantılar, etkinlikler, projeler ve topluma katkı sağlayan çalışmalar detaylı içeriklerle yayınlanır. Her etkinlik; tarih, içerik, görseller ve açıklamalarla birlikte arşivlenerek hem ziyaretçilere şeffaf bir yapı sunar hem de Rotary’nin uzun vadeli dijital hafızasını oluşturur.</p><p class="mil-up mil-mb-30">Atlas Rotary’nin temel amacı; “Kendinden Önce Hizmet” anlayışını daha geniş kitlelere ulaştırmak, yeni nesillere Rotary kültürünü anlatmak ve yapılan çalışmaları sürdürülebilir bir dijital yapı içerisinde görünür hale getirmektir. Eğitimden çevre projelerine, sağlıktan toplumsal dayanışmaya kadar birçok farklı alandaki faaliyetler bu yapı sayesinde düzenli şekilde aktarılır.</p><p class="mil-up mil-mb-30">Web sitesi aynı zamanda güçlü bir içerik altyapısıyla çalışır. Yayınlanan etkinlikler ve projeler arama motorlarına uygun biçimde yapılandırılır; böylece Google ve diğer arama motorları tarafından indekslenerek daha fazla kişiye ulaşması sağlanır. Bu yaklaşım sayesinde yalnızca mevcut üyeler değil, Rotary hakkında bilgi edinmek isteyen ziyaretçiler, gönüllüler ve potansiyel katılımcılar da kulübün faaliyetlerine kolayca erişebilir.</p><p class="mil-up mil-mb-30">Modern kullanıcı deneyimi, hızlı erişim yapısı ve mobil uyumlu tasarımı sayesinde ziyaretçiler etkinliklere, duyurulara ve kulüp çalışmalarına her cihazdan rahatlıkla ulaşabilir. Atlas Rotary dijital platformu; güven veren, düzenli güncellenen ve toplumsal faydayı merkeze alan bir iletişim yapısı sunar.</p></div>
 
-                  <a id="webSiteLink" href="https://www.atlasrotary.org" target="_blank" data-no-swup
+                  <a id="webSiteLink" href="https://www.atlasrotary.org" target="_blank" rel="noopener noreferrer" data-no-swup
                     class="mil-link mil-dark mil-up mil-arrow-place">
                     <span>Siteye Git</span>
                   </a>
@@ -347,9 +347,9 @@
               <div class="col-lg-6">
                 <!-- COVER -->
                 <!-- <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="coverImg" src="/img/works/5/6.jpg" alt="Rotary Özel Websitesi" />
+                  <img id="coverImg" src="/img/works/5/6.jpg" alt="Rotary Özel Websitesi"  loading="lazy"/>
                   <a id="coverZoom" href="/img/works/5/6.jpg" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
+                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom"  loading="lazy"/>
                   </a>
                 </div> -->
 
@@ -572,8 +572,11 @@
                 <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
 
                 <form class="mil-subscribe-form">
-                  <input type="text" placeholder="Mail adresinizi giriniz" />
-                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                  <label class="sr-only" for="projectSubscribeEmail">E-posta adresinizi giriniz</label>
+                  <input id="projectSubscribeEmail" type="email" name="email" placeholder="Mail adresinizi giriniz"
+                    aria-label="Mail adresinizi giriniz" />
+                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"
+                    aria-label="Abone ol"></button>
                 </form>
               </div>
               <div class="col-md-7 col-lg-6">
@@ -640,7 +643,7 @@
                       <li>
                         <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
                           class="social-icon" data-no-swup><img class="icons" src="/img/icons/instagram.svg"
-                            alt="instagram icon"></a>
+                            alt="instagram icon" loading="lazy"></a>
                       </li>
                       <li>
                         <a href="https://www.facebook.com/cftcbrandtech" target="_blank" rel="noopener"

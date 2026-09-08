@@ -334,7 +334,7 @@
                   <!-- TÜM YAZI BURAYA GELECEK -->
                   <div id="sectionContent"><p class="mil-up mil-mb-30"><b>CFTC BrandTech olarak,</b> yalnızca web sitesi tasarlayan bir ajans değiliz. İşletmelerin ihtiyacına göre düşünen, sektöre özel çözümler üreten ve dijital süreçleri uçtan uca yöneten bir teknoloji ve tasarım ekibiyiz. Her projeye aynı şablonla değil; markanın yapısını, hedef kitlesini ve iş modelini analiz ederek başlarız.Tasarım, yazılım ve kullanıcı deneyimi bizim için ayrı ayrı değil, bir bütündür.</p><p class="mil-up mil-mb-30">Her ürün, yüksek teknoloji ve kullanıcı dostu tasarımın birleşimi olarak öne çıkar. Enerji tasarrufu, uzaktan erişim ve otomasyon özellikleri sayesinde hem evinizde hem de iş yerinizde modern yaşamın ihtiyaçlarını karşılamanıza yardımcı olur.</p><p class="mil-up mil-mb-30">Her ürün, yüksek teknoloji ve kullanıcı dostu tasarımın birleşimi olarak öne çıkar. Enerji tasarrufu, uzaktan erişim ve otomasyon özellikleri sayesinde hem evinizde hem de iş yerinizde modern yaşamın ihtiyaçlarını karşılamanıza yardımcı olur. <br>Hukuk büroları gibi güvenin kritik olduğu alanlarda,sadece estetik değil; şeffaf, anlaşılır ve güven veren dijital deneyimler tasarlarız. <br> <br><ul><li> Kurumsal avukatlık web siteleri</li><li> Online danışmanlık ve ödeme alabilen sistemler</li><li> Dosya, vaka veya borç sorgulama altyapıları</li><li> Kredi kartı, IBAN ve QR destekli ödeme ekranları</li></ul></p><p class="mil-up mil-mb-30"><b class='mil-dark'>Neyi Farklı Yapıyoruz?</b> <ul><li> Hazır tema değil, ihtiyaca özel tasarım</li> <li> Gerçek kullanıcı davranışına göre UX kurgusu</li><li> Online ödeme ve güvenli altyapı entegrasyonları</li><li> Mobil, tablet ve masaüstünde kusursuz deneyim</li> <li> SEO, hız ve güvenlik odaklı geliştirme</li></ul> <br><br> Her detay, ziyaretçinin siteye girdiği ilk saniyeden, işlemini tamamladığı ana kadar planlanır.<br><br> <b>Tasarım Biter, İş Başlar</b><br><br> Bizim için bir web sitesi yayına girdiğinde iş bitmez. Asıl hedef; sitenin iş üretmesi, güven vermesi ve dönüşüm sağlamasıdır. Bu yüzden projelerimiz; Sadece “güzel görünen” değil Kullanan, anlayan ve işlem yapan sistemlerdir.</p></div>
 
-                  <a id="webSiteLink" href="https://www.zckolayli.com" target="_blank" data-no-swup
+                  <a id="webSiteLink" href="https://www.zckolayli.com" target="_blank" rel="noopener noreferrer" data-no-swup
                     class="mil-link mil-dark mil-up mil-arrow-place">
                     <span>Siteye Git</span>
                   </a>
@@ -347,9 +347,9 @@
               <div class="col-lg-6">
                 <!-- COVER -->
                 <!-- <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                  <img id="coverImg" src="/img/works/4/1.jpg" alt="Avukat Özel Websitesi" />
+                  <img id="coverImg" src="/img/works/4/1.jpg" alt="Avukat Özel Websitesi"  loading="lazy"/>
                   <a id="coverZoom" href="/img/works/4/1.jpg" data-fancybox="gallery" data-no-swup class="mil-zoom-btn">
-                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom" />
+                    <img class="icons" src="/img/icons/zoom.svg" alt="zoom"  loading="lazy"/>
                   </a>
                 </div> -->
 
@@ -566,8 +566,11 @@
                 <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
 
                 <form class="mil-subscribe-form">
-                  <input type="text" placeholder="Mail adresinizi giriniz" />
-                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                  <label class="sr-only" for="projectSubscribeEmail">E-posta adresinizi giriniz</label>
+                  <input id="projectSubscribeEmail" type="email" name="email" placeholder="Mail adresinizi giriniz"
+                    aria-label="Mail adresinizi giriniz" />
+                  <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"
+                    aria-label="Abone ol"></button>
                 </form>
               </div>
               <div class="col-md-7 col-lg-6">
@@ -634,7 +637,7 @@
                       <li>
                         <a href="https://www.instagram.com/cftcbrandtech/" target="_blank" rel="noopener"
                           class="social-icon" data-no-swup><img class="icons" src="/img/icons/instagram.svg"
-                            alt="instagram icon"></a>
+                            alt="instagram icon" loading="lazy"></a>
                       </li>
                       <li>
                         <a href="https://www.facebook.com/cftcbrandtech" target="_blank" rel="noopener"
