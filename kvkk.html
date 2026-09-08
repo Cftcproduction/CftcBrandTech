@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 
-<head data-optiqra-fix-target="af-0">
+<head>
     <!-- Temel -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,12 +10,11 @@
         content="CFTC BrandTech, dijital reklam, UX tasarım ve teknoloji stratejilerini birleştirerek markaların büyümesini hızlandırır. Yaratıcılıkla sonuç odaklı çözümler üretir.">
 
     <!-- Kanonik -->
-    <link rel="canonical" href="file://kvkk.html/%7B%7Bcanonical%7D%7D">
+    <link rel="canonical" href="{{canonical}}">
 
     <!-- Çok dillilik -->
-    <link rel="alternate" href="https://www.cftcbrandtech.com/" hreflang="tr-TR">
-    <link rel="alternate" href="https://www.cftcbrandtech.com/en/" hreflang="en-US">
-    <link rel="alternate" href="https://www.cftcbrandtech.com/" hreflang="x-default">
+    <link rel="alternate" href="{{canonical}}" hreflang="tr-TR">
+    <link rel="alternate" href="{{canonical}}" hreflang="x-default">
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="CFTC BrandTech">
@@ -23,9 +22,9 @@
     <meta property="og:description"
         content="Yaratıcılık ve teknolojiyi birleştirerek markanı geleceğe taşıyoruz. CFTC BrandTech ile tanış.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cftcbrandtech.com/">
+    <meta property="og:url" content="{{canonical}}">
     <!-- PNG/JPG önerilir, 1200x630 -->
-    <meta property="og:image" content="https://www.cftcbrandtech.com/img/og/og-image-1200x630.jpg">
+    <meta property="og:image" content="https://www.cftcbrandtech.com/img/partners/Logo-black.png">
     <meta property="og:image:alt" content="CFTC BrandTech — Yaratıcılık ve teknolojiyle büyüyen markalar">
     <meta property="og:locale" content="tr_TR">
     <meta property="og:locale:alternate" content="en_US">
@@ -35,16 +34,13 @@
     <meta name="twitter:title" content="CFTC BrandTech | Branding, Teknoloji ve Dijital Strateji Uzmanı">
     <meta name="twitter:description"
         content="Yaratıcılık ve teknolojiyi birleştirerek markanı geleceğe taşıyoruz. CFTC BrandTech ile tanış.">
-    <meta name="twitter:image" content="https://www.cftcbrandtech.com/img/og/og-image-1200x630.jpg">
+    <meta name="twitter:image" content="https://www.cftcbrandtech.com/img/partners/Logo-black.png">
 
     <!-- Tema rengi -->
     <meta name="theme-color" content="#0f0f10">
 
     <!-- Favicon & App ikonları -->
-    <link rel="icon" href="img/icons/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="img/icons/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="img/icons/favicon-192.png" sizes="192x192" type="image/png">
-    <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+    <link rel="icon" href="/img/icons/favicon.svg" type="image/svg+xml">
     <!-- PWA kullanıyorsan aç -->
     <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
@@ -445,19 +441,19 @@
                                 <h5 class="mil-up mil-mb-30">Kullanıcı Hakları</h5>
                                 <p class="mil-up mil-mb-30">
                                 </p>
+                                <p class="mil-up mil-mb-15">KVKK madde 11 uyarınca:</p>
                                 <ul class="mil-up mil-mb-30 ms-4">
-                                    KVKK madde 11 uyarınca:
                                     <li>Verilerinizin işlenip işlenmediğini öğrenme,</li>
                                     <li>İşlenme amaçlarını sorgulama,</li>
                                     <li>Yanlış/eksik işlenmişse düzeltilmesini talep etme,</li>
                                     <li> Yasal çerçevede silinmesini veya yok edilmesini isteme,</li>
                                     <li>İşleme faaliyetlerine itiraz etme,</li>
                                     <li>Zarar görmeniz halinde tazminat talep etme</li>
-                                    haklarına sahipsiniz. Bu haklarınızı kullanmak için kimliğinizi doğrulayarak <a
+                                </ul>
+                                <p class="mil-up mil-mb-30">Bu haklarınızı kullanmak için kimliğinizi doğrulayarak <a
                                         href="mailto:info@cftcbrandtech.com"><b>info@cftcbrandtech.com</b></a>
                                     adresine “KVKK Bilgi Talebi” konulu e-posta gönderebilirsiniz. Başvurularınız en geç
-                                    30 gün içinde yanıtlanacaktır.
-                                </ul>
+                                    30 gün içinde yanıtlanacaktır.</p>
                                 <p></p>
                                 <h5 class="mil-up mil-mb-30">Politika Değişiklikleri</h5>
                                 <p class="mil-up mil-mb-30">
@@ -605,11 +601,11 @@
 
                                 <p class="mil-light-soft mil-up mil-mb-30 mt-65">Yeni haberler için abone olun:</p>
 
-                                <form class="mil-subscribe-form ">
-                                    <input type="text" placeholder="Mail adresinizi giriniz"
-                                        aria-label="E-posta adresiniz" data-optiqra-fix-target="af-3">
+                                <form class="mil-subscribe-form " aria-label="E-posta aboneliği">
+                                    <input type="email" name="email" autocomplete="email" placeholder="Mail adresinizi giriniz"
+                                        aria-label="E-posta adresiniz">
                                     <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"
-                                        data-optiqra-fix-target="af-4"></button>
+                                        aria-label="Abone ol"></button>
                                 </form>
 
                             </div>
@@ -657,9 +653,9 @@
 
                                 <div class="row justify-content-between">
 
-                                    <section class="col-md-6 col-lg-5 mil-mb-60" aria-labelledby="istanbul-ofis">
+                                    <section class="col-md-6 col-lg-5 mil-mb-60" aria-labelledby="istanbul-ofis-footer">
 
-                                        <h6 id="istanbul-ofis" class="mil-muted mil-mb-30">Türkiye – İstanbul</h6>
+                                        <h6 id="istanbul-ofis-footer" class="mil-muted mil-mb-30">Türkiye – İstanbul</h6>
                                         <address class="mil-light-soft mil-up">
                                             Balaban Sk, Cevizli, Kartal, İstanbul<br>
                                             <a class="mil-no-wrap" href="https://wa.me/905422957990" target="_blank"
@@ -668,9 +664,9 @@
                                         </address>
 
                                     </section>
-                                    <section class="col-md-6 col-lg-5 mil-mb-60" aria-labelledby="bursa-ofis">
+                                    <section class="col-md-6 col-lg-5 mil-mb-60" aria-labelledby="bursa-ofis-footer">
 
-                                        <h6 id="bursa-ofis" class="mil-muted mil-mb-30">Türkiye – Bursa</h6>
+                                        <h6 id="bursa-ofis-footer" class="mil-muted mil-mb-30">Türkiye – Bursa</h6>
                                         <address class="mil-light-soft">
                                             Mustafa Kemal Paşa Mah, İznik, Bursa<br>
                                             <a class="mil-no-wrap" href="https://wa.me/905347111631" target="_blank"
@@ -688,18 +684,18 @@
                                     <div class="mil-mb-30">
                                         <ul class="mil-social-icons mil-up">
                                             <li><a href="https://www.instagram.com/cftcbrandtech/" target="_blank"
-                                                    rel="noopener noreferrer" class="social-icon" data-no-swup=""><img
+                                                    rel="noopener noreferrer" class="social-icon" data-no-swup="" aria-label="Instagram"><img
                                                         class="icons" src="img/icons/instagram.svg" alt="instagram icon"
                                                         loading="lazy"></a></li>
                                             <li><a href="https://www.facebook.com/cftcbrandtech" target="_blank"
-                                                    rel="noopener noreferrer" class="social-icon" data-no-swup=""><i
+                                                    rel="noopener noreferrer" class="social-icon" data-no-swup="" aria-label="Facebook"><i
                                                         class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="https://twitter.com/cftcbrandtech" target="_blank"
-                                                    rel="noopener noreferrer" class="social-icon" data-no-swup=""><i
+                                                    rel="noopener noreferrer" class="social-icon" data-no-swup="" aria-label="X (Twitter)"><i
                                                         class="fab fa-twitter"></i></a></li>
                                             <li><a href="https://www.linkedin.com/company/cftcbrandtech/"
                                                     target="_blank" rel="noopener noreferrer" class="social-icon"
-                                                    data-no-swup=""><i class="fab fa-linkedin-in"></i></a></li>
+                                                    data-no-swup="" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
                                         </ul>
 
                                     </div>

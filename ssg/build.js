@@ -19,6 +19,7 @@ const projectsDistPath = path.join(distRoot, "projects");
 
 const staticPages = [
   { source: "index.html", output: "index.html", url: "/" },
+  { source: "404.html", output: "404.html", url: "/404.html", sitemap: false },
   { source: "team.html", output: "team/index.html", url: "/team/" },
   { source: "contact.html", output: "contact/index.html", url: "/contact/" },
   { source: "branding.html", output: "branding/index.html", url: "/branding/" },
@@ -320,7 +321,12 @@ function renderProjectContent(content = []) {
   return content
     .map((block) => {
       if (block.type === "p") {
-        return `<p class="mil-up mil-mb-30">${block.html || ""}</p>`;
+        const content = block.html || "";
+        const hasBlockContent = /<(?:address|article|aside|blockquote|div|dl|fieldset|figure|footer|form|h[1-6]|header|hr|main|nav|ol|p|pre|section|table|ul)\b/i.test(content);
+
+        return hasBlockContent
+          ? `<div class="mil-up mil-mb-30">${content}</div>`
+          : `<p class="mil-up mil-mb-30">${content}</p>`;
       }
 
       if (block.type === "ul") {
@@ -614,7 +620,10 @@ function buildSitemap() {
   const posts = readJson(blogDataPath, []);
   const projects = readJson(projectsDataPath, []);
 
-  const staticUrls = staticPages.map((page) => createSitemapUrl(`${SITE_URL}${page.url}`, today)).join("");
+  const staticUrls = staticPages
+    .filter((page) => page.sitemap !== false)
+    .map((page) => createSitemapUrl(`${SITE_URL}${page.url}`, today))
+    .join("");
 
   const blogUrls = posts
     .filter((post) => post.slug)
