@@ -1,0 +1,23 @@
+# CFTC BrandTech
+
+> CFTC BrandTech; markalaşma, web tasarımı ve geliştirme, dijital pazarlama ve stratejik danışmanlık hizmetleri sunan Türkiye merkezli yaratıcı teknoloji ajansıdır.
+
+## Temel sayfalar
+
+- [Ana Sayfa](https://www.cftcbrandtech.com/): Ajansın yaklaşımı, uzmanlıkları ve öne çıkan çalışmaları.
+- [Hizmetler](https://www.cftcbrandtech.com/full-service/): Tüm hizmetlerin özeti, karşılaştırması, çalışma süreci ve sık sorulan sorular.
+- [Markalaşma](https://www.cftcbrandtech.com/branding/): Marka kimliği, konumlandırma, prodüksiyon ve yaratıcı tasarım hizmetleri.
+- [Web Tasarımı ve Geliştirme](https://www.cftcbrandtech.com/website-development/): UX, responsive geliştirme, teknik SEO ve performans hizmetleri.
+- [Dijital Pazarlama](https://www.cftcbrandtech.com/digital-marketing/): Reklam, içerik, kampanya ve ölçümleme hizmetleri.
+- [Danışmanlık](https://www.cftcbrandtech.com/consultancy/): Marka, iletişim, pazarlama ve hedef kitle danışmanlığı.
+
+## Çalışmalar ve içerikler
+
+- [Portföy](https://www.cftcbrandtech.com/portfolio/): Seçilmiş marka ve web projeleri.
+- [Blog](https://www.cftcbrandtech.com/blog/): Tasarım, yazılım, teknoloji ve marka konularındaki yayınlar.
+- [Ekip](https://www.cftcbrandtech.com/team/): CFTC BrandTech ekibi ve uzmanlıkları.
+
+## İletişim
+
+- [İletişim](https://www.cftcbrandtech.com/contact/): Proje talebi ve iletişim bilgileri.
+- E-posta: info@cftcbrandtech.com

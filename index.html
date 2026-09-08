@@ -8,6 +8,8 @@
   <title>CFTC BrandTech | Branding, Teknoloji ve Dijital Strateji Uzmanı</title>
   <meta name="description"
     content="CFTC BrandTech, dijital reklam, UX tasarım ve teknoloji stratejilerini birleştirerek markaların büyümesini hızlandırır. Yaratıcılıkla sonuç odaklı çözümler üretir.">
+  <meta name="author" content="CFTC BrandTech">
+  <meta name="last-modified" content="2026-09-08">
 
   <!-- Kanonik -->
   <link rel="canonical" href="{{canonical}}">
@@ -76,15 +78,94 @@
             "availableLanguage": ["tr", "en"]
           }
         ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Sokak Adı No: X",
-          "addressLocality": "İstanbul",
-          "postalCode": "34XXX",
-          "addressCountry": "TR"
-        }
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Balaban Sokak, Cevizli",
+            "addressLocality": "Kartal",
+            "addressRegion": "İstanbul",
+            "addressCountry": "TR"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Mustafa Kemal Paşa Mahallesi",
+            "addressLocality": "İznik",
+            "addressRegion": "Bursa",
+            "addressCountry": "TR"
+          }
+        ]
       }
     </script>
+
+  <!-- AEO: WebPage + FAQ -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "{{canonical}}#webpage",
+          "url": "{{canonical}}",
+          "name": "CFTC BrandTech",
+          "description": "Markalaşma, web geliştirme, dijital pazarlama ve danışmanlığı birleştiren yaratıcı teknoloji ajansı.",
+          "inLanguage": "tr-TR",
+          "dateModified": "2026-09-08",
+          "author": { "@id": "https://www.cftcbrandtech.com/#organization" },
+          "publisher": { "@id": "https://www.cftcbrandtech.com/#organization" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".mil-aeo-summary", "#faq .mil-faq-answer"]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "{{canonical}}#faq-schema",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "CFTC BrandTech nedir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CFTC BrandTech, strateji, tasarım, teknoloji ve pazarlamayı tek ekipte birleştiren Türkiye merkezli yaratıcı teknoloji ajansıdır."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "CFTC BrandTech hangi hizmetleri sunar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CFTC BrandTech; markalaşma, web tasarımı ve geliştirme, dijital pazarlama ve stratejik danışmanlık hizmetleri sunar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Bir projeye nasıl başlanır?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "İlk görüşmede hedef, kitle, mevcut durum ve öncelikler değerlendirilir. Ardından kapsam, takvim, teslimatlar ve başarı ölçütleri belirlenir."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hangi ölçekteki işletmelerle çalışıyorsunuz?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yeni girişimler, büyüyen markalar ve kurumsal ekiplerle çalışıyoruz. Hizmet kapsamını işletmenin hedeflerine ve mevcut kaynaklarına göre planlıyoruz."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Proje sonuçları nasıl ölçülür?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Başarı ölçütleri proje başında belirlenir. Görünürlük, web performansı, dönüşüm, talep ve marka tutarlılığı gibi hedefe uygun göstergeler izlenir."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 
   <!-- (İsteğe bağlı) WebSite + SearchAction şeması -->
   <!--
@@ -141,7 +222,8 @@
     <div class="mil-menu-frame">
       <!-- frame clone -->
       <div class="mil-frame-top">
-        <a href="/index.html" class="mil-logo">CFTC</a>
+        <a href="/index.html" class="mil-logo"><span aria-hidden="true">CFTC</span><span
+            class="mil-visually-hidden"> BrandTech</span></a>
         <div class="mil-menu-btn">
           <span></span>
         </div>
@@ -266,7 +348,8 @@
     <!-- frame -->
     <div class="mil-frame">
       <div class="mil-frame-top">
-        <a href="/index.html" class="mil-logo">CFTC</a>
+        <a href="/index.html" class="mil-logo"><span aria-hidden="true">CFTC</span><span
+            class="mil-visually-hidden"> BrandTech</span></a>
         <div class="mil-menu-btn">
           <span></span>
         </div>
@@ -302,9 +385,10 @@
                   <h1 class="mil-muted mil-mb-60">Yaratıcılığın <span class="mil-thin">Sonuçla Buluştuğu
                       Yer</span><br><span class="mil-thin"></span></h1>
                   <div class="row">
-                    <div class="col-md-7 col-lg-5">
-                      <p class="mil-light-soft mil-mb-60">“2 haftalık sprint ile riskinizi düşürün; <br>90 günde somut
-                        dönüşüm artışı görün.”</p>
+                    <div class="col-md-8 col-lg-6">
+                      <p class="mil-aeo-summary mil-light-soft mil-mb-60">CFTC BrandTech; strateji, tasarım, teknoloji
+                        ve pazarlamayı tek ekipte birleştiren yaratıcı teknoloji ajansıdır. Biz markanızın ihtiyacını
+                        analiz eder, sizin hedefinize uygun çözümü tasarlar ve sonucu ölçülebilir biçimde geliştiririz.</p>
                     </div>
                   </div>
 
@@ -343,6 +427,24 @@
           <!-- about -->
           <section id="about">
             <div class="container mil-p-120-30">
+              <div class="row mil-mb-60">
+                <div class="col-lg-10">
+                  <p class="mil-up mil-mb-30">
+                    <strong>Hazırlayan:</strong> <span rel="author">CFTC BrandTech</span>
+                    <span aria-hidden="true"> · </span>
+                    <strong>Son güncelleme:</strong> <time datetime="2026-09-08">8 Eylül 2026</time>
+                  </p>
+                  <nav class="mil-aeo-toc mil-aeo-toc-dark mil-up" aria-label="Ana sayfa bölümleri">
+                    <strong>İçindekiler:</strong>
+                    <ul>
+                      <li><a href="#about">Hakkımızda</a></li>
+                      <li><a href="#cftc-brandtech-nedir">Kısa özet</a></li>
+                      <li><a href="#proje-yaklasimi">Proje yaklaşımı</a></li>
+                      <li><a href="#faq">Sık sorulan sorular</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
               <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 col-xl-5">
                   <div class="mil-mb-90">
@@ -379,6 +481,134 @@
             </div>
           </section>
           <!-- about end -->
+
+          <!-- AEO overview -->
+          <section id="cftc-brandtech-nedir" class="mil-soft-bg" aria-labelledby="cftc-brandtech-baslik">
+            <div class="container mil-p-120-90">
+              <div class="row justify-content-between">
+                <div class="col-lg-5 mil-mb-60">
+                  <h2 id="cftc-brandtech-baslik" class="mil-up mil-mb-30">CFTC BrandTech nedir?</h2>
+                  <p class="mil-aeo-summary mil-up mil-mb-30">CFTC BrandTech, markaların stratejisini görünür ve çalışan
+                    dijital deneyimlere dönüştürür. Biz yaratıcı fikri teknolojiyle birleştirir, sizin hedefinize uygun
+                    çözümü tek bir ekip içinde üretiriz.</p>
+
+                  <h3 class="mil-up mil-mb-30">Uzmanlık alanlarımız ne anlama gelir?</h3>
+                  <dl class="mil-aeo-definitions mil-up">
+                    <div>
+                      <dt><code>Branding</code></dt>
+                      <dd><strong>Sonuç:</strong> Markanın kimliğini, konumunu ve iletişim dilini netleştirir.</dd>
+                    </div>
+                    <div>
+                      <dt><code>Web</code></dt>
+                      <dd><strong>Sonuç:</strong> Hızlı, erişilebilir ve dönüşüm odaklı dijital deneyim kurar.</dd>
+                    </div>
+                    <div>
+                      <dt><code>Growth</code></dt>
+                      <dd><strong>Sonuç:</strong> Doğru kitleye ulaşan kampanyaları ölçülebilir hale getirir.</dd>
+                    </div>
+                    <div>
+                      <dt><code>Strategy</code></dt>
+                      <dd><strong>Sonuç:</strong> Öncelikleri belirler ve uygulanabilir büyüme yol haritası oluşturur.</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div class="col-lg-6 mil-mb-60">
+                  <h3 class="mil-up mil-mb-30">Hangi ihtiyaca hangi çözüm uygundur?</h3>
+                  <p class="mil-up mil-mb-30">Aşağıdaki tablo, başlangıç noktanızı hızlıca seçmenize yardımcı olur.
+                    Birden fazla hedefiniz varsa hizmetleri aynı proje planında birleştirebiliriz.</p>
+                  <div class="mil-aeo-table-wrap mil-up">
+                    <table class="mil-aeo-table">
+                      <caption>CFTC BrandTech çözüm rehberi</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">İhtiyaç</th>
+                          <th scope="col">Önerilen hizmet</th>
+                          <th scope="col">Ana çıktı</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Yeni marka kurmak</th>
+                          <td>Markalaşma</td>
+                          <td>Kimlik ve konumlandırma</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Dijital deneyimi yenilemek</th>
+                          <td>Web geliştirme</td>
+                          <td>Responsive ve hızlı web sitesi</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Daha fazla talep üretmek</th>
+                          <td>Dijital pazarlama</td>
+                          <td>Kampanya ve ölçümleme</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Yönü netleştirmek</th>
+                          <td>Danışmanlık</td>
+                          <td>Analiz ve yol haritası</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div id="proje-yaklasimi" class="row justify-content-between mil-mb-60">
+                <div class="col-lg-5 mil-mb-30">
+                  <h2 class="mil-up mil-mb-30">Bir projeyi nasıl yürütüyoruz?</h2>
+                  <p class="mil-up mil-mb-30">Her proje dört aşamada ilerler. Bu yapı sizin ne zaman, neden ve hangi
+                    çıktıyı alacağınızı baştan görmenizi sağlar.</p>
+                  <ol class="mil-aeo-steps mil-up">
+                    <li><strong>Keşif:</strong> Hedefinizi, kitlenizi ve mevcut durumunuzu birlikte inceleriz.</li>
+                    <li><strong>Plan:</strong> Kapsamı, takvimi, teslimatları ve ölçüm yöntemini netleştiririz.</li>
+                    <li><strong>Üretim:</strong> Strateji, tasarım ve teknolojiyi aynı hedef için uygularız.</li>
+                    <li><strong>İyileştirme:</strong> Sonuçları test eder, raporlar ve sonraki adımları belirleriz.</li>
+                  </ol>
+                </div>
+
+                <div class="col-lg-6 mil-mb-30">
+                  <h3 class="mil-up mil-mb-30">Teknik içerik neden semantik olmalıdır?</h3>
+                  <p class="mil-up mil-mb-30">Semantik HTML, içeriğin anlamını kullanıcıya, arama motoruna ve yanıt
+                    motoruna açıkça bildirir. Başlık ve kısa yanıt sıralaması, önemli bilgiyi daha kolay çıkarılabilir
+                    hale getirir.</p>
+                  <pre class="mil-aeo-code mil-up"><code>&lt;main&gt;
+  &lt;h1&gt;Ana konu&lt;/h1&gt;
+  &lt;p&gt;Kısa ve doğrudan yanıt.&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+                </div>
+              </div>
+
+              <div class="row justify-content-between">
+                <div class="col-lg-5 mil-mb-60">
+                  <h3 class="mil-up mil-mb-30">Hangi resmi kaynakları kullanıyoruz?</h3>
+                  <p class="mil-up mil-mb-30">Teknik çalışmalarımızı birincil dokümantasyonla doğrularız. Aşağıdaki
+                    kaynaklar SEO, performans ve erişilebilirlik kararlarımız için temel referanslardır.</p>
+                  <ul class="mil-aeo-sources mil-up">
+                    <li><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+                        target="_blank" rel="noopener noreferrer">Google Search Central SEO Başlangıç Rehberi</a></li>
+                    <li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer">web.dev
+                        Core Web Vitals dokümantasyonu</a></li>
+                    <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank"
+                        rel="noopener noreferrer">W3C erişilebilirlik standartları</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-6 mil-mb-60">
+                  <h3 class="mil-up mil-mb-30">Çalışmalarımızı nasıl inceleyebilirsiniz?</h3>
+                  <p class="mil-up mil-mb-30">Aşağıdaki video, CFTC BrandTech tarafından hazırlanan bir web deneyimi
+                    örneğini gösterir. Daha fazla proje için portföy sayfamızı ziyaret edebilirsiniz.</p>
+                  <div class="mil-aeo-video mil-up">
+                    <iframe src="https://www.youtube-nocookie.com/embed/nZWrxCczS9Q"
+                      title="CFTC BrandTech web tasarım projesi örneği" loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- AEO overview end -->
 
           <!-- services -->
           <section class="mil-dark-bg">
@@ -447,6 +677,52 @@
             </div>
           </section>
           <!-- services end -->
+
+          <!-- FAQ -->
+          <section id="faq" aria-labelledby="faq-baslik">
+            <div class="container mil-p-120-90">
+              <div class="row justify-content-between">
+                <div class="col-lg-4 mil-mb-60">
+                  <h2 id="faq-baslik" class="mil-up mil-mb-30">Sık Sorulan Sorular</h2>
+                  <p class="mil-aeo-summary mil-up mil-mb-30">CFTC BrandTech ve çalışma yaklaşımımız hakkındaki kısa
+                    yanıtları burada bulabilirsiniz. Projenize özel bilgi için doğrudan bizimle iletişime geçebilirsiniz.</p>
+                </div>
+                <div class="col-lg-7 mil-mb-60 mil-aeo-faq">
+                  <details class="mil-up" open>
+                    <summary><h3>CFTC BrandTech nedir?</h3></summary>
+                    <p class="mil-faq-answer">CFTC BrandTech, strateji, tasarım, teknoloji ve pazarlamayı tek ekipte
+                      birleştiren yaratıcı teknoloji ajansıdır. Markanızın ihtiyacını analiz eder, hedefinize uygun
+                      çözümü tasarlar ve uygulama sürecini uçtan uca yönetiriz.</p>
+                  </details>
+                  <details class="mil-up">
+                    <summary><h3>CFTC BrandTech hangi hizmetleri sunar?</h3></summary>
+                    <p class="mil-faq-answer">Markalaşma, web tasarımı ve geliştirme, dijital pazarlama ve stratejik
+                      danışmanlık sunuyoruz. Siz tek bir hizmet seçebilir veya birbirini tamamlayan çalışmaları ortak
+                      bir proje planında birleştirebilirsiniz.</p>
+                  </details>
+                  <details class="mil-up">
+                    <summary><h3>Bir projeye nasıl başlanır?</h3></summary>
+                    <p class="mil-faq-answer">Önce kısa bir keşif görüşmesi yaparız. Hedefinizi, kitlenizi, mevcut
+                      durumunuzu ve önceliklerinizi birlikte değerlendiririz. Sonra kapsamı, takvimi, teslimatları ve
+                      başarı ölçütlerini açık biçimde paylaşırız.</p>
+                  </details>
+                  <details class="mil-up">
+                    <summary><h3>Hangi ölçekteki işletmelerle çalışıyorsunuz?</h3></summary>
+                    <p class="mil-faq-answer">Yeni girişimler, büyüyen markalar ve kurumsal ekiplerle çalışıyoruz.
+                      Çözümü hazır bir kalıba göre değil, sizin hedeflerinize, mevcut kaynaklarınıza ve önceliklerinize
+                      göre planlıyoruz.</p>
+                  </details>
+                  <details class="mil-up">
+                    <summary><h3>Proje sonuçları nasıl ölçülür?</h3></summary>
+                    <p class="mil-faq-answer">Başarı ölçütlerini proje başlamadan önce birlikte belirleriz. Görünürlük,
+                      web performansı, dönüşüm, talep ve marka tutarlılığı gibi hedefe uygun göstergeleri izleriz.
+                      Sonuçları raporlar ve iyileştirme adımlarını paylaşırız.</p>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- FAQ end -->
 
           <!-- team -->
           <section>

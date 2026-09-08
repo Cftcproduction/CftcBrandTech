@@ -82,6 +82,13 @@ function copyAssets() {
   ["css", "js", "img", "fonts"].forEach((folder) => {
     copyDir(path.join(projectRoot, folder), path.join(distRoot, folder));
   });
+
+  ["llms.txt"].forEach((file) => {
+    const source = path.join(projectRoot, file);
+    if (fs.existsSync(source)) {
+      fs.copyFileSync(source, path.join(distRoot, file));
+    }
+  });
 }
 
 function escapeHtml(value = "") {
