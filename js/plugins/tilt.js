@@ -273,9 +273,8 @@
                 maxGlare: $(this).is('[data-tilt-maxglare]') ? $(this).data('tilt-maxglare') : 1,
             }, options);
 
-            // Add deprecation warning & set disableAxis to deprecated axis setting
+            // Support the deprecated axis setting through disableAxis.
             if(this.settings.axis !== null){
-                console.warn('Tilt.js: the axis setting has been renamed to disableAxis. See https://github.com/gijsroge/tilt.js/pull/26 for more information');
                 this.settings.disableAxis = this.settings.axis;
             }
 

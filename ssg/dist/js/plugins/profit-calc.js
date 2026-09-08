@@ -52,7 +52,6 @@ calculateBtn.addEventListener("click", () => {
     profitResult.textContent = (Number(sermaye.value) - firstSermaye ).toFixed(2)
      lastSermaye.textContent = (Number(sermaye.value).toFixed(2))
      sermaye.value = firstSermaye
-     console.log(sermaye.value, profitCalc())
   } else {
     alert("lütfen sermaye tipi seçiniz!")
   }

@@ -26,7 +26,6 @@
    */
   window.onContentReady = function (callback, options = {}) {
     if (typeof callback !== "function") {
-      console.warn("[onContentReady] Callback must be a function");
       return;
     }
 
