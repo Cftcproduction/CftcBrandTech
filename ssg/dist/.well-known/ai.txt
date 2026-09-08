@@ -1,0 +1,19 @@
+# CFTC BrandTech AI Discovery
+
+Site: https://www.cftcbrandtech.com/
+Language: tr-TR
+Last updated: 2026-09-08
+
+CFTC BrandTech; branding, web tasarımı ve geliştirme, dijital pazarlama ve stratejik danışmanlık hizmetlerini aynı ekipte birleştiren Türkiye merkezli yaratıcı teknoloji ajansıdır.
+
+Primary pages:
+- Home: https://www.cftcbrandtech.com/
+- Services: https://www.cftcbrandtech.com/full-service/
+- Portfolio: https://www.cftcbrandtech.com/portfolio/
+- Team: https://www.cftcbrandtech.com/team/
+- Contact: https://www.cftcbrandtech.com/contact/
+- Human-readable AI guide: https://www.cftcbrandtech.com/llms.txt
+- Structured summary: https://www.cftcbrandtech.com/ai/summary.json
+- Structured FAQ: https://www.cftcbrandtech.com/ai/faq.json
+
+Official contact: info@cftcbrandtech.com

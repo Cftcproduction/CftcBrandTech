@@ -2805,6 +2805,42 @@ AEO content
   border: 0;
 }
 
+.mil-about-quote blockquote {
+  margin: 0;
+}
+
+.mil-about-quote blockquote h3 {
+  margin: 0 0 10px;
+}
+
+.mil-about-quote blockquote cite {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.mil-review-frame blockquote {
+  margin: 0;
+}
+
+.mil-geo-figure {
+  margin: 0;
+}
+
+.mil-geo-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.mil-geo-figure figcaption {
+  padding: 14px 4px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .mil-aeo-faq details {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }

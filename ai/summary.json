@@ -1,0 +1,31 @@
+{
+  "name": "CFTC BrandTech",
+  "url": "https://www.cftcbrandtech.com/",
+  "language": "tr-TR",
+  "lastUpdated": "2026-09-08",
+  "description": "Branding, teknoloji ve dijital stratejiyi tasarım, web geliştirme, dijital pazarlama ve danışmanlıkla birleştiren Türkiye merkezli yaratıcı teknoloji ajansı.",
+  "services": [
+    {
+      "name": "Markalaşma",
+      "url": "https://www.cftcbrandtech.com/branding/"
+    },
+    {
+      "name": "Web tasarımı ve geliştirme",
+      "url": "https://www.cftcbrandtech.com/website-development/"
+    },
+    {
+      "name": "Dijital pazarlama",
+      "url": "https://www.cftcbrandtech.com/digital-marketing/"
+    },
+    {
+      "name": "Stratejik danışmanlık",
+      "url": "https://www.cftcbrandtech.com/consultancy/"
+    }
+  ],
+  "portfolio": "https://www.cftcbrandtech.com/portfolio/",
+  "team": "https://www.cftcbrandtech.com/team/",
+  "contact": {
+    "url": "https://www.cftcbrandtech.com/contact/",
+    "email": "info@cftcbrandtech.com"
+  }
+}

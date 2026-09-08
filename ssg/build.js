@@ -83,6 +83,10 @@ function copyAssets() {
     copyDir(path.join(projectRoot, folder), path.join(distRoot, folder));
   });
 
+  [".well-known", "ai"].forEach((folder) => {
+    copyDir(path.join(projectRoot, folder), path.join(distRoot, folder));
+  });
+
   ["llms.txt"].forEach((file) => {
     const source = path.join(projectRoot, file);
     if (fs.existsSync(source)) {

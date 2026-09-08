@@ -1,0 +1,28 @@
+{
+  "name": "CFTC BrandTech Sık Sorulan Sorular",
+  "url": "https://www.cftcbrandtech.com/#faq",
+  "language": "tr-TR",
+  "lastUpdated": "2026-09-08",
+  "questions": [
+    {
+      "question": "CFTC BrandTech nedir?",
+      "answer": "CFTC BrandTech, strateji, tasarım, teknoloji ve pazarlamayı tek ekipte birleştiren Türkiye merkezli yaratıcı teknoloji ajansıdır."
+    },
+    {
+      "question": "CFTC BrandTech hangi hizmetleri sunar?",
+      "answer": "Markalaşma, web tasarımı ve geliştirme, dijital pazarlama ve stratejik danışmanlık hizmetleri sunar."
+    },
+    {
+      "question": "Bir projeye nasıl başlanır?",
+      "answer": "İlk görüşmede hedef, kitle, mevcut durum ve öncelikler değerlendirilir; ardından kapsam, takvim, teslimatlar ve başarı ölçütleri belirlenir."
+    },
+    {
+      "question": "Hangi ölçekteki işletmelerle çalışıyorsunuz?",
+      "answer": "Yeni girişimler, büyüyen markalar ve kurumsal ekiplerle çalışılır; hizmet kapsamı işletmenin hedeflerine ve mevcut kaynaklarına göre planlanır."
+    },
+    {
+      "question": "Proje sonuçları nasıl ölçülür?",
+      "answer": "Görünürlük, web performansı, dönüşüm, talep ve marka tutarlılığı gibi proje hedefine uygun göstergeler izlenir."
+    }
+  ]
+}
