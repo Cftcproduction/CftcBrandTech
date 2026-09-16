@@ -559,7 +559,10 @@ function isContentOverflowing(el) {
     return (el.clientHeight + 10 < el.scrollHeight);
 }
 
-// typically for <body> and <html>
+// typically for <body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJL5LT9Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --> and <html>
 function overflowNotHidden(el) {
     var overflow = getComputedStyle(el, '').getPropertyValue('overflow-y');
     return (overflow !== 'hidden');
