@@ -464,6 +464,9 @@ blockquote {
 #blog > div > div > div.col-lg-8 > ul {
   list-style: circle;
 }
+.mil-black {
+  font-weight: 900;
+}
 .mil-bold {
   font-weight: 700;
 }
