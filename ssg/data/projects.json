@@ -193,10 +193,10 @@
     "client": "Okay Zeytin",
     "date": "2026",
     "owner": "CFTC BrandTech EKİP",
-    "cover": "img/works/6/okay-zeytin-desktop.png",
+    "cover": "img/works/6/okay-zeytin-mobile.webp",
     "gallery": [
-      "img/works/6/okay-zeytin-desktop.png",
-      "img/works/6/okay-zeytin-mobile.webp"
+      "img/works/6/okay-zeytin-mobile.webp",
+      "img/works/6/okay-zeytin-desktop.webp"
     ],
     "link": "https://www.okayzeytin.com/",
     "sectionTitle": "Website frontend düzenlemesi, SEO, AEO ve GEO ile satış odaklı büyüme",
@@ -218,6 +218,10 @@
         "html": "AEO ve GEO yaklaşımıyla kullanıcıların arama motorlarında ve yapay zekâ destekli cevap deneyimlerinde sorularına doğrudan yanıt veren içerik kümeleri oluşturuldu. Tuzsuz zeytin nedir, zeytin nasıl saklanır, siyah ve yeşil zeytin arasındaki fark nedir, soğuk sıkım zeytinyağı nedir gibi konular; blog, rehber ve sık sorulan sorular yapısıyla desteklendi."
       },
       {
+        "type": "p",
+        "html": "Dijital pazarlama altyapısında Google Analytics ile dönüşüm ölçümü kurgulandı, Google Tag Manager kurulumu ve etiket yönetimi yapılandırıldı. Google Ads desteğiyle kampanya hedefleri, reklam trafiği ve satış odaklı kullanıcı davranışları takip edilebilir hale getirildi."
+      },
+      {
         "type": "ul",
         "items": [
           "Website frontend düzenlemesi ve responsive kullanıcı deneyimi",
@@ -225,7 +229,8 @@
           "AEO için soru-cevap, rehber ve sık sorulan sorular içerikleri",
           "GEO görünürlüğü için yapılandırılmış, kaynaklanabilir marka ve ürün anlatımı",
           "Satış odaklı Google sıralama düzenlemeleri ve iç linkleme",
-          "Ürün, kampanya, blog ve ticari içeriklerin sürekli güncellenmesi"
+          "Ürün, kampanya, blog ve ticari içeriklerin sürekli güncellenmesi",
+          "Google Analytics dönüşüm ölçümü, Google Tag Manager kurulumu ve Google Ads desteği"
         ]
       }
     ]
