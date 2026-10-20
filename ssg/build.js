@@ -9,6 +9,7 @@ const SITE_URL = "https://www.cftcbrandtech.com";
 
 const blogDataPath = path.join(ssgRoot, "data", "blog.json");
 const projectsDataPath = path.join(ssgRoot, "data", "projects.json");
+const reportsDataPath = path.join(ssgRoot, "data", "reports.json");
 
 const blogListTemplatePath = path.join(ssgRoot, "templates", "blog.html");
 const blogDetailTemplatePath = path.join(ssgRoot, "templates", "blog-detail.html");
@@ -571,6 +572,17 @@ function buildBlogPages() {
   fs.writeFileSync(path.join(blogDistPath, "index.html"), listHtml, "utf8");
 }
 
+
+function buildReports() {
+  const reports = readJson(reportsDataPath, []).sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  if (!reports.length) return;
+  const esc = escapeHtml;
+  const cards = reports.map((report) => `<article class="mil-blog-card mil-blog-card-hori mil-mb-60"><div class="mil-post-descr"><div class="mil-labels mil-mb-15"><div class="mil-label mil-upper mil-accent">Dijital Rapor</div><div class="mil-label mil-upper">${esc(report.date || "")}</div></div><h4>${esc(report.title || "Haftalık Dijital Rapor")}</h4><p class="mil-post-text">${esc(report.summary || "")}</p><a class="mil-link mil-dark mil-arrow-place" href="/reports/${esc(report.slug)}/"><span>Raporu incele</span></a></div></article>`).join("\n");
+  const index = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CFTCbrandtech Haftalık Dijital Raporlar</title><meta name="description" content="CFTCbrandtech haftalık dijital pazarlama, SEO ve analitik raporları."><link rel="stylesheet" href="/css/style.css"></head><body><main class="mil-page-wrapper"><section class="mil-p-120-60"><div class="container"><h1 class="mil-mb-60">Haftalık Dijital Raporlar</h1>${cards}</div></section></main></body></html>`;
+  ensureDir(path.join(distRoot, "reports")); fs.writeFileSync(path.join(distRoot, "reports", "index.html"), index, "utf8");
+  reports.forEach((report) => { const content = (report.insights || []).map(i => `<section class="mil-mb-30"><h4>${esc(i.category || "Gelişme")} · ${esc(i.date || "")}</h4><p>${esc(i.change || "")}</p><p>${esc(i.why_it_matters || "")}</p></section>`).join(""); const recs=(report.recommendations||[]).map(r=>`<li><b>${esc(r.priority||"")}</b> ${esc(r.action||"")}</li>`).join(""); const html=`<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(report.title)}</title><meta name="description" content="${esc(report.summary||"")}"><link rel="canonical" href="https://www.cftcbrandtech.com/reports/${esc(report.slug)}/"><link rel="stylesheet" href="/css/style.css"></head><body><main class="mil-page-wrapper"><section class="mil-p-120-60"><div class="container"><a href="/reports/">← Tüm raporlar</a><h1 class="mil-mt-60">${esc(report.title)}</h1><div class="mil-label mil-upper mil-accent mil-mb-30">${esc(report.date||"")}</div><p class="mil-lead mil-mb-60">${esc(report.summary||"")}</p><h3>Haftanın içgörüleri</h3>${content}<h3>Önerilen aksiyonlar</h3><ul class="mil-list mil-dark mil-mb-60">${recs}</ul><p class="mil-light-soft">Kaynaklar ve telif notları rapor verisinde yer almaktadır.</p></div></section></main></body></html>`; const dir=path.join(distRoot,"reports",report.slug); ensureDir(dir); fs.writeFileSync(path.join(dir,"index.html"),html,"utf8"); });
+}
+
 function formatDate(date = new Date()) {
   if (!date) return new Date().toISOString().split("T")[0];
 
@@ -693,5 +705,6 @@ copyAssets();
 copyStaticHtmlPages();
 buildProjectPages();
 buildBlogPages();
+buildReports();
 buildSitemap();
 buildRobotsTxt();

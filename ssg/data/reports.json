@@ -1,0 +1,158 @@
+[
+  {
+    "title": "CFTCbrandtech Haftalık Dijital Rapor",
+    "date": "2026-10-20",
+    "summary": "13–19 Ekim 2026 döneminde doğrulanmış önemli gelişmeler sınırlıdır. Google Indexing API dokümantasyonu güncellendi; Meta organik öneri kontrol araçları duyurdu. GA4 ve Meta Ads reklam açık artırması için bu hafta yeni bir kapsamlı değişiklik doğrulanmadı. Shopify oturum ölçümleme değişikliğinin dönemsel raporlamaya etkisi sürmektedir.",
+    "key_metrics": [
+      {
+        "metric": "Nitelikli CPL",
+        "purpose": "Meta Ads iş sonucu",
+        "target": "Müşteri bazında önce referans değer oluşturulacak"
+      },
+      {
+        "metric": "GA4 satın alma tutarlılığı",
+        "purpose": "Ölçüm güvenilirliği",
+        "target": "Sipariş ve gelir farkı incelenecek"
+      },
+      {
+        "metric": "Organik gelir",
+        "purpose": "SEO ticari etki",
+        "target": "Son 7/28 gün karşılaştırması"
+      },
+      {
+        "metric": "Checkout completion rate",
+        "purpose": "UX satış etkisi",
+        "target": "Önce mevcut oran ölçülecek"
+      }
+    ],
+    "insights": [
+      {
+        "category": "SEO",
+        "date": "2026-10-16",
+        "change": "Google Indexing API kota sayfası mevcut kota ve süreçleri yansıtacak biçimde güncellendi.",
+        "why_it_matters": "Indexing API kullanan uygun içerik türlerindeki otomasyonların kota varsayımları kontrol edilmeli; genel SEO sıralama güncellemesi değildir.",
+        "markets": [
+          "Türkiye",
+          "ABD",
+          "İngiltere",
+          "Avrupa"
+        ],
+        "affected_clients": "Indexing API entegrasyonu olan siteler",
+        "test": "API kullanan müşterilerde kota ve hata günlüklerini kontrol et; diğer sitelerde Search Console indeksleme ve organik dönüşümleri izle.",
+        "kpis": [
+          "API kota hataları",
+          "organik dönüşüm",
+          "indekslenen ticari URL oranı"
+        ],
+        "priority": "P2",
+        "source_url": "https://developers.google.com/search/updates"
+      },
+      {
+        "category": "Meta / Organik içerik",
+        "date": "2026-10-13",
+        "change": "Facebook, Feed ve Reels ilgi alanı önerilerini kullanıcıların kendi sözcükleriyle yönlendirmesine ilişkin araçlar duyurdu.",
+        "why_it_matters": "Organik içerik keşfi açısından izlenebilir; Ads Manager hedefleme algoritması değişikliği olarak kabul edilmemeli.",
+        "markets": [
+          "özellik sunulan pazarlar"
+        ],
+        "affected_clients": "Facebook organik içerik yayımlayan markalar",
+        "test": "İki benzer Reels videosunda konu netliğini karşılaştır; kontrolsüz algoritma etkisi iddiasından kaçın.",
+        "kpis": [
+          "organik erişim",
+          "izlenme süresi",
+          "profil ziyareti"
+        ],
+        "priority": "P3",
+        "source_url": "https://about.fb.com/news/"
+      },
+      {
+        "category": "E-ticaret / Analitik",
+        "date": "2026-09-21",
+        "change": "Shopify oturum ölçümü ve bot filtrelemesi Eylül ayında değişti; bu haftanın yeni duyurusu değil.",
+        "why_it_matters": "Ekim dönem karşılaştırmalarında dönüşüm oranı değişikliği yanlışlıkla gerçek talep değişimi sanılabilir.",
+        "markets": [
+          "Türkiye",
+          "ABD",
+          "İngiltere",
+          "Avrupa"
+        ],
+        "affected_clients": "Shopify kullanan e-ticaret işletmeleri",
+        "test": "Sipariş, satış ve oturum verilerini ayrı değerlendir; Eylül öncesi ve sonrası metrikleri metodoloji notuyla karşılaştır.",
+        "kpis": [
+          "session",
+          "conversion rate",
+          "orders",
+          "revenue"
+        ],
+        "priority": "P2",
+        "source_url": "https://help.shopify.com/en/manual/reports-and-analytics/discrepancies/session-measurement-update"
+      }
+    ],
+    "recommendations": [
+      {
+        "priority": "P1",
+        "action": "Meta Ads kampanyalarında link tıklaması, landing page view, GA4 oturumu ve nitelikli lead zincirini doğrula.",
+        "kpi": "nitelikli CPL ve veri eşleşmesi",
+        "type": "operasyonel kontrol; yeni duyuru değil"
+      },
+      {
+        "priority": "P1",
+        "action": "GA4 purchase ve revenue olaylarını sipariş sistemiyle eşleştir; mükerrer transaction_id kontrolü yap.",
+        "kpi": "sipariş ve gelir farkı",
+        "type": "operasyonel kontrol"
+      },
+      {
+        "priority": "P1",
+        "action": "En çok gelir üreten 20 ürün/kategori URL için organik tıklama ve satın alma analizini yap.",
+        "kpi": "organik gelir ve dönüşüm oranı",
+        "type": "operasyonel kontrol"
+      },
+      {
+        "priority": "P2",
+        "action": "Shopify kullanan müşterilerde Eylül oturum ölçümleme değişikliğinin raporlara etkisini belgele.",
+        "kpi": "raporlama tutarlılığı",
+        "type": "devam eden değişiklik etkisi"
+      },
+      {
+        "priority": "P2",
+        "action": "Mobil checkout akışında kargo, ödeme ve form sürtünmesini gerçek cihazlarda test et.",
+        "kpi": "checkout completion rate",
+        "type": "operasyonel UX testi"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Google Search Central documentation updates",
+        "date": "2026-10-16",
+        "url": "https://developers.google.com/search/updates",
+        "copyright_note": "Yalnızca olgusal değişiklik özeti; metin ve görsel kopyalanmadı."
+      },
+      {
+        "title": "Meta Newsroom",
+        "date": "2026-10-13",
+        "url": "https://about.fb.com/news/",
+        "copyright_note": "Duyuru özgün biçimde özetlendi; resmî görsel kullanılmadı."
+      },
+      {
+        "title": "Shopify session measurement changes",
+        "date": "2026-09-21/23",
+        "url": "https://help.shopify.com/en/manual/reports-and-analytics/discrepancies/session-measurement-update",
+        "copyright_note": "Önceki dönem değişikliğinin güncel raporlama etkisi özgün yorumlandı."
+      },
+      {
+        "title": "Shopify Analytics discrepancies",
+        "date": "2026-09",
+        "url": "https://help.shopify.com/en/manual/reports-and-analytics/discrepancies/analytics-updates",
+        "copyright_note": "Kaynak bağlantısı ve özgün özet; uzun alıntı yok."
+      },
+      {
+        "title": "Google Analytics API changelog",
+        "date": "2026-09-14",
+        "url": "https://developers.google.com/analytics/devguides/reporting/data/v1/changelog",
+        "copyright_note": "Bu haftaya ait yeni özellik iddiası oluşturulmadı."
+      }
+    ],
+    "copyright_notes": "Özgün Türkçe analizdir. Kaynakların uzun metinleri, ekran görüntüleri ve izinsiz görselleri kullanılmadı. Kaynaklar yalnızca olgusal doğrulama ve yönlendirme içindir. Duyuru ile öneri ve önceki dönem etkileri ayrıştırıldı.",
+    "slug": "2026-10-20"
+  }
+]
