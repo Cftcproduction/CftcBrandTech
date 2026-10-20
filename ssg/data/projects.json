@@ -8,7 +8,14 @@
     "date": "NİSAN 2025",
     "owner": "CFTC BrandTech EKİP",
     "cover": "img/works/1/1.jpg",
-    "gallery": ["img/works/1/2.jpg", "img/works/1/3.jpg", "img/works/1/4.jpg", "img/works/1/5.jpg", "img/works/1/6.jpg", "img/works/1/7.jpg"],
+    "gallery": [
+      "img/works/1/2.jpg",
+      "img/works/1/3.jpg",
+      "img/works/1/4.jpg",
+      "img/works/1/5.jpg",
+      "img/works/1/6.jpg",
+      "img/works/1/7.jpg"
+    ],
     "link": "https://www.cftcsmarttech.com",
     "sectionTitle": "Sadelik, Şıklık, Güvenlik",
     "content": [
@@ -44,7 +51,12 @@
     "date": "Mayıs 2025",
     "owner": "CFTC BrandTech EKİP",
     "cover": "img/works/2/2.jpg",
-    "gallery": ["img/works/2/villavillage-2.webp", "img/works/2/2.jpg", "img/works/2/3.jpg", "img/works/2/4.jpg"],
+    "gallery": [
+      "img/works/2/villavillage-2.webp",
+      "img/works/2/2.jpg",
+      "img/works/2/3.jpg",
+      "img/works/2/4.jpg"
+    ],
     "video": "https://www.youtube.com/embed/nZWrxCczS9Q?si=4BaBMEnI1GgLTGg6",
     "link": "https://www.villavillage.tr",
     "sectionTitle": "Sadelik, Zarafet, Yenilik",
@@ -72,7 +84,11 @@
     "date": "Ekim 2025",
     "owner": "Murat Gökyokuş",
     "cover": "img/works/3/3-1.jpg",
-    "gallery": ["img/works/3/3-2.jpg", "img/works/3/3-3.jpg", "img/works/3/3-4.jpg"],
+    "gallery": [
+      "img/works/3/3-2.jpg",
+      "img/works/3/3-3.jpg",
+      "img/works/3/3-4.jpg"
+    ],
     "link": "https://www.siempretour.cpm",
     "sectionTitle": "Keşif, Özgürlük, Deneyim",
     "content": [
@@ -99,7 +115,11 @@
     "date": "Aralık 2025",
     "owner": "Zeynep Cansu Kolaylı Çiftçi",
     "cover": "img/works/4/1.jpg",
-    "gallery": ["img/works/4/2.jpg", "img/works/4/3.jpg", "img/works/4/4.jpg"],
+    "gallery": [
+      "img/works/4/2.jpg",
+      "img/works/4/3.jpg",
+      "img/works/4/4.jpg"
+    ],
     "video": "https://www.youtube.com/embed/60uPdODp3HY?si=HyxKB9zm2ZBTO2q_",
     "link": "https://www.zckolayli.com",
     "sectionTitle": "Dijitalde Sadelik, Güven ve İşlevsellik",
@@ -131,7 +151,14 @@
     "date": "Şubat 2026",
     "owner": "İstanbul Atlas Rotary Kulübü",
     "cover": "img/works/5/6.jpg",
-    "gallery": ["img/works/5/1.jpg", "img/works/5/2.jpg", "img/works/5/3.jpg", "img/works/5/4.jpg", "img/works/5/5.jpg", "img/works/5/6.jpg"],
+    "gallery": [
+      "img/works/5/1.jpg",
+      "img/works/5/2.jpg",
+      "img/works/5/3.jpg",
+      "img/works/5/4.jpg",
+      "img/works/5/5.jpg",
+      "img/works/5/6.jpg"
+    ],
     "video": "",
     "link": "https://www.atlasrotary.org",
     "sectionTitle": "Rotary’nin Değerlerini Dijital Dünyaya Taşıyoruz",
@@ -155,6 +182,72 @@
       {
         "type": "p",
         "html": "Modern kullanıcı deneyimi, hızlı erişim yapısı ve mobil uyumlu tasarımı sayesinde ziyaretçiler etkinliklere, duyurulara ve kulüp çalışmalarına her cihazdan rahatlıkla ulaşabilir. Atlas Rotary dijital platformu; güven veren, düzenli güncellenen ve toplumsal faydayı merkeze alan bir iletişim yapısı sunar."
+      }
+    ]
+  },
+  {
+    "slug": "okay-zeytin-website",
+    "breadcrumb": "Okay Zeytin",
+    "titleMain": "Okay Zeytin",
+    "titleThin": "Websitesi",
+    "client": "Okay Zeytin",
+    "date": "2026",
+    "owner": "CFTC BrandTech EKİP",
+    "cover": "img/works/6/okay-zeytin-desktop.png",
+    "gallery": [
+      "img/works/6/okay-zeytin-desktop.png",
+      "img/works/6/okay-zeytin-mobile.webp"
+    ],
+    "link": "https://www.okayzeytin.com/",
+    "sectionTitle": "Website frontend düzenlemesi, SEO, AEO ve GEO ile satış odaklı büyüme",
+    "content": [
+      {
+        "type": "p",
+        "html": "<b>Okay Zeytin,</b> 1959 yılında Gemlik’te başlayan aile işletmesi deneyimini; siyah zeytin, yeşil zeytin, tuzsuz zeytin, zeytinyağı ve yöresel ürünleriyle dijital satış kanalına taşıyan bir e-ticaret markasıdır. 2002’den beri tuzsuz zeytin üretimi üzerine geliştirdiği Hiper Diyet serisi, markanın uzmanlık alanlarından biridir."
+      },
+      {
+        "type": "p",
+        "html": "Proje kapsamında Okay Zeytin web sitesinin frontend yapısı; ürün keşfini, kategori geçişlerini ve sepete ulaşma akışını kolaylaştıracak şekilde düzenlendi. Zeytin, zeytinyağı, kahvaltılık, gurme ve yöresel ürünler, tatlılar ve doğal bakım kategorileri daha anlaşılır bir alışveriş deneyimi için yeniden ele alındı. Desktop ve mobile ekranlarda hızlı, okunabilir ve satışa yönlendiren bir arayüz hedeflendi."
+      },
+      {
+        "type": "p",
+        "html": "SEO çalışmaları; tuzsuz zeytin, Gemlik zeytini, siyah zeytin, yeşil zeytin, naturel sızma ve soğuk sıkım zeytinyağı gibi arama niyetlerine göre kategori ve ürün içeriklerinin düzenlenmesini kapsadı. Başlık, açıklama, iç linkleme ve ürün metinleri arama sonuçlarında daha güçlü görünürlük ve daha nitelikli trafik için optimize edildi."
+      },
+      {
+        "type": "p",
+        "html": "AEO ve GEO yaklaşımıyla kullanıcıların arama motorlarında ve yapay zekâ destekli cevap deneyimlerinde sorularına doğrudan yanıt veren içerik kümeleri oluşturuldu. Tuzsuz zeytin nedir, zeytin nasıl saklanır, siyah ve yeşil zeytin arasındaki fark nedir, soğuk sıkım zeytinyağı nedir gibi konular; blog, rehber ve sık sorulan sorular yapısıyla desteklendi."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Website frontend düzenlemesi ve responsive kullanıcı deneyimi",
+          "SEO odaklı kategori, ürün ve meta içerik düzenlemeleri",
+          "AEO için soru-cevap, rehber ve sık sorulan sorular içerikleri",
+          "GEO görünürlüğü için yapılandırılmış, kaynaklanabilir marka ve ürün anlatımı",
+          "Satış odaklı Google sıralama düzenlemeleri ve iç linkleme",
+          "Ürün, kampanya, blog ve ticari içeriklerin sürekli güncellenmesi"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "il-mio-bambino-website",
+    "breadcrumb": "Il Mio Bambino",
+    "titleMain": "Il Mio Bambino",
+    "titleThin": "Websitesi",
+    "client": "Il Mio Bambino",
+    "date": "2026",
+    "owner": "CFTC BrandTech EKİP",
+    "cover": "img/partners/illmiobambino.png",
+    "gallery": [
+      "img/partners/illmiobambino.png"
+    ],
+    "link": "#",
+    "sectionTitle": "İçerik hazırlanıyor",
+    "content": [
+      {
+        "type": "p",
+        "html": "Il Mio Bambino proje içeriği hazırlanıyor. Proje detayları yakında burada yer alacak."
       }
     ]
   }

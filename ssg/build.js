@@ -267,7 +267,11 @@ function injectMenuProjects(html, projects = []) {
   const menuHtml = renderMenuProjects(projects);
   if (!menuHtml) return html;
 
-  return String(html).replace(/(<h5 id="projelerimiz" class="mil-muted mil-mb-30">Projelerimiz<\/h5>\s*<ul class="mil-menu-list" role="list">)[\s\S]*?(<\/ul>)/, `$1\n                        ${menuHtml}\n                      $2`);
+  let nextHtml = String(html).replace(/(<h5 id="projelerimiz" class="mil-muted mil-mb-30">Projelerimiz<\/h5>\s*<ul class="mil-menu-list" role="list">)[\s\S]*?(<\/ul>)/, `$1\n                        ${menuHtml}\n                      $2`);
+
+  // Keep project entries discoverable directly under the Portföy submenu.
+  nextHtml = nextHtml.replace(/(<ul id="menu-portfoy"[^>]*>[\s\S]*?)(\s*<\/ul>)/, `$1\n                        ${menuHtml}$2`);
+  return nextHtml;
 }
 
 function injectPortfolioList(html, projects = []) {
