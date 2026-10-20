@@ -270,8 +270,8 @@ function injectMenuProjects(html, projects = []) {
 
   let nextHtml = String(html).replace(/(<h5 id="projelerimiz" class="mil-muted mil-mb-30">Projelerimiz<\/h5>\s*<ul class="mil-menu-list" role="list">)[\s\S]*?(<\/ul>)/, `$1\n                        ${menuHtml}\n                      $2`);
 
-  // Keep project entries discoverable directly under the Portföy submenu.
-  nextHtml = nextHtml.replace(/(<ul id="menu-portfoy"[^>]*>[\s\S]*?)(\s*<\/ul>)/, `$1\n                        ${menuHtml}$2`);
+  // Keep reports discoverable under the Blog menu on every generated page.
+  nextHtml = nextHtml.replace(/(<a href="\/blog\/"[^>]*>Blog<\/a>)/, `$1\n                    <ul class="mil-submenu" aria-label="Blog alt menüsü"><li><a href="/reports/">Haftalık Dijital Raporlar</a></li></ul>`);
   return nextHtml;
 }
 
