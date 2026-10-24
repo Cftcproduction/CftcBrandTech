@@ -128,14 +128,26 @@ function removeClientProjectScript(html = "") {
   return String(html).replace(/\s*<script\s+src="\/?js\/plugins\/projects\.js"\s+defer><\/script>\s*/g, "\n");
 }
 
+// Add future tools here; both primary and footer menus use this list.
+const freeTools = [{ label: "Image Toolbox", href: "/toolbox/" }];
+
+function freeToolsMenu(footer = false) {
+  const submenuId = footer ? "footer-ucretsiz-araclar" : "menu-ucretsiz-araclar";
+  const links = freeTools.map((tool) => `<li><a href="${escapeHtml(tool.href)}" data-no-swup="">${escapeHtml(tool.label)}</a></li>`).join("");
+  return `<!-- cftc-free-tools:start --><li class="${footer ? "mil-up " : ""}mil-has-children" data-toolbox-menu><button type="button" class="mil-submenu-button" aria-expanded="false" aria-controls="${submenuId}">Ücretsiz Araçlar</button><ul id="${submenuId}" class="mil-submenu" aria-hidden="true">${links}</ul></li><!-- cftc-free-tools:end -->`;
+}
+
 function addToolboxNavigation(html = "") {
   // Toolbox has its own app shell and must load outside Swup's page containers.
   return String(html).replace(
     /(<nav\b[^>]*\bclass="[^"]*\bmil-(?:main|footer)-menu\b[^"]*"[^>]*>)([\s\S]*?)(<\/nav>)/g,
     (match, opening, content, closing) => {
-      if (/href="\/toolbox\/?"/.test(content)) return match;
       const footer = opening.includes("mil-footer-menu");
-      const item = `<li class="${footer ? "mil-up" : "mil-has-children"}"><a href="/toolbox/" data-no-swup="">Ücretsiz Araçlar</a></li>`;
+      const item = freeToolsMenu(footer);
+      const marker = /<!-- cftc-free-tools:start -->[\s\S]*?<!-- cftc-free-tools:end -->/;
+      if (marker.test(content)) return opening + content.replace(marker, () => item) + closing;
+      const previousLink = /<li\b[^>]*>\s*<a\b[^>]*href="\/toolbox\/?"[^>]*>[\s\S]*?<\/a>\s*<\/li>/;
+      if (previousLink.test(content)) return opening + content.replace(previousLink, () => item) + closing;
       return opening + content.replace(/(<ul\b[^>]*>)(?:\r?\n)?/, `$1\n                  ${item}\n`) + closing;
     },
   );

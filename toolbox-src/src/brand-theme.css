@@ -1,0 +1,59 @@
+/* Brand tokens mirror css/plugins/bootstrap-grid.css; the app layout is unchanged. */
+:root {
+  --bs-red: #ff0000;
+  --bs-black: #000000;
+  --bs-white: #ffffff;
+  --accent: var(--bs-red);
+  --muted: #a3a3a3;
+  --line: #303030;
+  --panel: #171717;
+  color: #f2f2f2;
+  background: #101010;
+}
+.sidebar, .studio-header, .canvas-toolbar { background: #171717; }
+.settings, .setting-section, .mini-frame.back { background: #1a1a1a; }
+.export-box, .queue-empty, .file-card { background: #202020; }
+.queue-empty, .file-card, .mini-frame.back { border-color: #404040; }
+.text-button, .icon-button, .precise, .two-fields label { color: #b3b3b3; }
+.icon-button:hover:not(:disabled) { background: #303030; }
+.queue-heading h3 span { background: #2b2b2b; color: #bbbbbb; }
+.stage { background-color: #111111; background-image: radial-gradient(#303030 1px, transparent 1px); }
+.dropzone { background: #171717ee; border-color: #444444; }
+.dropzone:hover { background: #211717ee; border-color: var(--accent); }
+.button.primary, .brand-mark, .mini-frame.front > span { background: var(--accent); color: var(--bs-black); }
+.button.primary:hover:not(:disabled) { background: #ff3333; }
+.button.secondary { background: #262626; border-color: #404040; color: #eeeeee; }
+.button.secondary:hover:not(:disabled) { background: #333333; }
+.nav-item.active, .format-picker button.selected, .quick-ratios button.selected, .lock-button.locked {
+  background: #331414; border-color: #a52b2b; color: #ffffff;
+}
+.brand-dot, .icon-button:hover:not(:disabled), .text-button:hover:not(:disabled), .mini-frame.front > svg { color: var(--accent); }
+.eyebrow span { color: #ffffff; border-color: #913030; }
+.mini-frame.front { background: #291717; border-color: #7a3030; }
+.mini-frame.back { border-color: #454545; }
+.mini-frame.front > span { border-color: #171717; }
+.privacy-pill { background: #232323; border-color: #424242; color: #dddddd; }
+.privacy-pill span { background: var(--accent); }
+.local-note svg, .help-foot, .bottom-tip svg { color: #dddddd; }
+.local-note p, .field-hint, .range-labels, #crop-hint, .bottom-tip, .small-label { color: #b0b0b0; }
+.breadcrumb, .side-heading, .nav-label, .version, .help-link, .input-formats, .export-summary, footer, footer .text-button { color: #aaaaaa; }
+.format-picker, select, input[type=number] { background: #111111; border-color: #404040; color: #eeeeee; }
+.quick-ratios button, .lock-button { background: #242424; border-color: #454545; color: #cccccc; }
+.lock-button:hover:not(:disabled) { border-color: var(--accent); color: #ffffff; }
+.apply-crop.previewing { background: #331414; border-color: #a52b2b; color: #ffffff; }
+.canvas-toolbar .apply-crop.previewing:hover { background: #4a1717; }
+.file-card.selected { background: #2d1616; border-color: var(--accent); }
+.file-card img { background-color: #161616; background-image: conic-gradient(#292929 25%,transparent 0 50%,#292929 0 75%,transparent 0); }
+.canvas-badge { background: #111111dd; border-color: #505050; }
+.drag-overlay { background: #281111f2; border-color: var(--accent); }
+.drag-overlay svg { color: var(--accent); }
+.icon-button.active { background: #331414; border-color: #a52b2b; color: #ffffff; }
+.progress { background: #3b2929; }
+.progress div { background: var(--accent); }
+.export-box #status { color: #b0b0b0; }
+.export-box #status.error { color: #ffb3b3; }
+dialog { background: #202020; border-color: #494949; color: #eeeeee; }
+dialog::backdrop { background: #000000c9; }
+dialog h3 { color: #ffffff; }
+dialog p { color: #bbbbbb; }
+#toast { background: #262626; color: #ffffff; border-color: #666666; }

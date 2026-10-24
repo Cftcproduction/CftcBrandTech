@@ -1,5 +1,6 @@
 import './style.css';
 import './workspace.css';
+import './brand-theme.css';
 import {createIcons,Blocks,Image as ImageIcon,ShieldCheck,CircleHelp,ArrowUpRight,Plus,Scan,FolderOpen,ArrowRight,Upload,RotateCw,FlipHorizontal2,Undo2,Crop,Layers2,Sparkles,SlidersHorizontal,Download,Archive,LockKeyhole,KeyRound,X} from 'lucide';
 import {decodeImage,canvas,oriented,integerCrop,outputDimensions,exportImage,stopCodec} from './images.js';
 const icons={Blocks,Image:ImageIcon,ShieldCheck,CircleHelp,ArrowUpRight,Plus,Scan,FolderOpen,ArrowRight,Upload,RotateCw,FlipHorizontal2,Undo2,Crop,Layers2,Sparkles,SlidersHorizontal,Download,Archive,LockKeyhole,KeyRound,X};
@@ -161,14 +162,14 @@ function draw(){
   if(editor.width!==Math.round(w*dpr)||editor.height!==Math.round(h*dpr)){editor.width=Math.round(w*dpr);editor.height=Math.round(h*dpr);}
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const g=geometry(),c=selected.crop;
   ctx.save();ctx.beginPath();ctx.rect(g.x,g.y,g.w,g.h);ctx.clip();
-  for(let y=g.y;y<g.y+g.h;y+=12)for(let x=g.x;x<g.x+g.w;x+=12){ctx.fillStyle=(Math.round((x-g.x)/12)+Math.round((y-g.y)/12))%2?'#30333a':'#25282d';ctx.fillRect(x,y,12,12);}
+  for(let y=g.y;y<g.y+g.h;y+=12)for(let x=g.x;x<g.x+g.w;x+=12){ctx.fillStyle=(Math.round((x-g.x)/12)+Math.round((y-g.y)/12))%2?'#2b2b2b':'#202020';ctx.fillRect(x,y,12,12);}
   if(selected.preview){const crop=integerCrop(c,view.width,view.height);ctx.drawImage(view,crop.x,crop.y,crop.w,crop.h,g.x,g.y,g.w,g.h);ctx.restore();return;}
   ctx.drawImage(view,g.x,g.y,g.w,g.h);
   const r={x:g.x+c.x*g.scale,y:g.y+c.y*g.scale,w:c.w*g.scale,h:c.h*g.scale};
-  ctx.fillStyle='#080b1099';ctx.beginPath();ctx.rect(g.x,g.y,g.w,g.h);ctx.rect(r.x,r.y,r.w,r.h);ctx.fill('evenodd');
+  ctx.fillStyle='#00000099';ctx.beginPath();ctx.rect(g.x,g.y,g.w,g.h);ctx.rect(r.x,r.y,r.w,r.h);ctx.fill('evenodd');
   ctx.strokeStyle='#ffffff50';ctx.lineWidth=1;ctx.beginPath();for(const f of [1/3,2/3]){ctx.moveTo(r.x+r.w*f,r.y);ctx.lineTo(r.x+r.w*f,r.y+r.h);ctx.moveTo(r.x,r.y+r.h*f);ctx.lineTo(r.x+r.w,r.y+r.h*f);}ctx.stroke();ctx.restore();
-  ctx.strokeStyle='#f6a372';ctx.lineWidth=1.5;ctx.strokeRect(r.x,r.y,r.w,r.h);
-  ctx.fillStyle='#fbd2b8';for(const [x,y] of [[r.x,r.y],[r.x+r.w,r.y],[r.x,r.y+r.h],[r.x+r.w,r.y+r.h]]){ctx.beginPath();ctx.roundRect(x-4,y-4,8,8,2);ctx.fill();}
+  ctx.strokeStyle=getComputedStyle(editor).getPropertyValue('--accent').trim();ctx.lineWidth=1.5;ctx.strokeRect(r.x,r.y,r.w,r.h);
+  ctx.fillStyle='#ffffff';for(const [x,y] of [[r.x,r.y],[r.x+r.w,r.y],[r.x,r.y+r.h],[r.x+r.w,r.y+r.h]]){ctx.beginPath();ctx.roundRect(x-4,y-4,8,8,2);ctx.fill();}
 }
 new ResizeObserver(draw).observe(stage);
 function point(event){const rect=editor.getBoundingClientRect(),g=geometry();return{x:clamp((event.clientX-rect.left-g.x)/g.scale,0,view.width),y:clamp((event.clientY-rect.top-g.y)/g.scale,0,view.height)};}
