@@ -24,7 +24,9 @@ npm run build
 
 Vite'nin `/toolbox/` taban yolu; ana JavaScript dosyası, dinamik codec parçaları, Web Worker ve WASM dosyaları için korunmalıdır. Üretilen `toolbox/` dosyalarını kaynak değişiklikleriyle birlikte commit edin. Siteyi normal şekilde yeniden yayınlayın. Mevcut site build'i Toolbox bağımlılıklarını ayrıca yüklemeye ihtiyaç duymaz.
 
-`Ücretsiz Araçlar` bağlantısı `data-no-swup` taşır. Aracın kendi sayfa yapısının yüklenebilmesi için bu niteliği kaldırmayın. Toolbox içindeki CFTC BrandTech bağlantısı ana siteye geri döner.
+Ana ve alt menülerde `Ücretsiz Araçlar → Image Toolbox` yapısı kullanılır. Yeni araçlar `ssg/build.js` dosyasındaki `freeTools` listesine eklenir; menüler build sırasında güncellenir. Alt bağlantılar `data-no-swup` taşır; uygulamanın kendi sayfa yapısının yüklenebilmesi için bu niteliği kaldırmayın. Toolbox içindeki CFTC BrandTech bağlantısı ana siteye geri döner.
+
+Renkler `toolbox-src/src/brand-theme.css` dosyasında tanımlanır. Kırmızı, siyah ve beyaz değerleri ana sitenin `css/plugins/bootstrap-grid.css` dosyasındaki marka renkleriyle aynıdır.
 
 ## Erişim ve sınırlar
 

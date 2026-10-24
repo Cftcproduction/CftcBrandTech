@@ -3295,6 +3295,33 @@ blog
 footer
 
 ------------------------------------------- */
+.mil-footer-menu [data-toolbox-menu] > .mil-submenu-button {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.mil-footer-menu [data-toolbox-menu] > .mil-submenu-button::after {
+  content: "+";
+  margin-left: 12px;
+  color: var(--bs-red);
+}
+.mil-footer-menu [data-toolbox-menu] > .mil-submenu-button[aria-expanded="true"]::after {
+  content: "−";
+}
+.mil-footer-menu [data-toolbox-menu] > ul {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 20px;
+  transition: max-height 0.3s ease;
+}
+.mil-footer-menu [data-toolbox-menu] > ul.mil-active { max-height: 180px; }
+.mil-main-menu [data-toolbox-menu] > ul[aria-hidden="true"],
+.mil-footer-menu [data-toolbox-menu] > ul[aria-hidden="true"] { visibility: hidden; }
+.mil-footer-menu [data-toolbox-menu] > ul > li { margin: 16px 0 0; }
+.mil-footer-menu [data-toolbox-menu] > ul > li > a { font-size: 16px; }
+@media screen and (max-width: 768px) {
+  .mil-footer-menu [data-toolbox-menu] > .mil-submenu-button { font-size: 22px; }
+}
 .mil-footer-menu {
   margin-bottom: 120px;
 }

@@ -1248,13 +1248,22 @@ document.addEventListener("click", function (e) {
     const otherSub = item.querySelector("ul");
     const otherBtn = item.querySelector(".mil-submenu-button");
 
-    if (otherSub) otherSub.classList.remove("mil-active");
-    if (otherBtn) otherBtn.classList.remove("mil-active");
+    if (otherSub) {
+      otherSub.classList.remove("mil-active");
+      otherSub.setAttribute("aria-hidden", "true");
+    }
+    if (otherBtn) {
+      otherBtn.classList.remove("mil-active");
+      otherBtn.setAttribute("aria-expanded", "false");
+    }
   });
 
   // Şimdi tıklananı toggle et
   sub.classList.toggle("mil-active");
   btn.classList.toggle("mil-active");
+  const open = sub.classList.contains("mil-active");
+  btn.setAttribute("aria-expanded", String(open));
+  sub.setAttribute("aria-hidden", String(!open));
 });
 
 //hover gösterme
