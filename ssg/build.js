@@ -48,6 +48,7 @@ const staticPages = [
     url: "/terms-conditions/",
   },
   { source: "kvkk.html", output: "kvkk/index.html", url: "/kvkk/" },
+  { source: "toolbox/index.html", output: "toolbox/index.html", url: "/toolbox/" },
 ];
 
 function ensureDir(dir) {
@@ -80,7 +81,7 @@ function copyDir(src, dest) {
 }
 
 function copyAssets() {
-  ["css", "js", "img", "fonts"].forEach((folder) => {
+  ["css", "js", "img", "fonts", "toolbox"].forEach((folder) => {
     copyDir(path.join(projectRoot, folder), path.join(distRoot, folder));
   });
 
@@ -127,9 +128,22 @@ function removeClientProjectScript(html = "") {
   return String(html).replace(/\s*<script\s+src="\/?js\/plugins\/projects\.js"\s+defer><\/script>\s*/g, "\n");
 }
 
+function addToolboxNavigation(html = "") {
+  // Toolbox has its own app shell and must load outside Swup's page containers.
+  return String(html).replace(
+    /(<nav\b[^>]*\bclass="[^"]*\bmil-(?:main|footer)-menu\b[^"]*"[^>]*>)([\s\S]*?)(<\/nav>)/g,
+    (match, opening, content, closing) => {
+      if (/href="\/toolbox\/?"/.test(content)) return match;
+      const footer = opening.includes("mil-footer-menu");
+      const item = `<li class="${footer ? "mil-up" : "mil-has-children"}"><a href="/toolbox/" data-no-swup="">Ücretsiz Araçlar</a></li>`;
+      return opening + content.replace(/(<ul\b[^>]*>)(?:\r?\n)?/, `$1\n                  ${item}\n`) + closing;
+    },
+  );
+}
+
 function normalizeInternalLinks(html = "") {
   return removeClientProjectScript(
-    String(html)
+    addToolboxNavigation(html)
       .replaceAll('href="index.html"', 'href="/"')
       .replaceAll('href="/index.html"', 'href="/"')
 

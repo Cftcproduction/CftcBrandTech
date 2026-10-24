@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#131517"><meta name="description" content="Görsellerini tarayıcıda dönüştür, kırp ve WebP, PNG, JPG veya AVIF olarak indir. Ücretsiz, hızlı ve dosyaların cihazında kalır."><title>CFTC BrandTech Toolbox — Görsel Atölyesi</title><link rel="canonical" href="https://www.cftcbrandtech.com/toolbox/"><link rel="icon" type="image/svg+xml" href="/toolbox/favicon.svg">  <script type="module" crossorigin src="/toolbox/assets/index-BpVEzG0J.js"></script>
+  <link rel="stylesheet" crossorigin href="/toolbox/assets/index-DKXegk9-.css">
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="Toolbox ana sayfa"><span class="brand-mark"><i data-lucide="blocks"></i></span>toolbox<span class="brand-dot">.</span></a>
+  <div class="side-heading">CFTC BRANDTECH</div>
+  <nav aria-label="Araçlar"><span class="nav-label">ÇALIŞMA ALANIN</span><a href="/toolbox/" class="nav-item active"><i data-lucide="image"></i> Görsel Atölyesi <span>01</span></a></nav>
+  <div class="side-bottom"><div class="local-note"><i data-lucide="shield-check"></i><strong>Dosyaların sende kalır.</strong><p>Görseller sunucuya yüklenmez. Her şey tarayıcında işlenir.</p></div><button class="help-link" id="help"><i data-lucide="circle-help"></i> Kullanım ve formatlar <i data-lucide="arrow-up-right"></i></button><div class="version">TOOLBOX <span>v1.0 / Web</span></div></div>
+</aside>
+<main>
+  <header class="topbar"><div class="breadcrumb"><a href="/" aria-label="CFTC BrandTech ana sayfa">CFTC BrandTech</a> <span>/</span> <strong>Görsel Atölyesi</strong></div><span class="privacy-pill"><span></span> %100 tarayıcıda</span></header>
+  <section class="page-heading"><div><div class="eyebrow"><span>01</span> GÖRSEL ARAÇLARI</div><h1>Bir görsel. Her format.</h1><p>Dönüştür, kadrajını bul, istediğin formatta indir.</p></div><button class="button secondary" id="add-top"><i data-lucide="plus"></i> Görsel ekle</button></section>
+  <div class="workspace">
+    <section class="studio" aria-label="Görsel düzenleyici">
+      <div class="studio-header"><div><i data-lucide="scan"></i><span id="image-title">Önizleme</span></div><span class="small-label" id="image-meta">ÇALIŞMA ALANI</span></div>
+      <div class="stage" id="stage">
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Görsel seç veya buraya sürükle">
+          <div class="upload-illustration"><div class="mini-frame back"></div><div class="mini-frame front"><i data-lucide="image"></i><span>+</span></div></div>
+          <h2>Görsellerini buraya bırak</h2><p>Bir görsel ya da birden fazla dosya.</p><span class="button primary"><i data-lucide="folder-open"></i> Dosya seç <i data-lucide="arrow-right"></i></span>
+          <div class="input-formats">JPG <b>·</b> PNG <b>·</b> WEBP <b>·</b> AVIF <b>·</b> HEIC <b>·</b> + daha fazlası</div>
+        </div>
+        <canvas id="editor" hidden aria-label="Kırpma alanı. Hassas ayar için kadraj ölçülerini kullanın."></canvas>
+        <div class="canvas-badge" id="canvas-badge" hidden>Orijinal</div>
+        <div class="drag-overlay" hidden><i data-lucide="upload"></i> Görselleri bırak</div>
+      </div>
+      <div class="canvas-toolbar"><div class="tool-group"><button id="rotate" class="icon-button" aria-label="90 derece döndür" title="90° döndür" disabled><i data-lucide="rotate-cw"></i></button><button id="mirror" class="icon-button" aria-label="Yatay aynala" title="Yatay aynala" disabled><i data-lucide="flip-horizontal-2"></i></button><span class="divider"></span><button id="reset" class="text-button" disabled><i data-lucide="undo-2"></i> Sıfırla</button></div><span id="crop-hint">Kendi kadrajını oluştur.</span><div class="canvas-actions"><button id="apply-crop" class="button primary apply-crop" type="button" aria-pressed="false" disabled><span id="apply-label">Kırpmayı uygula</span><span id="edit-label" hidden>Kadrajı düzenle</span></button><button id="new-crop" class="icon-button" aria-label="Yeni kırpma alanı çiz" title="Yeni alan çiz (Shift + sürükle)" disabled><i data-lucide="crop"></i></button><button id="ratio-lock" class="lock-button" type="button" aria-label="En-boy oranı kilidi" aria-pressed="false" title="Mevcut en-boy oranını kilitle" disabled><i data-lucide="key-round"></i><span id="lock-label">Serbest</span></button></div></div>
+      <div class="queue-heading"><h3>Dosyaların <span id="file-count">0</span></h3><button id="clear" class="text-button" disabled>Listeyi temizle</button></div>
+      <div class="queue" id="queue"><div class="queue-empty"><i data-lucide="layers-2"></i><p>Eklediğin görseller burada görünecek.</p></div></div>
+      <div class="bottom-tip"><i data-lucide="sparkles"></i><span>Tek tek düzenle, birlikte indir. Her görselin kadrajı ayrı tutulur.</span></div>
+    </section>
+    <aside class="settings" aria-label="Kırpma ve çıktı ayarları">
+      <section class="setting-section"><div class="section-heading"><h2><i data-lucide="crop"></i> Kadraj</h2><span>01</span></div>
+        <label class="field-label" for="ratio">En-boy oranı</label>
+        <select id="ratio" disabled><option value="free">Serbest</option><option value="current">Mevcut kadraj · Kilitli</option><option value="original">Orijinal</option><option value="1">1:1 · Kare</option><option value="1.3333333333333333">4:3 · Fotoğraf</option><option value="1.5">3:2 · Fotoğraf</option><option value="1.7777777777777777">16:9 · Geniş ekran</option><option value="0.5625">9:16 · Hikâye</option><option value="0.8">4:5 · Gönderi</option><option value="0.75">3:4 · Portre</option><option value="0.6666666666666666">2:3 · Portre</option><option value="2.3333333333333335">21:9 · Sinema</option><option value="custom">Özel oran</option></select>
+        <div class="quick-ratios"><button data-ratio="1" disabled><span class="ratio-shape square"></span>1:1</button><button data-ratio="1.7777777777777777" disabled><span class="ratio-shape landscape"></span>16:9</button><button data-ratio="0.5625" disabled><span class="ratio-shape portrait"></span>9:16</button><button data-ratio="0.8" disabled><span class="ratio-shape post"></span>4:5</button></div>
+        <div id="custom-ratio" class="two-fields" hidden><label>En<input id="ratio-w" type="number" min="1" max="1000" value="1"></label><label>Boy<input id="ratio-h" type="number" min="1" max="1000" value="1"></label></div>
+        <details class="precise"><summary>Hassas kırpma <span>px</span></summary><div class="two-fields"><label>Genişlik<input id="crop-w" type="number" min="1" value="1" disabled></label><label>Yükseklik<input id="crop-h" type="number" min="1" value="1" disabled></label><label>X<input id="crop-x" type="number" min="0" value="0" disabled></label><label>Y<input id="crop-y" type="number" min="0" value="0" disabled></label></div></details>
+      </section>
+      <section class="setting-section output-section"><div class="section-heading"><h2><i data-lucide="sliders-horizontal"></i> Çıktı ayarları</h2><span>02</span></div>
+        <span class="field-label">Format</span><div class="format-picker" role="group" aria-label="Çıktı formatı"><button class="selected" data-format="webp" aria-pressed="true">WEBP</button><button data-format="png" aria-pressed="false">PNG</button><button data-format="jpg" aria-pressed="false">JPG</button><button data-format="avif" aria-pressed="false">AVIF</button></div><p class="field-hint" id="format-info">Küçük dosyalar, şeffaf arka plan desteği.</p>
+        <div class="quality-row"><label for="quality">Kalite</label><output id="quality-value">85<span>%</span></output></div><input id="quality" type="range" min="1" max="100" value="85"><div class="range-labels"><span>Daha küçük dosya</span><span>Daha yüksek kalite</span></div>
+        <label class="checkbox-row" id="lossless-row"><input type="checkbox" id="lossless"><span>Kayıpsız sıkıştırma</span></label>
+        <label id="matte-row" class="field-label" hidden>JPG arka planı<select id="matte"><option value="#ffffff">Beyaz</option><option value="#000000">Siyah</option></select></label>
+        <label class="field-label resize-label" for="max-edge">En uzun kenar <span>İsteğe bağlı</span></label><div class="input-unit"><input id="max-edge" type="number" min="1" max="16000" placeholder="Orijinal boyut"><span>px</span></div><p class="field-hint">Oranı korur, yalnızca küçültür.</p>
+      </section>
+      <div class="export-box"><div class="export-summary"><span>Çıktı boyutu</span><strong id="output-size">—</strong></div><button class="button primary" id="export-one" disabled><i data-lucide="download"></i> Görseli indir</button><button class="button secondary" id="export-all" disabled><i data-lucide="archive"></i> Tümünü ZIP olarak indir</button><button id="cancel" class="text-button" hidden>İşlemi iptal et</button><div class="progress" id="progress" hidden><div></div></div><p id="status" role="status" aria-live="polite">Başlamak için bir görsel ekle.</p></div>
+    </aside>
+  </div>
+  <footer><span><i data-lucide="lock-keyhole"></i> Dosyaların cihazından ayrılmaz.</span><button id="footer-help" class="text-button">Kullanım ve formatlar <i data-lucide="arrow-up-right"></i></button><span>Ücretsiz. Kurulum yok. Tamamen senin kontrolünde.</span></footer>
+</main>
+<input type="file" id="files" multiple accept="image/*,.heic,.heif,.tif,.tiff,.psd,.jxl,.bmp,.ico,.avif" hidden>
+<div id="toast" role="status" hidden></div>
+<dialog id="help-dialog"><div class="dialog-heading"><h2>Atölyeye hoş geldin.</h2><button class="icon-button" id="close-help" aria-label="Kapat"><i data-lucide="x"></i></button></div><p>Görselleri ekle, listeden seç ve kadrajını ayarla. Köşelerden boyutlandır, içinden tutup taşı. Yeni alan çizmek için kırpma simgesini seç veya Shift + sürükle kullan. Kırpmayı uygula düğmesiyle yalnızca seçtiğin alanı görürsün. Kadrajı düzenle ile seçimine geri dönebilirsin. Sağ alttaki anahtar düğmesi mevcut kadrajı değiştirmeden en-boy oranını kilitler veya serbest bırakır. Oran presetleri en-boy oranını otomatik kilitler; Sıfırla ile serbest moda dönersin.</p><h3>Desteklenen formatlar</h3><p>JPG, PNG, WebP, AVIF, GIF, BMP, SVG ve tarayıcının desteklediği diğer görseller. Ayrıca HEIC/HEIF, TIFF, JPEG XL ve birleşik önizlemeli PSD dosyaları açılabilir. Codec ve dosya türüne göre destek değişebilir. Kamera RAW, PDF ve tüm özel formatlar desteklenmez.</p><h3>Kaydetme</h3><p>WebP, PNG, JPG veya AVIF olarak indir. PNG kayıpsızdır; WebP ve AVIF için kayıpsız seçeneği de vardır. JPG, şeffaf alanları seçilen arka plan rengiyle doldurur. Toplu indirme bir ZIP dosyası oluşturur.</p><h3>Küçük ama önemli notlar</h3><p>Animasyonların ve çok sayfalı dosyaların ilk karesi/sayfası kullanılır. SVG piksele dönüştürülür. Bu bir 8 bit görsel aracıdır; katmanlı düzenleme veya HDR/RAW geliştirme sunmaz. EXIF bilgileri çıktıya kopyalanmaz. Görseller ve kadrajlar sekme kapanınca silinir.</p><p>Tarayıcı belleğini korumak için dosya başına 50 MB ve çözümlenmiş görsel başına 40 megapiksel sınırı uygulanır. Dosyalar sırayla işlenir. Büyük AVIF dosyaları biraz zaman alabilir.</p><div class="help-foot"><i data-lucide="shield-check"></i> Hiçbir görsel sunucuya yüklenmez.</div></dialog>
+</body></html>
