@@ -1,0 +1,84 @@
+/* Roomier editor and readable controls across desktop and mobile. */
+.stage { height: clamp(500px, 58vh, 760px); }
+.studio-header { height: 52px; }
+.studio-header > div { font-size: 14px; }
+.studio-header #image-title { max-width: min(460px, 34vw); }
+.small-label { font-size: 12px; letter-spacing: .2px; color: #9da6b2; }
+.canvas-badge { font-size: 13px; padding: 7px 10px; }
+.canvas-toolbar { min-height: 58px; height: auto; padding: 9px 12px; }
+.canvas-toolbar .text-button { font-size: 13px; }
+.canvas-toolbar .icon-button { width: 36px; height: 36px; }
+.canvas-toolbar svg { width: 20px; height: 20px; }
+#crop-hint { font-size: 12px; color: #a1a9b4; line-height: 1.5; margin-left: auto; }
+.canvas-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.canvas-toolbar { flex-wrap: wrap; }
+.canvas-actions { flex-wrap: wrap; justify-content: flex-end; }
+.apply-crop { min-height: 38px; font-size: 12px; padding: 8px 12px; }
+.apply-crop.previewing { background: #2a3530; color: #bbdfc7; border-color: #51695b; }
+.canvas-toolbar .apply-crop.previewing:hover { background: #35483c; }
+.lock-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; min-width: 116px; padding: 8px 12px; border: 1px solid #4a515b; border-radius: 6px; background: #252a30; color: #c4ccd7; font-size: 12px; font-weight: 550; }
+.lock-button:hover:not(:disabled) { border-color: #e4a47b; color: #f5b78f; }
+.lock-button.locked { background: #3d2e23; border-color: #ad754f; color: #ffc49b; }
+.queue-heading h3 { font-size: 16px; }
+.queue-heading h3 span { font-size: 12px; }
+.queue-heading .text-button { font-size: 13px; }
+.queue-empty { font-size: 13px; }
+.file-card { flex-basis: 150px; }
+.file-card img { height: 80px; }
+.file-card .filename { max-width: 132px; font-size: 12px; }
+.bottom-tip { font-size: 12px; color: #a1a9b4; }
+.page-heading p { font-size: 15px; }
+.page-heading > .button { font-size: 14px; }
+.section-heading h2 { font-size: 16px; }
+.section-heading h2 svg { width: 19px; height: 19px; }
+.field-label, .quality-row, .checkbox-row { font-size: 13px; }
+select, input[type=number] { font-size: 13px; height: 41px; }
+.quick-ratios button { font-size: 12px; height: 48px; }
+.precise, .two-fields label { font-size: 12px; }
+.format-picker button { font-size: 12px; min-height: 35px; }
+.field-hint { font-size: 12px; color: #a3acb8; }
+.range-labels { font-size: 11px; color: #98a2b0; }
+.quality-row output { font-size: 15px; }
+.quality-row output span, .resize-label span, .input-unit > span { font-size: 11px; }
+.export-summary { font-size: 12px; }
+.export-box .button { font-size: 14px; min-height: 44px; }
+.export-box .button.secondary { font-size: 13px; min-height: 42px; }
+.export-box #status { font-size: 12px; color: #a8b1bc; }
+.export-box #status.error { color: #f9a18d; }
+footer, footer .text-button { font-size: 12px; }
+@media (min-width: 1550px) {
+  .stage { height: clamp(580px, 60vh, 900px); }
+  .workspace { grid-template-columns: minmax(0,1fr) 350px; }
+}
+@media (max-width: 1180px) {
+  .canvas-toolbar #crop-hint { display: none; }
+  .canvas-actions { margin-left: auto; }
+}
+@media (max-width: 940px) and (min-width: 701px) {
+  .canvas-toolbar { flex-wrap: wrap; }
+  .canvas-actions { gap: 4px; }
+  .lock-button { min-width: 100px; padding: 8px; }
+}
+@media (max-width: 700px) {
+  .stage { height: clamp(400px, 52svh, 520px); }
+  .studio-header #image-title { max-width: 68vw; }
+  .studio-header > div { font-size: 13px; }
+  .canvas-toolbar { padding: 8px; gap: 4px; }
+  .canvas-toolbar .icon-button { width: 32px; }
+  .canvas-toolbar .text-button { font-size: 12px; }
+  .tool-group { gap: 0; }
+  .divider { margin: 0 4px; }
+  .canvas-actions { gap: 3px; }
+  .canvas-actions { flex-basis: 100%; margin-top: 4px; }
+  .canvas-actions .apply-crop { margin-right: auto; }
+  .lock-button { min-width: 107px; padding: 8px; font-size: 12px; }
+  .page-heading p { font-size: 13px; }
+  .page-heading > .button { font-size: 0; }
+  .range-labels { font-size: 11px; }
+  .bottom-tip { font-size: 12px; }
+  footer { font-size: 11px; }
+}
+@media (max-width: 370px) {
+  .canvas-toolbar { flex-wrap: wrap; }
+  .canvas-actions { margin-left: auto; }
+}
