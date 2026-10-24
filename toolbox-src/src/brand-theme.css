@@ -4,7 +4,7 @@
   --bs-black: #000000;
   --bs-white: #ffffff;
   --accent: var(--bs-red);
-  --muted: #a3a3a3;
+  --muted: #b8b8b8;
   --line: #303030;
   --panel: #171717;
   color: #f2f2f2;
@@ -20,8 +20,10 @@
 .stage { background-color: #111111; background-image: radial-gradient(#303030 1px, transparent 1px); }
 .dropzone { background: #171717ee; border-color: #444444; }
 .dropzone:hover { background: #211717ee; border-color: var(--accent); }
-.button.primary, .brand-mark, .mini-frame.front > span { background: var(--accent); color: var(--bs-black); }
-.button.primary:hover:not(:disabled) { background: #ff3333; }
+.brand-mark, .mini-frame.front > span { background: var(--accent); color: var(--bs-white); }
+.button.primary { background: #d60000; color: var(--bs-white); }
+.button.primary:hover:not(:disabled) { background: #bf0000; color: var(--bs-white); }
+.button.primary:active:not(:disabled) { background: #a80000; }
 .button.secondary { background: #262626; border-color: #404040; color: #eeeeee; }
 .button.secondary:hover:not(:disabled) { background: #333333; }
 .nav-item.active, .format-picker button.selected, .quick-ratios button.selected, .lock-button.locked {
@@ -57,3 +59,13 @@ dialog::backdrop { background: #000000c9; }
 dialog h3 { color: #ffffff; }
 dialog p { color: #bbbbbb; }
 #toast { background: #262626; color: #ffffff; border-color: #666666; }
+/* Keep inactive labels readable without making inactive controls clickable. */
+button:disabled, select:disabled, input:disabled { opacity: 1; }
+.button:disabled, .icon-button:disabled, .text-button:disabled,
+.quick-ratios button:disabled, .lock-button:disabled {
+  background: #252525; border-color: #444444; color: #ababab;
+}
+.button.primary:disabled { background: #522626; border-color: #694040; color: var(--bs-white); }
+select:disabled, input[type=number]:disabled { background: #222222; border-color: #444444; color: #b8b8b8; }
+input::placeholder { color: #aaaaaa; opacity: 1; }
+input[type=range]:disabled { accent-color: #a0a0a0; }
