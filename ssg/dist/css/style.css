@@ -3323,6 +3323,10 @@ footer
 .mil-footer-menu [data-toolbox-menu] > ul[aria-hidden="true"] { visibility: hidden; }
 .mil-footer-menu [data-toolbox-menu] > ul > li { margin: 16px 0 0; }
 .mil-footer-menu [data-toolbox-menu] > ul > li > a { font-size: 16px; }
+.mil-main-menu [data-toolbox-menu] > ul > li > a,
+.mil-footer-menu [data-toolbox-menu] > ul > li > a { color: #d0d0d0; }
+.mil-main-menu [data-toolbox-menu] > ul > li > a:hover,
+.mil-footer-menu [data-toolbox-menu] > ul > li > a:hover { color: #ff0000; }
 @media screen and (max-width: 768px) {
   .mil-footer-menu [data-toolbox-menu] > .mil-submenu-button { font-size: 22px; }
 }

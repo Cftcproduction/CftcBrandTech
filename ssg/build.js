@@ -6,7 +6,7 @@ const projectRoot = path.join(__dirname, "..");
 const distRoot = path.join(ssgRoot, "dist");
 
 const SITE_URL = "https://www.cftcbrandtech.com";
-const { tools, renderPage } = require('./tools');
+const { tools, navigationLinks, renderPage } = require('./tools');
 
 const blogDataPath = path.join(ssgRoot, "data", "blog.json");
 const projectsDataPath = path.join(ssgRoot, "data", "projects.json");
@@ -131,7 +131,7 @@ function removeClientProjectScript(html = "") {
 }
 
 // Add future tools here; both primary and footer menus use this list.
-const freeTools = [{ label: "Tüm Araçlar", href: "/araclar/" }, ...tools.map(t => ({ label: t.title, href: t.href || `/araclar/${t.slug}/` }))];
+const freeTools = navigationLinks;
 
 function freeToolsMenu(footer = false) {
   const submenuId = footer ? "footer-ucretsiz-araclar" : "menu-ucretsiz-araclar";

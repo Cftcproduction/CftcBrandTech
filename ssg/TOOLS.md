@@ -6,6 +6,8 @@ Doğrulama: `node --test ssg/tests/tools.test.cjs` ve `node ssg/build.js`.
 
 API'ler dahil yerel önizleme: `ssg` klasöründe `npm run dev` (Node 24). Varsayılan adres `http://127.0.0.1:4174/araclar/`; `.env.local` otomatik yüklenir. Önce build çalıştırın.
 
+Site menüsünde tek tek araçlar yerine tüm araçlar ve dört hizmet kategorisi bulunur. Kategori bağlantıları `/araclar/?kategori=dijital-pazarlama` biçimindedir; seçenekler `ssg/tools.js` içindeki `categories` ve `navigationLinks` tanımlarından üretilir. Katalog seçimi adres çubuğunda saklanır; yenileme ve geri/ileri gezinmede korunur. Tanınmayan kategori tüm araçları gösterir.
+
 ## Yeni değerlendirme araçları
 
 Reklam kârlılığı ve e-ticaret araçları değişken giderler sonrası katkı hesaplar; sabit gider ve vergiler sonrası net kâr hesaplamaz. Büyüme fırsatları aracı kullanıcı beyanına göre web sitesi, ölçüm, SEO, reklam ve CRM için eşit ağırlıklı beş maddelik öz değerlendirme sunar.

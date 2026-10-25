@@ -169,7 +169,28 @@ form?.addEventListener('submit', async event => {
   } catch (error) { results.replaceChildren(element('p', 'Rapor alınamadı.')); status.textContent = error.name === 'AbortError' ? 'Analiz zaman aşımına uğradı. Yeniden deneyin.' : error instanceof SyntaxError ? 'Analiz servisine ulaşılamıyor. Lütfen daha sonra deneyin.' : error.message; }
   finally { clearTimeout(timer); busy = false; button.disabled = false; }
 });
-document.querySelector('#category')?.addEventListener('change', event => {
-  let count = 0; document.querySelectorAll('[data-category]').forEach(card => { card.hidden = Boolean(event.target.value && card.dataset.category !== event.target.value); if (!card.hidden) count++; });
-  document.querySelector('#tool-count').textContent = `${count} araç`;
-});
+const categorySelect = document.querySelector('#category');
+if (categorySelect) {
+  function filterCategory() {
+    let count = 0;
+    document.querySelectorAll('[data-category]').forEach(card => {
+      card.hidden = Boolean(categorySelect.value && card.dataset.category !== categorySelect.value);
+      if (!card.hidden) count++;
+    });
+    document.querySelector('#tool-count').textContent = `${count} araç`;
+  }
+  function readCategory() {
+    const requested = new URL(location.href).searchParams.get('kategori') || '';
+    categorySelect.value = [...categorySelect.options].some(option => option.value === requested) ? requested : '';
+    filterCategory();
+  }
+  categorySelect.addEventListener('change', () => {
+    const url = new URL(location.href);
+    if (categorySelect.value) url.searchParams.set('kategori', categorySelect.value);
+    else url.searchParams.delete('kategori');
+    history.pushState(null, '', url);
+    filterCategory();
+  });
+  window.addEventListener('popstate', readCategory);
+  readCategory();
+}
