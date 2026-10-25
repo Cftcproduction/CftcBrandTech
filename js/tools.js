@@ -65,11 +65,16 @@ function renderCalculation(data) {
   offer();
 }
 function comparison(pages) {
-  const wrap = element('div', null, 'table-scroll'), table = element('table'), head = element('thead'), tr = element('tr');
+  const wrap = element('div', null, 'table-scroll'), table = element('table', null, 'comparison-table'), head = element('thead'), tr = element('tr');
+  table.setAttribute('role', 'table');
   for (const label of ['Kontrol', 'Siteniz', 'Rakip sayfa']) { const th = element('th', label); th.scope = 'col'; tr.append(th); } head.append(tr); table.append(element('caption', 'Girilen sayfaların HTML ön incelemesi'), head);
   const body = element('tbody');
   const checks = [['Sayfa başlığı', p => p.title || 'Bulunamadı'], ['Meta açıklama', p => p.description || 'Bulunamadı'], ['H1 adedi', p => number(p.h1Count)], ['Canonical', p => p.canonical || 'Bulunamadı'], ['HTTPS', p => p.https ? 'Var' : 'Yok'], ['Viewport', p => p.viewport ? 'Var' : 'Bulunamadı'], ['Boş / eksik alt metni', p => `${number(p.missingAlt)} / ${number(p.images)}`], ...['title', 'description', 'h1', 'content'].map((key, i) => [['Başlıkta hedef kelime', 'Açıklamada hedef kelime', 'H1 içinde hedef kelime', 'İçerikte hedef kelime'][i], p => p.keyword[key] ? 'Bulundu' : 'Bulunamadı'])];
-  for (const [label, get] of checks) { const row = element('tr'); const th = element('th', label); th.scope = 'row'; row.append(th); for (const p of pages) row.append(element('td', p.ok ? get(p) : 'Sayfa okunamadı')); body.append(row); }
+  for (const [label, get] of checks) {
+    const row = element('tr'); const th = element('th', label); th.scope = 'row'; row.append(th);
+    pages.forEach((p, index) => { const cell = element('td', p.ok ? get(p) : 'Sayfa okunamadı'); cell.dataset.label = index === 0 ? 'Siteniz' : 'Rakip sayfa'; row.append(cell); });
+    body.append(row);
+  }
   table.append(body); wrap.append(table); results.append(wrap);
   const own = pages[0], rival = pages[1];
   const gaps = [];

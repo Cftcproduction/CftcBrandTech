@@ -4839,6 +4839,15 @@ AEO content
   color: rgba(0, 0, 0, 0.3);
 }
 
+#cftc-brandtech-baslik .mil-company-name {
+  display: block;
+  white-space: nowrap;
+  font-size: clamp(26px, 3.4vw, 46px);
+  font-weight: 500;
+}
+#cftc-brandtech-baslik .mil-company-name strong {
+  font-weight: 900;
+}
 .mil-aeo-definitions {
   margin: 0;
 }
