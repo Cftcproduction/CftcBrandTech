@@ -2,9 +2,9 @@
 
 Site: https://www.cftcbrandtech.com/
 Language: tr-TR
-Last updated: 2026-09-08
+Last updated: 2026-10-26
 
-CFTC BrandTech; branding, web tasarımı ve geliştirme, dijital pazarlama ve stratejik danışmanlık hizmetlerini aynı ekipte birleştiren Türkiye merkezli yaratıcı teknoloji ajansıdır.
+CFTC BrandTech Solutions (CFTC BrandTech), Türkiye merkezli bir yaratıcı teknoloji şirketidir. Markalaşma, web tasarımı ve geliştirme, dijital pazarlama ve stratejik danışmanlık hizmetleri sunar. Şirketlerin marka kimliğini güçlendirmek ve dijital büyüme hedeflerini desteklemek için strateji, tasarım, teknoloji ve pazarlama çalışmalarını aynı ekipte bir araya getirir.
 
 Primary pages:
 - Home: https://www.cftcbrandtech.com/
