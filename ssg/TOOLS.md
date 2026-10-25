@@ -4,6 +4,16 @@
 
 Doğrulama: `node --test ssg/tests/tools.test.cjs` ve `node ssg/build.js`.
 
+API'ler dahil yerel önizleme: `ssg` klasöründe `npm run dev` (Node 24). Varsayılan adres `http://127.0.0.1:4174/araclar/`; `.env.local` otomatik yüklenir. Önce build çalıştırın.
+
+## Yeni değerlendirme araçları
+
+Reklam kârlılığı ve e-ticaret araçları değişken giderler sonrası katkı hesaplar; sabit gider ve vergiler sonrası net kâr hesaplamaz. Büyüme fırsatları aracı kullanıcı beyanına göre web sitesi, ölçüm, SEO, reklam ve CRM için eşit ağırlıklı beş maddelik öz değerlendirme sunar.
+
+`/api/site-analysis?mode=conversion&url=…` tek sayfa; `mode=competitor&url=…&competitor=…&keyword=…` iki sayfa için HTML ön incelemesi yapar. Sunucu işlevi `ssg/api/site-analysis.js`, güvenli okuma ve sinyal çıkarımı `ssg/lib/site-analysis.cjs` içindedir. Her yönlendirmede URL ve DNS doğrulanır; bağlantı doğrulanmış herkese açık IPv4 adresine sabitlenir. Özel/rezerve IP'ler, kimlik bilgili URL'ler ve özel portlar engellenir. En fazla üç yönlendirme, sayfa başına 15 saniye ve 2 MB HTML sınırı vardır. IPv6-only siteler desteklenmez.
+
+HTML incelemesi sayfada JavaScript çalıştırmaz, form göndermez, kimlik doğrulama veya erişim engellerini aşmaz. Engellenen ya da okunamayan sayfalar raporda ayrıca belirtilir. SEO sonuçları sıralama, trafik veya backlink verisi değildir; dönüşüm ön incelemesinde mobil PageSpeed raporu ayrıca istenir ve kısmi hatalarda erişilebilen bulgular korunur. Sonuç ekranlarındaki uzman desteği bağlantıları mevcut iletişim sayfasına gider; otomatik başvuru gönderilmez.
+
 ## PageSpeed kurulumu
 
 Mevcut Vercel proje kökü `ssg`, build komutu `npm run build`, çıktı `dist` olarak kalır. `ssg/api/pagespeed.js` sunucu işlevi, statik çıktının dışında Vercel tarafından yayınlanır. İşlev süresi `vercel.json` içinde 60 saniyedir; kullanılan hosting planının bunu desteklemesi gerekir.

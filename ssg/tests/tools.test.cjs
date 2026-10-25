@@ -18,6 +18,28 @@ test('calculator reference values and boundaries', async () => {
   assert.equal(c('buyume-hedefi', { ...input, target: 100000 }).monthly, 0);
   assert.ok(c('buyume-hedefi', { ...input, target: 50000 }).monthly < 0);
 });
+test('Turkish number input separators', async () => {
+  const { parseTurkishNumber: parse } = await import('../../js/tool-calculations.mjs');
+  assert.equal(parse('10.000,50'), 10000.5);
+  assert.equal(parse('1.234.567,89'), 1234567.89);
+  assert.equal(parse('0,25'), .25);
+  assert.equal(parse('10000'), 10000);
+  for (const value of ['', '10.50', '1,2,3', 'abc', '1e3']) assert.ok(Number.isNaN(parse(value)));
+});
+test('profit, ecommerce and assessment calculations', async () => {
+  const { calculate: c } = await import('../../js/tool-calculations.mjs');
+  const ad = c('reklam-karlilik', { spend: 10000, revenue: 24000, customers: 20, margin: 100 / 3 });
+  assert.equal(ad.roas, 2.4); assert.equal(ad.cpa, 500); assert.equal(ad.breakEven, 3); assert.ok(Math.abs(ad.contribution + 2000) < .000001);
+  assert.equal(c('reklam-karlilik', { spend: 100, revenue: 0, customers: 0, margin: 50 }).cpa, null);
+  assert.throws(() => c('reklam-karlilik', { spend: 100, revenue: 200, customers: 1, margin: 0 }));
+  const input = { price: 1000, cost: 400, commission: 15, shipping: 70, adCost: 100, returns: 30 };
+  const profit = c('eticaret-kar', input); assert.equal(profit.total, 750); assert.equal(profit.contribution, 250); assert.equal(profit.margin, 25); assert.equal(profit.maxAdCost, 350);
+  assert.ok(c('eticaret-kar', { ...input, cost: 1200 }).maxAdCost < 0);
+  assert.throws(() => c('eticaret-kar', { ...input, price: 0 }));
+  const assessment = { current: 100000, target: 200000, budget: 10000, website: 'yes', analytics: true, seo: false, ads: true, crm: false, sector: 'B2B' };
+  const plan = c('buyume-firsatlari', assessment); assert.equal(plan.score, 60); assert.equal(plan.growth, 100); assert.equal(plan.budgetRatio, 10); assert.equal(plan.priorities.length, 2);
+  assert.equal(c('buyume-firsatlari', { ...assessment, seo: true, crm: true }).score, 100);
+});
 function request(query) { return { method: 'GET', query, headers: {}, socket: { remoteAddress: Math.random().toString() } }; }
 function response() { return { statusCode: 200, setHeader() {}, status(value) { this.statusCode = value; return this; }, json(value) { this.body = value; return this; } }; }
 test('PageSpeed validation, errors, normalization and rate limit', async () => {

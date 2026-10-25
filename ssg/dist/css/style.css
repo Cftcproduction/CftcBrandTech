@@ -3314,7 +3314,11 @@ footer
   padding-left: 20px;
   transition: max-height 0.3s ease;
 }
-.mil-footer-menu [data-toolbox-menu] > ul.mil-active { max-height: 180px; }
+.mil-footer-menu [data-toolbox-menu] > ul.mil-active,
+.mil-main-menu [data-toolbox-menu] > ul.mil-active {
+  max-height: min(360px, 45vh);
+  overflow-y: auto;
+}
 .mil-main-menu [data-toolbox-menu] > ul[aria-hidden="true"],
 .mil-footer-menu [data-toolbox-menu] > ul[aria-hidden="true"] { visibility: hidden; }
 .mil-footer-menu [data-toolbox-menu] > ul > li { margin: 16px 0 0; }
