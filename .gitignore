@@ -4,4 +4,6 @@ calc-page.html
 js/plugins/profit-calc.js
 js/plugins/todo.js
 js/plugins/projects.js
+.env
+.env.*
 projects-1.html

@@ -6,6 +6,7 @@ const projectRoot = path.join(__dirname, "..");
 const distRoot = path.join(ssgRoot, "dist");
 
 const SITE_URL = "https://www.cftcbrandtech.com";
+const { tools, renderPage } = require('./tools');
 
 const blogDataPath = path.join(ssgRoot, "data", "blog.json");
 const projectsDataPath = path.join(ssgRoot, "data", "projects.json");
@@ -19,6 +20,7 @@ const blogDistPath = path.join(distRoot, "blog");
 const projectsDistPath = path.join(distRoot, "projects");
 
 const staticPages = [
+  ...[null, ...tools.filter(t => !t.href).map(t => t.slug)].map(slug => ({ source: `araclar/${slug ? `${slug}/` : ''}index.html`, output: `araclar/${slug ? `${slug}/` : ''}index.html`, url: `/araclar/${slug ? `${slug}/` : ''}` })),
   { source: "index.html", output: "index.html", url: "/" },
   { source: "404.html", output: "404.html", url: "/404.html", sitemap: false },
   { source: "team.html", output: "team/index.html", url: "/team/" },
@@ -129,7 +131,7 @@ function removeClientProjectScript(html = "") {
 }
 
 // Add future tools here; both primary and footer menus use this list.
-const freeTools = [{ label: "Image Toolbox", href: "/toolbox/" }];
+const freeTools = [{ label: "Tüm Araçlar", href: "/araclar/" }, ...tools.map(t => ({ label: t.title, href: t.href || `/araclar/${t.slug}/` }))];
 
 function freeToolsMenu(footer = false) {
   const submenuId = footer ? "footer-ucretsiz-araclar" : "menu-ucretsiz-araclar";
@@ -733,6 +735,12 @@ Allow: /
 }
 
 cleanDist();
+// Generate both directly hostable source pages and SSG input pages from one definition.
+for (const slug of [null, ...tools.filter(t => !t.href).map(t => t.slug)]) {
+  const directory = path.join(projectRoot, 'araclar', slug || '');
+  ensureDir(directory);
+  fs.writeFileSync(path.join(directory, 'index.html'), renderPage(slug), 'utf8');
+}
 copyAssets();
 copyStaticHtmlPages();
 buildProjectPages();
