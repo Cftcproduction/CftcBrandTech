@@ -1,0 +1,415 @@
+{
+  "title": "CFTCbrandtech Haftalık Dijital Rapor",
+  "date": "2026-10-26",
+  "summary": "19–25 Ekim 2026 döneminde doğrulanan en önemli ticari gelişmeler Shopify’ın İngiltere KDV hesaplaması (23 Ekim), uluslararası sabit kargo/etiket maliyeti (24 Ekim), stok sayımı (20 Ekim), katalog kampanya planlama (23 Ekim), checkout görünümü (22 Ekim) ve dış yönlendirme güvenliği (20/23 Ekim) güncellemeleridir. Google 21 ve 23 Ekim’de SEO dokümanlarını netleştirdi; bunlar algoritma değişikliği değildir. İncelenen resmî GA4 sürüm listesinde ve Meta reklam duyurularında dönem için ticari etki taşıyan yeni bir genel sürüm doğrulanmadı. Önceden duyurulan ABD iade kargo vergisi 23 Ekim’de devreye girdi; AB €2 işlem ücreti 1 Kasım için ayrı operasyonel uyarıdır.",
+  "key_metrics": [
+    {
+      "name": "Checkout completion rate",
+      "formula": "purchase / begin_checkout",
+      "direction": "higher",
+      "note": "Olay sayısı değil mümkünse benzersiz checkout oturumlarıyla da kontrol edin."
+    },
+    {
+      "name": "Sipariş başına katkı marjı",
+      "formula": "net satış - ürün maliyeti - ödeme komisyonu - reklam atfedilen maliyet - lojistik - iade/değişken giderler - uygulanabilir vergi/ücretler",
+      "direction": "higher",
+      "note": "Vergi tahsilatı ile gerçek işletme giderini karıştırmayın."
+    },
+    {
+      "name": "Stok doğruluk oranı",
+      "formula": "doğru sayılan SKU / kontrol edilen SKU",
+      "direction": "higher"
+    },
+    {
+      "name": "Satın alma ölçüm mutabakatı",
+      "formula": "|GA4 purchase sayısı - mağaza gerçek sipariş sayısı| / mağaza gerçek sipariş sayısı",
+      "direction": "lower",
+      "note": "İade, iptal, zaman dilimi ve consent farkları açıklanmalıdır."
+    },
+    {
+      "name": "Nitelikli CPL",
+      "formula": "Meta harcaması / satış tarafından nitelikli kabul edilen lead",
+      "direction": "lower"
+    },
+    {
+      "name": "Organik ticari dönüşüm",
+      "formula": "organik kaynaklı purchase veya nitelikli lead",
+      "direction": "higher"
+    }
+  ],
+  "insights": [
+    {
+      "id": "I1",
+      "category": "E-ticaret / Vergi",
+      "title": "İngiltere siparişlerinde KDV, seçilen gönderim konumuna göre hesaplanıyor",
+      "date": "2026-10-23",
+      "priority": "P1",
+      "markets": [
+        "İngiltere"
+      ],
+      "audience": "Birleşik Krallık müşterilerine Shopify üzerinden ve birden çok depodan satış yapan mağazalar",
+      "change": "Büyük Britanya teslimatlı, vergi ve kargo öncesi 135 GBP üzerindeki siparişlerde seçilen fulfillment konumu Birleşik Krallık dışındaysa sipariş ithalat olarak ele alınıyor ve checkout aşamasında KDV alınmıyor. 135 GBP ve altı, Kuzey İrlanda ve mevcut siparişler etkilenmiyor.",
+      "importance": "Yanlış depo yönlendirmesi, beklenmedik vergi/ithalat deneyimi ve yanlış checkout tutarı yaratabilir; dönüşüm, destek talebi ve uyumluluğu etkiler.",
+      "test": "İngiltere içi ve dışı fulfillment konumlarıyla 134, 135 ve 136 GBP test sepetleri kurun; Great Britain ve Northern Ireland adresleri için vergi gösterimini, sipariş yönlendirmesini ve gümrük vergisi toplama ayarlarını kontrol edin. Üretimde gerçek sipariş oluşturmadan test ortamı kullanın.",
+      "kpis": [
+        "Vergi hesaplama hata oranı",
+        "Checkout toplamı uyuşmazlığı",
+        "Vergi kaynaklı destek talebi",
+        "Checkout completion rate"
+      ],
+      "decision": "Vergi farkı varsa reklam ölçeklemesinden önce ödeme/vergilendirme yapılandırmasını düzeltin; mali müşavir doğrulaması alın.",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "I2",
+      "category": "E-ticaret / Lojistik",
+      "title": "Managed Markets uluslararası kargoda sabit fiyat ve etiket maliyeti güvencesi sunuyor",
+      "date": "2026-10-24",
+      "priority": "P1",
+      "markets": [
+        "ABD",
+        "İngiltere",
+        "Avrupa"
+      ],
+      "audience": "Managed Markets kullanabilen ve sınır ötesi gönderim yapan Shopify satıcıları",
+      "change": "Uygun mağazalarda hedef pazara göre Standard/Express gönderim ücretleri ve vergi/gümrük dahil fiyatlandırma sunuluyor; belirli FedEx veya DHL Express ön ödemeli etiketlerde sonradan taşıyıcı düzeltmesi için güvence sağlanıyor. Duty-inclusive pricing zorunlu; fiyatlar Managed Markets tarafından belirleniyor.",
+      "importance": "Ödeme sırasında sürpriz kargo bedeli ve sonradan gelen etiket farkı riskini azaltabilir; ancak ürün fiyatına yansıtılan kargo payı marjı etkileyebilir.",
+      "test": "İngiltere, Almanya ve ABD için 3 ağırlık/sepet segmentinde mevcut kargo maliyeti ve Managed Markets önizlemesini karşılaştırın; fiyat, checkout toplamı ve beklenen ödeme tutarını tabloya alın. Uygunluk ve etiket koşullarını doğrulayın.",
+      "kpis": [
+        "Sipariş başına katkı marjı",
+        "Checkout kargo terk oranı",
+        "Kargo maliyeti sapması",
+        "Teslimat süresi"
+      ],
+      "decision": "Marj ve teslimat netliği iyileşirse bir pazarda sınırlı pilot başlatın; otomatik fiyatlandırmanın ürün fiyatını bozmasına izin vermeyin.",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "I3",
+      "category": "E-ticaret / Stok",
+      "title": "Shopify yönetim panelinde yapılandırılmış stok sayımı",
+      "date": "2026-10-20",
+      "priority": "P1",
+      "markets": [
+        "Türkiye",
+        "ABD",
+        "İngiltere",
+        "Avrupa"
+      ],
+      "audience": "Fiziksel stoklu, çok çalışanlı veya çok lokasyonlu uygun Shopify mağazaları",
+      "change": "Planlı sayım, barkodla/manüel giriş, çalışan ataması, çok kullanıcılı kayıt, sapma inceleme ve onay sonrası stok düzeltmesi yönetim panelinde yapılabiliyor.",
+      "importance": "Excel ve manuel sayımlarda oluşan hataları azaltabilir; yanlış stok yüzünden iptal ve kayıp satış riskini düşürebilir.",
+      "test": "En çok satan 30 SKU için sayım yapın. Sistem ve fiziksel stok farkını kaydedin; sayımın onaylanmadan canlı stokları değiştirmediğini ve yetkilerin doğru olduğunu doğrulayın.",
+      "kpis": [
+        "Stok doğruluk oranı",
+        "Stok nedeniyle iptal edilen sipariş",
+        "SKU başına sayım süresi",
+        "Stok farkı değeri"
+      ],
+      "decision": "Hata ve zaman tasarrufu yeterliyse düzenli döngüsel sayım prosedürü oluşturun.",
+      "sources": [
+        "S3"
+      ]
+    },
+    {
+      "id": "I4",
+      "category": "E-ticaret / Kampanya",
+      "title": "Rollouts ile katalog ve pazar bazlı fiyat değişiklikleri zamanlanabiliyor",
+      "date": "2026-10-23",
+      "priority": "P2",
+      "markets": [
+        "ABD",
+        "İngiltere",
+        "Avrupa"
+      ],
+      "audience": "Shopify Rollouts özelliğine erişimi olan çok pazarlı ve kampanya yoğun mağazalar",
+      "change": "Ürün erişilebilirliği ve fiyatlar pazar bazlı kataloglarla planlanabiliyor; kataloglar arası teklif deneyleri ve tema/checkout güncellemeleriyle eşzamanlı yayına alma destekleniyor.",
+      "importance": "Kampanya başlangıç/bitişinde yanlış fiyat ve stok gösterimi riskini azaltabilir; kontrollü fiyat testi yapmayı kolaylaştırır.",
+      "test": "Bir ürün grubunda zamanlanmış katalog geçişini test ortamında prova edin; farklı pazar fiyatlarını ve reklam bağlantılarının açıldığı sayfayı kontrol edin. Yeterli trafik varsa ayrıştırılmış fiyat testi yapın.",
+      "kpis": [
+        "Yanlış fiyatlı sipariş sayısı",
+        "Kampanya kurulum süresi",
+        "Katkı marjı",
+        "Satın alma dönüşüm oranı"
+      ],
+      "decision": "Önce fiyat doğruluğu ve geri alma süreci doğrulansın; dönüşüm kazancı için yeterli örneklem olmadan fiyat stratejisi değiştirilmesin.",
+      "sources": [
+        "S4"
+      ]
+    },
+    {
+      "id": "I5",
+      "category": "Web / UX",
+      "title": "Checkout ödeme yöntemleri için yeni kutucuk görünümü",
+      "date": "2026-10-22",
+      "priority": "P2",
+      "markets": [
+        "ABD",
+        "İngiltere",
+        "Avrupa"
+      ],
+      "audience": "Özelliğin etkin olduğu Shopify checkout kullanan mağazalar",
+      "change": "Uygun yapılandırmalarda, özellikle dört veya daha az ödeme yöntemi olduğunda, yöntemler kompakt kutucuk görünümünde sunulabiliyor; diğer durumlarda liste görünümü korunuyor.",
+      "importance": "Ödeme seçiminin anlaşılabilirliğini değiştirebilir; olumlu veya olumsuz etki gerçek checkout verileriyle doğrulanmalı.",
+      "test": "Mobil ve masaüstünde 1, 2, 4 ve 5 ödeme yöntemi senaryolarını kontrol edin. Gerçek bir A/B aracı varsa ödeme seçimi ve checkout bitirme davranışını karşılaştırın; yoksa önce kullanılabilirlik testi yapın.",
+      "kpis": [
+        "Ödeme adımı terk oranı",
+        "Checkout completion rate",
+        "Ödeme yöntemi seçim süresi",
+        "Ödeme hatası"
+      ],
+      "decision": "Görsel değişikliği otomatik dönüşüm artışı olarak raporlamayın.",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "I6",
+      "category": "Web / UX / Güvenlik",
+      "title": "Shopify mağaza dışı bağlantı güvenlik davranışını 23 Ekim’de daralttı",
+      "date": "2026-10-20",
+      "updated": "2026-10-23",
+      "priority": "P2",
+      "markets": [
+        "Türkiye",
+        "ABD",
+        "İngiltere",
+        "Avrupa"
+      ],
+      "audience": "Shopify mağazalarından dış ödeme, WhatsApp, kampanya ve üçüncü taraf sayfalarına bağlantı veren işletmeler",
+      "change": "İlk duyuruda dış bağlantılarda onay ekranı tarif edildi; 23 Ekim güncellemesiyle yalnızca kötü amaçlı olduğu belirlenen bağlantılar engelleniyor, şüpheli olanlarda onay isteniyor, diğer bağlantılar doğrudan açılıyor.",
+      "importance": "Dış bağlantı akışları ve yönlendirme sürtünmesi etkilenebilir. İlk duyuruyu nihai davranış gibi yorumlamak hatalı olur.",
+      "test": "Kritik dış bağlantıları gerçek cihazlarda test edin; bağlı olmayan markaya ait alan adları, WhatsApp, ödeme sağlayıcısı ve destek bağlantıları için yönlendirme başarı oranını kontrol edin.",
+      "kpis": [
+        "Dış bağlantı tıklama→varış oranı",
+        "Yönlendirme hata oranı",
+        "Destek talebi",
+        "Harici ödeme dönüşümü"
+      ],
+      "decision": "Sorun yoksa müdahale etmeyin; engellenen bağlantılarda önce alan adı güvenliğini inceleyin.",
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "id": "I7",
+      "category": "E-ticaret / ABD Vergi",
+      "title": "ABD iade kargo ücretlerinde vergi hesaplama değişikliği yürürlüğe girdi",
+      "date": "2026-10-23",
+      "priority": "P2",
+      "markets": [
+        "ABD"
+      ],
+      "audience": "Shopify Tax veya Tax Platform kullanan ve ABD adreslerine gönderim yapan mağazalar",
+      "change": "25 Eylül’de duyurulan düzenleme 23 Ekim’de uygulanmaya başladı: uygun iade kargo ücretlerinde vergi hesaplanıp raporlanıyor; eyalet bazlı vergisiz kargo ayarları korunuyor.",
+      "importance": "Manuel vergi çözümleri kullanan mağazalarda çift hesaplama ve mutabakat hatası oluşabilir.",
+      "test": "Vergili ve vergisiz kargo ayarları olan iki eyalet için örnek iade işleyin; iade kargo vergisi, net geri ödeme ve muhasebe kayıtlarını karşılaştırın.",
+      "kpis": [
+        "İade vergisi mutabakat farkı",
+        "Çift vergi vakası",
+        "İade işlem süresi"
+      ],
+      "decision": "Manuel workaround varsa kapatmadan önce muhasebe ve vergi danışmanıyla doğrulayın.",
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "id": "I8",
+      "category": "SEO",
+      "title": "Google URL ve arama görünürlüğü kontrol dokümanlarını güncelledi",
+      "date": "2026-10-23",
+      "priority": "P3",
+      "markets": [
+        "Türkiye",
+        "ABD",
+        "İngiltere",
+        "Avrupa"
+      ],
+      "audience": "URL mimarisi karmaşık, indekslenme sorunu yaşayan veya AI arama görünürlüğü kontrolü gereken siteler",
+      "change": "21 Ekim’de robots meta, data-nosnippet, X-Robots-Tag ve AI arama kontrolü belgeleri mevcut seçenekleri daha açık listeleyecek şekilde güncellendi. 23 Ekim’de taranabilir URL yapısında tire/alt çizgiyle kelime ayrımına ilişkin açıklama netleştirildi. Yeni algoritma duyurusu değildir.",
+      "importance": "Yanlış noindex/nosnippet kuralları organik görünürlüğü sınırlayabilir; sırf belge değişti diye URL göçü yapmak risklidir.",
+      "test": "İlk 20 gelir getiren URL’de indexability, canonical, robots, snippet kontrollerini doğrulayın. URL’leri topluca değiştirmeyin; yeni sayfalarda tutarlı URL adlandırma standardı kullanın.",
+      "kpis": [
+        "İndekslenebilir ticari URL oranı",
+        "Organik gelir",
+        "Organik tıklama",
+        "Hatalı engellenmiş URL sayısı"
+      ],
+      "decision": "Yalnızca gerçek teknik sorun saptanırsa düzeltme yapın.",
+      "sources": [
+        "S8"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "day": "Pazartesi 26 Ekim",
+      "task": "İngiltere Shopify mağazalarında 135 GBP eşiği ve fulfillment yönlendirmesi için checkout/KDV testleri; uygunsuzluğu canlıya dokunmadan düzeltme planı.",
+      "owner": "E-ticaret + muhasebe",
+      "deliverable": "Vergi senaryo matrisi",
+      "kpis": [
+        "Vergi hesaplama hatası",
+        "Checkout completion rate"
+      ]
+    },
+    {
+      "priority": "P1",
+      "day": "Salı 27 Ekim",
+      "task": "AB’ye doğrudan gönderim yapan müşterilerde 1 Kasım €2 işlem ücreti için ürün başına maliyet simülasyonu; gümrük müşavirinden kapsam teyidi. Bu önceki haftanın duyurusuna dayalı yaklaşan tarihtir.",
+      "owner": "Finans + lojistik",
+      "deliverable": "20 SKU kârlılık tablosu",
+      "kpis": [
+        "Sipariş katkı marjı",
+        "Toplam teslim edilmiş maliyet"
+      ]
+    },
+    {
+      "priority": "P1",
+      "day": "Çarşamba 28 Ekim",
+      "task": "Stok sayım pilotu: 30 SKU sayımı, yetki ve onay akışı, stok farkları; Shopify dışı mağazalarda eşdeğer manuel kontrol.",
+      "owner": "Operasyon",
+      "deliverable": "Stok farkı ve zaman tasarrufu raporu",
+      "kpis": [
+        "Stok doğruluk oranı",
+        "Stok kaynaklı iptal"
+      ]
+    },
+    {
+      "priority": "P2",
+      "day": "Perşembe 29 Ekim",
+      "task": "Shopify Rollouts erişimi varsa kampanya katalog geçişi provası ve fiyat doğrulama; Meta Ads için doğrulanmış yeni duyuru yok, mevcut kreatif ve landing page ölçümünü kontrol edin.",
+      "owner": "Performance + e-ticaret",
+      "deliverable": "Kampanya kalite kontrol listesi",
+      "kpis": [
+        "Yanlış fiyat sayısı",
+        "Nitelikli CPL/CPA"
+      ]
+    },
+    {
+      "priority": "P2",
+      "day": "Cuma 30 Ekim",
+      "task": "Mobil checkout ödeme yöntemi ve dış bağlantı testleri; GA4 purchase event ile gerçek siparişleri mutabık hale getirme.",
+      "owner": "Web/CRO + Analytics",
+      "deliverable": "Dönüşüm hunisi hata listesi",
+      "kpis": [
+        "Checkout completion",
+        "Purchase mutabakat farkı",
+        "Yönlendirme başarı oranı"
+      ]
+    },
+    {
+      "priority": "P2",
+      "day": "Cumartesi 31 Ekim",
+      "task": "Sınır ötesi gönderim için Managed Markets uygunluğu ve 3 ülke/3 sepet maliyet karşılaştırması; test yoksa yapılmadı olarak raporlayın.",
+      "owner": "Lojistik + finans",
+      "deliverable": "Kargo fiyat ve marj simülasyonu",
+      "kpis": [
+        "Kargo maliyeti sapması",
+        "Katkı marjı"
+      ]
+    },
+    {
+      "priority": "P1",
+      "day": "Pazar 1 Kasım",
+      "task": "AB ücretinin yürürlük durumunu resmî kaynaktan yeniden doğrulayın, kapsam dahilindeki ürün fiyatlarını ve kargo maliyetlerini kontrol edin; haftalık karar raporu.",
+      "owner": "Yönetim",
+      "deliverable": "Devam/iyileştir/durdur karar tablosu",
+      "kpis": [
+        "Katkı marjı",
+        "Sipariş başına kâr"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Shopify — More accurate UK VAT based on fulfillment location",
+      "publisher": "Shopify",
+      "published": "2026-10-23",
+      "url": "https://changelog.shopify.com/posts/more-accurate-uk-vat-based-on-fulfillment-location",
+      "copyright_note": "Resmî duyurunun olguları özgün Türkçe anlatımla özetlendi; metin ve görseller kopyalanmadı."
+    },
+    {
+      "id": "S2",
+      "title": "Shopify — Guaranteed flat-rate shipping, now with Managed Markets",
+      "publisher": "Shopify",
+      "published": "2026-10-24",
+      "url": "https://changelog.shopify.com/posts/guaranteed-flat-rate-shipping-now-in-managed-markets",
+      "copyright_note": "Olgular yeniden ifade edildi; ekran görüntüsü veya görsel alınmadı."
+    },
+    {
+      "id": "S3",
+      "title": "Shopify — Create, manage and review stock counts in Shopify admin",
+      "publisher": "Shopify",
+      "published": "2026-10-20",
+      "url": "https://changelog.shopify.com/posts/create-manage-and-review-stock-counts-in-shopify-admin",
+      "copyright_note": "Kısa olgusal özet ve özgün test önerileri; kopyalanmış içerik yok."
+    },
+    {
+      "id": "S4",
+      "title": "Shopify — Schedule and test catalog changes with Rollouts",
+      "publisher": "Shopify",
+      "published": "2026-10-23",
+      "url": "https://changelog.shopify.com/posts/schedule-and-test-catalog-changes-with-rollouts",
+      "copyright_note": "Kısa olgusal özet; ticari yorum ve testler özgündür."
+    },
+    {
+      "id": "S5",
+      "title": "Shopify — Refreshed payment method design in checkout",
+      "publisher": "Shopify",
+      "published": "2026-10-22",
+      "url": "https://changelog.shopify.com/posts/refreshed-payment-method-design-in-checkout",
+      "copyright_note": "Resmî olgular yeniden yazıldı; görsel kopyalanmadı."
+    },
+    {
+      "id": "S6",
+      "title": "Shopify — New protection against unexpected redirects (23 Ekim revizyonu)",
+      "publisher": "Shopify",
+      "published": "2026-10-20",
+      "updated": "2026-10-23",
+      "url": "https://changelog.shopify.com/posts/new-protection-against-unexpected-redirects",
+      "copyright_note": "Değişiklik ve düzeltme özgün anlatımla özetlendi."
+    },
+    {
+      "id": "S7",
+      "title": "Shopify — Tax is now calculated on return shipping fees",
+      "publisher": "Shopify",
+      "published": "2026-09-25",
+      "effective": "2026-10-23",
+      "url": "https://changelog.shopify.com/posts/tax-is-now-calculated-on-return-shipping-fees",
+      "copyright_note": "Önceki duyurunun bu hafta yürürlüğe giren etkisi aktarıldı; alıntı yapılmadı."
+    },
+    {
+      "id": "S8",
+      "title": "Google Search Central — Latest documentation updates",
+      "publisher": "Google",
+      "published": "2026-10-23",
+      "url": "https://developers.google.com/search/updates",
+      "copyright_note": "21 ve 23 Ekim kayıtlarının olgusal özeti; yeni algoritma iddiası yok."
+    },
+    {
+      "id": "S9",
+      "title": "Google Analytics — What’s new in Google Analytics",
+      "publisher": "Google",
+      "published": "2026-10-05",
+      "url": "https://support.google.com/analytics/answer/9164320?hl=en",
+      "copyright_note": "Resmî sürüm listesinin incelendiği belirtilir; içerik kopyalanmadı."
+    },
+    {
+      "id": "S10",
+      "title": "EU Customs Reform — Union handling fee guidance",
+      "publisher": "European Commission",
+      "published": "2026-10-07",
+      "effective": "2026-11-01",
+      "url": "https://taxation-customs.ec.europa.eu/customs/eu-customs-reform_en",
+      "copyright_note": "Önceki duyurunun yaklaşan tarihi için kısa olgusal özet; mevzuat tavsiyesi değildir."
+    }
+  ],
+  "copyright_notes": "Rapor özgün Türkçe analiz ve test planıdır. Resmî kaynaklardan yalnızca doğrulanabilir olgular kısa biçimde yeniden ifade edilmiştir. Uzun metin, ekran görüntüsü veya izinsiz görsel kopyalanmamıştır. Kaynaklar bağlantı ve tarihleriyle listelenmiştir. Platform özelliklerinin erişimi ülke, plan ve hesaba göre değişebilir; finansal ve hukuki değerlendirmeler uzman teyidi gerektirir. Raporlanan KPI hedefleri test önerisidir, gerçekleşmiş sonuç değildir."
+}
