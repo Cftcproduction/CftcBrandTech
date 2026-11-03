@@ -37,7 +37,12 @@
         <div id="custom-ratio" class="two-fields" hidden><label>En<input id="ratio-w" type="number" min="1" max="1000" value="1"></label><label>Boy<input id="ratio-h" type="number" min="1" max="1000" value="1"></label></div>
         <details class="precise"><summary>Hassas kırpma <span>px</span></summary><div class="two-fields"><label>Genişlik<input id="crop-w" type="number" min="1" value="1" disabled></label><label>Yükseklik<input id="crop-h" type="number" min="1" value="1" disabled></label><label>X<input id="crop-x" type="number" min="0" value="0" disabled></label><label>Y<input id="crop-y" type="number" min="0" value="0" disabled></label></div></details>
       </section>
-      <section class="setting-section output-section"><div class="section-heading"><h2><i data-lucide="sliders-horizontal"></i> Çıktı ayarları</h2><span>02</span></div>
+      <section class="setting-section radius-section"><div class="section-heading"><h2><i data-lucide="square"></i> Köşe yuvarlama</h2><span>02</span></div>
+        <div class="quality-row"><label for="radius">Radius</label><output id="radius-value">0<span>%</span></output></div>
+        <input id="radius" type="range" min="0" max="50" value="0" step="1" disabled aria-label="Köşe yuvarlama yüzdesi"><div class="range-labels"><span>Kare</span><span>Tam yuvarlak</span></div>
+        <p class="field-hint">PNG, WEBP ve AVIF çıktılarında köşeler şeffaf kalır. JPG’de seçilen arka plan kullanılır.</p>
+      </section>
+      <section class="setting-section output-section"><div class="section-heading"><h2><i data-lucide="sliders-horizontal"></i> Çıktı ayarları</h2><span>03</span></div>
         <span class="field-label">Format</span><div class="format-picker" role="group" aria-label="Çıktı formatı"><button class="selected" data-format="webp" aria-pressed="true">WEBP</button><button data-format="png" aria-pressed="false">PNG</button><button data-format="jpg" aria-pressed="false">JPG</button><button data-format="avif" aria-pressed="false">AVIF</button></div><p class="field-hint" id="format-info">Küçük dosyalar, şeffaf arka plan desteği.</p>
         <div class="quality-row"><label for="quality">Kalite</label><output id="quality-value">85<span>%</span></output></div><input id="quality" type="range" min="1" max="100" value="85"><div class="range-labels"><span>Daha küçük dosya</span><span>Daha yüksek kalite</span></div>
         <label class="checkbox-row" id="lossless-row"><input type="checkbox" id="lossless"><span>Kayıpsız sıkıştırma</span></label>

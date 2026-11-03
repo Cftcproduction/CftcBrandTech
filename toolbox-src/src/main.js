@@ -1,9 +1,9 @@
 import './style.css';
 import './workspace.css';
 import './brand-theme.css';
-import {createIcons,Blocks,Image as ImageIcon,ShieldCheck,CircleHelp,ArrowUpRight,Plus,Scan,FolderOpen,ArrowRight,Upload,RotateCw,FlipHorizontal2,Undo2,Crop,Layers2,Sparkles,SlidersHorizontal,Download,Archive,LockKeyhole,KeyRound,X} from 'lucide';
-import {decodeImage,canvas,oriented,integerCrop,outputDimensions,exportImage,stopCodec} from './images.js';
-const icons={Blocks,Image:ImageIcon,ShieldCheck,CircleHelp,ArrowUpRight,Plus,Scan,FolderOpen,ArrowRight,Upload,RotateCw,FlipHorizontal2,Undo2,Crop,Layers2,Sparkles,SlidersHorizontal,Download,Archive,LockKeyhole,KeyRound,X};
+import {createIcons,Blocks,Image as ImageIcon,ShieldCheck,CircleHelp,ArrowUpRight,Plus,Scan,FolderOpen,ArrowRight,Upload,RotateCw,FlipHorizontal2,Undo2,Crop,Layers2,Sparkles,SlidersHorizontal,Download,Archive,LockKeyhole,KeyRound,Square,X} from 'lucide';
+import {decodeImage,canvas,oriented,integerCrop,outputDimensions,exportImage,stopCodec,radiusPixels,roundedRectPath} from './images.js';
+const icons={Blocks,Image:ImageIcon,ShieldCheck,CircleHelp,ArrowUpRight,Plus,Scan,FolderOpen,ArrowRight,Upload,RotateCw,FlipHorizontal2,Undo2,Crop,Layers2,Sparkles,SlidersHorizontal,Download,Archive,LockKeyhole,KeyRound,Square,X};
 const $=selector=>document.querySelector(selector), $$=selector=>[...document.querySelectorAll(selector)];
 const iconize=()=>createIcons({icons});iconize();
 let items=[],selected=null,original=null,view=null,busy=false,canceled=false,format='webp',drawMode=false,drag=null,toastTimer;
@@ -15,14 +15,14 @@ function toast(text){clearTimeout(toastTimer);$('#toast').textContent=text;$('#t
 function enable(){
   const valid=!!selected&&!!view;
   $('#add-top').disabled=busy;$('#clear').disabled=busy||!items.length;$('#files').disabled=busy;
-  for(const id of ['reset','apply-crop','export-one'])$('#'+id).disabled=busy||!valid;
+  for(const id of ['reset','apply-crop','export-one','radius'])$('#'+id).disabled=busy||!valid;
   for(const id of ['rotate','mirror','new-crop','ratio-lock','ratio','crop-w','crop-h','crop-x','crop-y'])$('#'+id).disabled=busy||!valid||!!selected?.preview;
   $$('[data-ratio]').forEach(b=>b.disabled=busy||!valid||!!selected?.preview);
   $('#export-all').disabled=busy||!items.length;
   for(const element of $$('.settings input,.settings select,.format-picker button')){
-    if(!['ratio','crop-w','crop-h','crop-x','crop-y'].includes(element.id))element.disabled=busy||(['ratio-w','ratio-h'].includes(element.id)&&!!selected?.preview);
+    if(!['ratio','crop-w','crop-h','crop-x','crop-y','radius'].includes(element.id))element.disabled=busy||(['ratio-w','ratio-h'].includes(element.id)&&!!selected?.preview);
   }
-  updateFormat();syncLock();syncPreview();editor.style.pointerEvents=busy||selected?.preview?'none':'auto';$('#dropzone').setAttribute('aria-disabled',String(busy));
+  updateFormat();syncLock();syncRadius();syncPreview();editor.style.pointerEvents=busy||selected?.preview?'none':'auto';$('#dropzone').setAttribute('aria-disabled',String(busy));
 }
 function syncPreview(){
   const preview=!!selected?.preview;
@@ -59,6 +59,11 @@ function syncRatio(){
   $('#ratio-w').value=selected?.custom[0]||1;$('#ratio-h').value=selected?.custom[1]||1;
   $$('[data-ratio]').forEach(b=>b.classList.toggle('selected',b.dataset.ratio===selected?.ratio));
   syncLock();
+}
+function syncRadius(){
+  const value=clamp(Number(selected?.radius)||0,0,50);
+  if(selected)selected.radius=value;
+  $('#radius').value=String(value);$('#radius-value').innerHTML=`${value}<span>%</span>`;
 }
 function cropChanged(){
   if(!selected||!view)return;
@@ -121,7 +126,7 @@ async function addFiles(fileList){
       const image=await decodeImage(file),factor=Math.min(1,200/Math.max(image.width,image.height));
       const thumb=canvas(Math.max(1,Math.round(image.width*factor)),Math.max(1,Math.round(image.height*factor)));thumb.getContext('2d').drawImage(image,0,0,thumb.width,thumb.height);
       const blob=await new Promise(resolve=>thumb.toBlob(resolve,'image/png'));
-      items.push({id:crypto.randomUUID(),file,thumb:URL.createObjectURL(blob),turns:0,flip:false,ratio:'free',custom:[1,1],crop:{x:0,y:0,w:image.width,h:image.height}});
+      items.push({id:crypto.randomUUID(),file,thumb:URL.createObjectURL(blob),turns:0,flip:false,ratio:'free',custom:[1,1],radius:0,crop:{x:0,y:0,w:image.width,h:image.height}});
       image.close?.();added++;renderQueue();
     }catch(error){errors.push(`${file.name}: ${error.message}`);}
   }
@@ -144,7 +149,8 @@ $('#ratio').onchange=e=>applyRatio(e.target.value);$$('[data-ratio]').forEach(b=
 for(const id of ['ratio-w','ratio-h'])$('#'+id).onchange=()=>applyRatio('custom');
 $$('[data-format]').forEach(b=>b.onclick=()=>{format=b.dataset.format;updateFormat();});
 $('#quality').oninput=updateFormat;$('#lossless').onchange=updateFormat;$('#max-edge').oninput=cropChanged;
-function transform(reset=false){if(!selected||busy)return;selected.preview=false;if(view)view.width=view.height=1;view=oriented(original,selected);selected.crop={x:0,y:0,w:view.width,h:view.height};if(reset)selected.ratio='free';else fitCropToRatio();syncRatio();enable();$('#image-meta').textContent=`${number(view.width)} × ${number(view.height)} · ${sizeText(selected.file.size)}`;cropChanged();}
+$('#radius').oninput=e=>{if(!selected||busy)return;selected.radius=clamp(Number(e.target.value)||0,0,50);syncRadius();draw();};
+function transform(reset=false){if(!selected||busy)return;selected.preview=false;if(view)view.width=view.height=1;view=oriented(original,selected);selected.crop={x:0,y:0,w:view.width,h:view.height};if(reset){selected.ratio='free';selected.radius=0;}else fitCropToRatio();syncRatio();syncRadius();enable();$('#image-meta').textContent=`${number(view.width)} × ${number(view.height)} · ${sizeText(selected.file.size)}`;cropChanged();}
 $('#rotate').onclick=()=>{selected.turns=(selected.turns+1)%4;transform();};$('#mirror').onclick=()=>{selected.flip=!selected.flip;transform();};$('#reset').onclick=()=>{selected.turns=0;selected.flip=false;transform(true);};
 $('#new-crop').onclick=()=>{drawMode=!drawMode;$('#new-crop').classList.toggle('active',drawMode);toast(drawMode?'Görselin üzerinde sürükleyerek yeni bir alan çiz.':'Kırpma alanını taşıyabilirsin.');};
 for(const key of ['x','y','w','h'])$('#crop-'+key).onchange=()=>{
@@ -163,7 +169,7 @@ function draw(){
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const g=geometry(),c=selected.crop;
   ctx.save();ctx.beginPath();ctx.rect(g.x,g.y,g.w,g.h);ctx.clip();
   for(let y=g.y;y<g.y+g.h;y+=12)for(let x=g.x;x<g.x+g.w;x+=12){ctx.fillStyle=(Math.round((x-g.x)/12)+Math.round((y-g.y)/12))%2?'#2b2b2b':'#202020';ctx.fillRect(x,y,12,12);}
-  if(selected.preview){const crop=integerCrop(c,view.width,view.height);ctx.drawImage(view,crop.x,crop.y,crop.w,crop.h,g.x,g.y,g.w,g.h);ctx.restore();return;}
+  if(selected.preview){const crop=integerCrop(c,view.width,view.height);ctx.save();roundedRectPath(ctx,g.x,g.y,g.w,g.h,radiusPixels(selected.radius,g.w,g.h));ctx.clip();ctx.drawImage(view,crop.x,crop.y,crop.w,crop.h,g.x,g.y,g.w,g.h);ctx.restore();ctx.restore();return;}
   ctx.drawImage(view,g.x,g.y,g.w,g.h);
   const r={x:g.x+c.x*g.scale,y:g.y+c.y*g.scale,w:c.w*g.scale,h:c.h*g.scale};
   ctx.fillStyle='#00000099';ctx.beginPath();ctx.rect(g.x,g.y,g.w,g.h);ctx.rect(r.x,r.y,r.w,r.h);ctx.fill('evenodd');

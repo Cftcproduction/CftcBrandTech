@@ -58,13 +58,23 @@ export function outputDimensions(crop,maxEdge) {
   const factor=maxEdge?Math.min(1,maxEdge/Math.max(crop.w,crop.h)):1;
   return [Math.max(1,Math.round(crop.w*factor)),Math.max(1,Math.round(crop.h*factor))];
 }
+export function radiusPixels(value,width,height) {
+  const percent=Math.max(0,Math.min(50,Number(value)||0));
+  return Math.min(width,height)/2*(percent/50);
+}
+export function roundedRectPath(ctx,x,y,w,h,r) {
+  const radius=Math.max(0,Math.min(Math.min(w,h)/2,r));
+  ctx.beginPath();
+  if(!radius){ctx.rect(x,y,w,h);return;}
+  ctx.moveTo(x+radius,y);ctx.arcTo(x+w,y,x+w,y+h,radius);ctx.arcTo(x+w,y+h,x,y+h,radius);ctx.arcTo(x,y+h,x,y,radius);ctx.arcTo(x,y,x+w,y,radius);ctx.closePath();
+}
 export async function exportImage(item,options) {
   const original=await decodeImage(item.file);
   const source=oriented(original,item);original.close?.();
   const crop=integerCrop(item.crop,source.width,source.height);
   const [w,h]=outputDimensions(crop,options.maxEdge),out=canvas(w,h),ctx=out.getContext('2d');
   if(options.format==='jpg'){ctx.fillStyle=options.matte;ctx.fillRect(0,0,w,h);}
-  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(source,crop.x,crop.y,crop.w,crop.h,0,0,w,h);source.width=source.height=1;
+  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.save();roundedRectPath(ctx,0,0,w,h,radiusPixels(item.radius,w,h));ctx.clip();ctx.drawImage(source,crop.x,crop.y,crop.w,crop.h,0,0,w,h);ctx.restore();source.width=source.height=1;
   let blob;
   if(['avif','webp'].includes(options.format)) {
     const data=ctx.getImageData(0,0,w,h);out.width=out.height=1;
