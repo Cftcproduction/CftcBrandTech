@@ -69,7 +69,8 @@ function cropChanged(){
   if(!selected||!view)return;
   const c=integerCrop(selected.crop,view.width,view.height);
   for(const key of ['x','y','w','h'])$('#crop-'+key).value=c[key];
-  const [w,h]=outputDimensions(c,Number($('#max-edge').value)||0);
+  const width=Number($('#output-width').value)||0,height=Number($('#output-height').value)||0;
+  const [w,h]=width&&height?[width,height]:outputDimensions(c,0);
   $('#output-size').textContent=`${number(w)} × ${number(h)} px`;
   $('#canvas-badge').textContent=`${selected.preview?'Kırpılmış · ':''}${number(c.w)} × ${number(c.h)} px`;
   $('#crop-hint').textContent=selected.preview?'Kırpma uygulandı. Sonucu görüyorsun.':'Köşelerden boyutlandır, içinden tutup taşı.';
@@ -148,7 +149,17 @@ $('#clear').onclick=()=>{if(busy)return;for(const item of items)URL.revokeObject
 $('#ratio').onchange=e=>applyRatio(e.target.value);$$('[data-ratio]').forEach(b=>b.onclick=()=>applyRatio(b.dataset.ratio));
 for(const id of ['ratio-w','ratio-h'])$('#'+id).onchange=()=>applyRatio('custom');
 $$('[data-format]').forEach(b=>b.onclick=()=>{format=b.dataset.format;updateFormat();});
-$('#quality').oninput=updateFormat;$('#lossless').onchange=updateFormat;$('#max-edge').oninput=cropChanged;
+$('#quality').oninput=updateFormat;$('#lossless').onchange=updateFormat;
+function resolutionChanged(source){
+  if(!selected||busy||!view)return;
+  const crop=integerCrop(selected.crop,view.width,view.height),ratio=crop.w/crop.h;
+  let value=clamp(Number($('#output-'+source).value)||0,1,16000);
+  if(!value){$('#output-width').value='';$('#output-height').value='';cropChanged();return;}
+  if(source==='width')$('#output-height').value=String(clamp(Math.round(value/ratio),1,16000));
+  else $('#output-width').value=String(clamp(Math.round(value*ratio),1,16000));
+  cropChanged();
+}
+$('#output-width').oninput=()=>resolutionChanged('width');$('#output-height').oninput=()=>resolutionChanged('height');
 $('#radius').oninput=e=>{if(!selected||busy)return;selected.radius=clamp(Number(e.target.value)||0,0,50);syncRadius();draw();};
 function transform(reset=false){if(!selected||busy)return;selected.preview=false;if(view)view.width=view.height=1;view=oriented(original,selected);selected.crop={x:0,y:0,w:view.width,h:view.height};if(reset){selected.ratio='free';selected.radius=0;}else fitCropToRatio();syncRatio();syncRadius();enable();$('#image-meta').textContent=`${number(view.width)} × ${number(view.height)} · ${sizeText(selected.file.size)}`;cropChanged();}
 $('#rotate').onclick=()=>{selected.turns=(selected.turns+1)%4;transform();};$('#mirror').onclick=()=>{selected.flip=!selected.flip;transform();};$('#reset').onclick=()=>{selected.turns=0;selected.flip=false;transform(true);};
@@ -199,8 +210,8 @@ editor.onpointerup=finishDrag;editor.onpointercancel=finishDrag;
 function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);}
 async function doExport(all){
   if(busy||!items.length||(!all&&!selected))return;
-  const maxEdge=Number($('#max-edge').value)||0;if(maxEdge<0||maxEdge>16000){status('En uzun kenar 1–16.000 px arasında olmalı; orijinal boyut için boş bırak.',true);return;}
-  const options={format,quality:Number($('#quality').value),lossless:$('#lossless').checked,matte:$('#matte').value,maxEdge};
+  const width=Number($('#output-width').value)||0,height=Number($('#output-height').value)||0;if(width<0||height<0||width>16000||height>16000||(width&&!height)||(!width&&height)){status('Çözünürlük genişlik ve yükseklik olarak 1–16.000 px arasında olmalı.',true);return;}
+  const options={format,quality:Number($('#quality').value),lossless:$('#lossless').checked,matte:$('#matte').value,maxEdge,width:Number($('#output-width').value)||0,height:Number($('#output-height').value)||0};
   const targets=(all?items:[selected]).map(i=>({...i,crop:{...i.crop}}));const results=[],errors=[],names=new Set();
   canceled=false;busy=true;enable();renderQueue();$('#progress').hidden=false;$('#progress div').style.width='0%';$('#cancel').hidden=false;
   try{

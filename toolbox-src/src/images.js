@@ -72,7 +72,7 @@ export async function exportImage(item,options) {
   const original=await decodeImage(item.file);
   const source=oriented(original,item);original.close?.();
   const crop=integerCrop(item.crop,source.width,source.height);
-  const [w,h]=outputDimensions(crop,options.maxEdge),out=canvas(w,h),ctx=out.getContext('2d');
+  const [w,h]=options.width&&options.height?[options.width,options.height]:outputDimensions(crop,options.maxEdge),out=canvas(w,h),ctx=out.getContext('2d');
   if(options.format==='jpg'){ctx.fillStyle=options.matte;ctx.fillRect(0,0,w,h);}
   ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.save();roundedRectPath(ctx,0,0,w,h,radiusPixels(item.radius,w,h));ctx.clip();ctx.drawImage(source,crop.x,crop.y,crop.w,crop.h,0,0,w,h);ctx.restore();source.width=source.height=1;
   let blob;
