@@ -211,7 +211,7 @@ function download(blob,name){const url=URL.createObjectURL(blob),a=document.crea
 async function doExport(all){
   if(busy||!items.length||(!all&&!selected))return;
   const width=Number($('#output-width').value)||0,height=Number($('#output-height').value)||0;if(width<0||height<0||width>16000||height>16000||(width&&!height)||(!width&&height)){status('Çözünürlük genişlik ve yükseklik olarak 1–16.000 px arasında olmalı.',true);return;}
-  const options={format,quality:Number($('#quality').value),lossless:$('#lossless').checked,matte:$('#matte').value,maxEdge,width:Number($('#output-width').value)||0,height:Number($('#output-height').value)||0};
+  const options={format,quality:Number($('#quality').value),lossless:$('#lossless').checked,matte:$('#matte').value,maxEdge:0,width:Number($('#output-width').value)||0,height:Number($('#output-height').value)||0};
   const targets=(all?items:[selected]).map(i=>({...i,crop:{...i.crop}}));const results=[],errors=[],names=new Set();
   canceled=false;busy=true;enable();renderQueue();$('#progress').hidden=false;$('#progress div').style.width='0%';$('#cancel').hidden=false;
   try{
