@@ -1,0 +1,30 @@
+{
+  "title": "CFTCbrandtech Haftalık Dijital Rapor",
+  "date": "2026-11-09",
+  "summary": "2–8 Kasım 2026 döneminde resmî kaynaklarla doğrulanabilen dört Shopify gelişmesi öne çıktı: uygulama izinleri ve güvenlik görünürlüğü, Fransa'da Cartes Bancaires desteği, Shopify POS kasa akışının hızlandırılması ve beş yerel ödeme yönteminin eklenmesi. SEO, GA4 ve Meta Ads tarafında genel KOBİ/e-ticaret kampanyalarını değiştirecek yeni ve yüksek etkili resmî bir duyuru doğrulanmadı.",
+  "key_metrics": [
+    {"metric":"API ve webhook hata oranı","purpose":"Shopify uygulama entegrasyon sağlığı","target":"İzin ve entegrasyon kaynaklı hataları görünür kılmak"},
+    {"metric":"GA4–sipariş gelir farkı","purpose":"Satın alma ölçümünün güvenilirliği","target":"Mağaza siparişleriyle ölçüm farkını açıklamak"},
+    {"metric":"Ödeme onay oranı","purpose":"Yerel ödeme yöntemlerinin işlem başarısı","target":"Desteklenen pazarlarda ödeme başarısını karşılaştırmak"},
+    {"metric":"Checkout tamamlanma oranı","purpose":"Mobil ve POS ödeme deneyimi","target":"Akış değişikliklerinin dönüşüm etkisini ölçmek"}
+  ],
+  "insights": [
+    {"category":"Güvenlik / Entegrasyon","title":"Shopify uygulama erişimi ve güvenlik görünürlüğü","date":"2026-11-05","priority":"P1","markets":["Türkiye","ABD","İngiltere","Avrupa"],"change":"Shopify, uygulamaların hassas veri izinlerini ve güvenlik durumunu daha görünür biçimde denetlemeye yardımcı olan uygulama erişimi ve güvenlik görünürlüğü geliştirmelerini duyurdu.","why_it_matters":"Üçüncü taraf uygulamaların gereğinden geniş izinleri entegrasyon güvenilirliği, veri güvenliği ve operasyonel süreklilik riski yaratabilir.","test":"Kullanılan tüm Shopify uygulamalarını izin kapsamı, son kullanım ve hata kayıtlarıyla envanterle; kritik webhook ve API çağrılarını test mağazasında doğrula.","kpis":["API hata oranı","Webhook hata oranı","Gereksiz hassas izin sayısı"],"source_url":"https://changelog.shopify.com/"},
+    {"category":"Ödeme / POS","title":"Fransa'da Cartes Bancaires banka kartı desteği","date":"2026-11-06","priority":"P2","markets":["Fransa"],"change":"Shopify POS için Fransa'da Cartes Bancaires banka kartı desteğine ilişkin duyuru yayımlandı.","why_it_matters":"Desteklenen fiziksel mağazalarda yerel kart kabulü ödeme başarısını ve müşteri deneyimini etkileyebilir.","test":"Uygun Fransa mağazasında Cartes Bancaires ile küçük tutarlı test işlemi, iade ve günlük mutabakat akışını doğrula.","kpis":["Ödeme onay oranı","Ödeme hatası","İade süresi"],"source_url":"https://changelog.shopify.com/"},
+    {"category":"POS / UX","title":"Shopify POS kasa akışının hızlandırılması","date":"2026-11-06","priority":"P2","markets":["Desteklenen POS pazarları"],"change":"Shopify POS kasa akışını hızlandırmaya yönelik bir güncelleme duyuruldu.","why_it_matters":"Kasa başında işlem süresinin kısalması yoğun saatlerde kuyruk ve terk riskini azaltabilir; sonuç mağaza ve donanım yapılandırmasına bağlıdır.","test":"Güncelleme öncesi ve sonrası aynı ürün sepetiyle ödeme, iade ve makbuz adımlarının sürelerini gerçek cihazlarda karşılaştır.","kpis":["İşlem süresi","Kasa başı terk oranı","POS hata oranı"],"source_url":"https://changelog.shopify.com/"},
+    {"category":"Ödeme / Yerelleştirme","title":"Shopify POS'a beş yerel ödeme yönteminin eklenmesi","date":"2026-11-06","priority":"P2","markets":["Duyuruda desteklenen pazarlar"],"change":"Shopify POS'a beş yerel ödeme yönteminin eklendiği duyuruldu.","why_it_matters":"Yerel ödeme seçeneği, uygun pazarlarda ödeme tercihi ve dönüşüm için yeni bir test alanı açabilir; Türkiye'deki çevrimiçi ödeme sistemlerine doğrudan uygulanacağı varsayılmamalıdır.","test":"Yöntemleri desteklenen pazarlarda küçük tutarlı işlemler, başarısız ödeme, iade ve mutabakat senaryolarıyla test et; çevrimiçi ve fiziksel akışları ayrı raporla.","kpis":["Ödeme yöntemi kullanım payı","Ödeme onay oranı","Checkout tamamlanma oranı"],"source_url":"https://changelog.shopify.com/"}
+  ],
+  "recommendations": [
+    {"priority":"P1","action":"Shopify uygulama izinlerini, API çağrılarını ve webhook sağlığını müşteri bazında denetle; gereksiz hassas izinleri azalt.","kpi":"API ve webhook hata oranı","type":"entegrasyon güvenliği"},
+    {"priority":"P1","action":"GA4 purchase ve revenue verilerini mağaza siparişleriyle karşılaştır; sipariş, gelir, zaman dilimi ve consent farklarını ayrı kaydet.","kpi":"Sipariş ve gelir ölçüm farkı","type":"ölçümleme kontrolü"},
+    {"priority":"P2","action":"Fransa'daki uygun mağazalarda Cartes Bancaires kabulü, iade ve günlük mutabakat akışını test et.","kpi":"Ödeme onay oranı","type":"yerel ödeme testi"},
+    {"priority":"P2","action":"Shopify POS kasa akışının güncelleme öncesi/sonrası işlem süresini ve hata oranını gerçek cihazlarda karşılaştır.","kpi":"İşlem süresi","type":"POS UX testi"},
+    {"priority":"P2","action":"Desteklenen pazarlarda yeni yerel ödeme yöntemlerini kontrollü sepetlerde test et; Türkiye çevrimiçi checkout'una doğrudan uygulama varsayımı yapma.","kpi":"Ödeme onay oranı ve checkout tamamlanma oranı","type":"pazar bazlı ödeme testi"}
+  ],
+  "sources": [
+    {"title":"Shopify Changelog","date":"2026-11-05/06","url":"https://changelog.shopify.com/","copyright_note":"Resmî duyurular özgün Türkçe özetlenmiştir; uzun metin, ekran görüntüsü veya izinsiz görsel kopyalanmamıştır."},
+    {"title":"Shopify Help Center — POS ve ödeme yöntemleri","date":"2026-11-06","url":"https://help.shopify.com/","copyright_note":"Desteklenen ülke, plan ve donanım koşulları için yönlendirme kaynağı olarak kullanılmıştır."}
+  ],
+  "copyright_notes":"Bu kayıt, bağlı konuşmada doğrulanabilen 9 Kasım 2026 rapor içeriğinin site veri şemasına taşınmış özgün Türkçe özetidir. POS yeniliklerinin yalnızca desteklenen pazar ve yapılandırmalarda geçerli olabileceği belirtilmiştir; SEO, GA4 ve Meta Ads için yeni yüksek etkili resmî duyuru doğrulanmadığı ayrıca not edilmiştir. Raporlanan KPI'lar test önerisidir, gerçekleşmiş sonuç değildir.",
+  "slug":"2026-11-09"
+}
