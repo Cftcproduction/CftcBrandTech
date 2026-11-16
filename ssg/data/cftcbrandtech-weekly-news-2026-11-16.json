@@ -1,0 +1,201 @@
+{
+  "title": "CFTCbrandtech Haftalık Dijital Rapor",
+  "date": "2026-11-16",
+  "summary": "9–15 Kasım 2026 döneminde 5 somut gelişme: Google Search Referer ölçümleme dokümanı, Shopify değişiklik günlüğü, Shopify müşteri hesapları, AB Digital Fairness Act teklifi ve Google Ads geliştirici duyuru kaynağı taşınması. Meta Ads için doğrulanmış yüksek etkili yeni duyuru tespit edilmedi. Shopify yenilikleri ikas/IdeaSoft için geçerli değildir.",
+  "key_metrics": [
+    {
+      "metric": "Doğrulanmış gelişme",
+      "value": 5
+    },
+    {
+      "metric": "P1 öncelikli gelişme",
+      "value": 3
+    },
+    {
+      "metric": "İncelenen dönem",
+      "value": "2026-11-09/2026-11-15"
+    },
+    {
+      "metric": "İzlenecek pazarlar",
+      "value": "Türkiye, ABD, İngiltere, AB"
+    }
+  ],
+  "insights": [
+    {
+      "category": "SEO / GA4 ölçümleme",
+      "title": "Google Search kaynak trafiğini tanımlama dokümanı",
+      "date": "2026-11-12",
+      "priority": "P1",
+      "change": "Google, Google Search kaynaklı ziyaretleri HTTP Referer ile belirleme yöntemini resmî olarak belgelendirdi; yeni bir sıralama algoritması veya GA4 özelliği ilan edilmedi.",
+      "why": "Search Console tıklamaları ile GA4 oturumları farklı ölçüldüğünden SEO performansının yanlış yorumlanmasını ve hatalı kanal sınıflamasını önlemeye yardımcı olur.",
+      "markets": "TR, ABD, UK, AB; tüm organik trafik alan siteler",
+      "test": "Search Console organik tıklamalarını GA4 google/organic oturumlarıyla aynı tarih ve açılış sayfasında karşılaştır; 10 yüksek trafikli URL için yönlendirme zincirlerini, Referer, consent, UTM/gclid korumasını incele; farkı cihaz ve tarayıcıya göre ayır.",
+      "kpis": [
+        "GSC tıklama / GA4 organik oturum oranı",
+        "direct/unassigned oturum payı",
+        "landing-page ölçüm kapsaması"
+      ],
+      "caveat": "GSC tıklaması GA4 oturumuna bire bir eşitlenmez; düzeltme sonrası mutlak eşitlik hedeflenmemeli.",
+      "source": 1
+    },
+    {
+      "category": "E-ticaret / operasyon",
+      "title": "Shopify Store activity log yeniden tasarlandı",
+      "date": "2026-11-13",
+      "priority": "P1",
+      "change": "Ürün, sipariş, indirim, tema, uygulama, personel, ödeme ve ayar değişiklikleri tek günlükte toplanıyor; aktör, alan, tarih filtreleri ve uygun kayıtlarda önce/sonra değerleri gösteriliyor; 18 aya kadar saklama belirtiliyor.",
+      "why": "Hatalı fiyat, indirim, checkout veya tema değişikliklerinden doğan gelir kaybının kök nedenini daha hızlı bulmayı sağlayabilir.",
+      "markets": "Shopify kullanan TR/ABD/UK/AB mağazalar",
+      "test": "Test mağazasında düşük riskli bir ürün açıklaması veya test indirimi değiştir; günlüğün aktörü, alanı, zamanını doğru gösterdiğini kontrol et; bir örnek olayın teşhis süresini ölç.",
+      "kpis": [
+        "değişiklik tespit süresi",
+        "olay çözüm süresi",
+        "kaydı bulunan kritik değişiklik oranı"
+      ],
+      "caveat": "Yetki ve kayıt kapsamı sınırlı; geçmiş tüm işlemler geriye dönük mevcut değil; IdeaSoft ve ikas için geçerli değil.",
+      "source": 2
+    },
+    {
+      "category": "E-ticaret / CRO",
+      "title": "Shopify müşteri hesaplarında mağaza kredisi ve öneriler",
+      "date": "2026-11-12",
+      "priority": "P2",
+      "change": "Güncel müşteri hesaplarında kredi bakiyesi tüm sayfalarda görülebiliyor; ilk siparişini vermemiş giriş yapmış müşterilere kişiselleştirilmiş katalog önerileri gösteriliyor.",
+      "why": "Mevcut kredinin görünürlüğü kullanım sürtünmesini azaltabilir; öneriler ilk satın almayı kolaylaştırabilir; etkisi deneyle doğrulanmalı.",
+      "markets": "Güncel Shopify müşteri hesabı kullanan ABD/UK/AB/TR mağazalar",
+      "test": "Uygun hesaplarda kredi bakiyesi ve önerilerin doğru görünmesini doğrula; uygun yeni müşteri segmentinin 14 günlük dönüşümünü önceki benzer kohortla karşılaştır, trafik karışımını kontrol et.",
+      "kpis": [
+        "ilk sipariş dönüşüm oranı",
+        "müşteri hesabından ürüne tıklama oranı",
+        "kredi kullanım oranı",
+        "sipariş başına gelir"
+      ],
+      "caveat": "Eski müşteri hesaplarında özellik bulunmayabilir; kişiselleştirme performans artışı garanti etmez.",
+      "source": 3
+    },
+    {
+      "category": "Web/UX / mevzuat",
+      "title": "AB Digital Fairness Act teklifi",
+      "date": "2026-11-11",
+      "priority": "P1",
+      "change": "Avrupa Komisyonu, manipülatif tasarım kalıpları, gizli ücretler ve şeffaf olmayan influencer pazarlamasını hedefleyen Digital Fairness Act teklifini ve CPC iş birliği reformunu sundu.",
+      "why": "AB tüketicilerine satış yapan sitelerde fiyat şeffaflığı, abonelik iptali ve reklam açıklamalarının yeniden değerlendirilmesini gerektirebilir; bu henüz yürürlükte olan yeni bir kanun değil.",
+      "markets": "AB tüketicilerine satış yapan Türkiye/UK/ABD merkezli e-ticaret ve lead-gen markaları",
+      "test": "AB müşteri yolculuğunu mobilde test et: liste fiyatı-sepet-kargo-ödeme toplamı tutarlılığı, önceden seçili kutular, aciliyet iddiaları, influencer iş birliği etiketleri ve iptal akışı; bulguları risk matrisine koy.",
+      "kpis": [
+        "checkout aşaması terk oranı",
+        "beklenmedik ücret şikâyetleri",
+        "fiyat tutarsızlığı sayısı",
+        "uyumsuz tasarım bulgusu"
+      ],
+      "caveat": "Hukuki yürürlük ve kapsam ayrıca takip edilmeli; hukuki görüş yerine geçmez.",
+      "source": 4
+    },
+    {
+      "category": "Google Ads / ajans otomasyonu",
+      "title": "Google Ads geliştirici duyuru kanalı taşındı",
+      "date": "2026-11-10",
+      "priority": "P3",
+      "change": "Google Ads Developer Blog, 11 Kasım itibarıyla Google for Developers alanına taşındı; yeni RSS adresi duyuruldu.",
+      "why": "Ajansın API değişikliklerini takip eden otomasyonları eski besleme yüzünden duyuruları kaçırabilir; kampanya performansında doğrudan değişiklik yok.",
+      "markets": "Google Ads API kullanan tüm pazarlar",
+      "test": "İzleme botunda yeni RSS https://developers.google.com/ads/blog/rss.xml kaynağını ekle, son 25 gönderiyi çek ve eski-yeni kaynak mükerrerlerini ayıkla.",
+      "kpis": [
+        "duyuru yakalama gecikmesi",
+        "başarılı RSS sorgu oranı",
+        "mükerrer bildirim sayısı"
+      ],
+      "caveat": "Yeni RSS son 25 gönderiyi içerir ve ürün bazlı feed sağlamaz.",
+      "source": 6
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "day": "Pazartesi",
+      "action": "Okay Zeytin ve ill mio bambino için GSC-GA4 ve platform siparişleri ölçüm farklarını denetle; test satın alımlarını ayrı işaretle.",
+      "owner": "Analytics",
+      "kpi": "kaynak/medium sınıflama ve sipariş mutabakatı"
+    },
+    {
+      "priority": "P1",
+      "day": "Salı",
+      "action": "AB satış veya hedefleme yapan müşteri sitelerinde toplam fiyat, teslimat, influencer açıklaması ve dark-pattern taraması yap; düzeltmeleri etki ve riske göre sırala.",
+      "owner": "UX/Compliance",
+      "kpi": "kritik risk bulgusu ve checkout terk oranı"
+    },
+    {
+      "priority": "P1",
+      "day": "Çarşamba",
+      "action": "Shopify müşterileri varsa değişiklik günlüğünü kullanarak test indirim/tema olayı izle; diğer altyapılara Shopify özelliği atfetme.",
+      "owner": "E-ticaret operasyon",
+      "kpi": "olay tespit/çözüm süresi"
+    },
+    {
+      "priority": "P2",
+      "day": "Perşembe",
+      "action": "Uygun Shopify mağazalarında müşteri hesabı önerileri ve kredi görünürlüğünü doğrula; karşılaştırmalı kohort ölçümü başlat.",
+      "owner": "CRO",
+      "kpi": "ilk satın alma CVR ve kredi kullanımı"
+    },
+    {
+      "priority": "P3",
+      "day": "Cuma",
+      "action": "Google Ads geliştirici RSS kaynağını değiştir; Meta Ads ve GA4 resmi değişiklik kanallarını gözlemlemeye devam et.",
+      "owner": "Otomasyon",
+      "kpi": "RSS başarı oranı"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Google Search Central",
+      "date": "2026-11-12",
+      "url": "https://developers.google.com/search/updates",
+      "description": "Google Search trafiği için Referer dokümantasyonu",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    },
+    {
+      "publisher": "Google Search Central",
+      "date": "2026-11-12",
+      "url": "https://developers.google.com/search/docs/monitor-debug/identify-google-search-traffic/",
+      "description": "Referer, Search Console ve GA4 farkları",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    },
+    {
+      "publisher": "Shopify",
+      "date": "2026-11-13",
+      "url": "https://changelog.shopify.com/posts/review-store-changes-in-the-new-store-activity-log",
+      "description": "Mağaza işlem geçmişi",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    },
+    {
+      "publisher": "Shopify",
+      "date": "2026-11-12",
+      "url": "https://changelog.shopify.com/posts/customer-accounts-now-show-store-credit-and-personalized-product-recommendations",
+      "description": "Müşteri hesabında kredi ve ürün önerileri",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    },
+    {
+      "publisher": "European Commission",
+      "date": "2026-11-11",
+      "url": "https://audiovisual.ec.europa.eu/en/stories/M-010072",
+      "description": "Digital Fairness Act teklifi",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    },
+    {
+      "publisher": "European Commission Germany",
+      "date": "2026-11-11",
+      "url": "https://germany.representation.ec.europa.eu/nachrichten-und-veranstaltungen/pressemitteilungen/gleiche-rechte-offline-und-online-eu-kommission-schlagt-aktualisierung-der-verbraucherschutzregeln-2026-11-11_de",
+      "description": "Karanlık örüntüler, gizli ücretler ve influencer şeffaflığı",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    },
+    {
+      "publisher": "Google Ads Developer",
+      "date": "2026-11-10",
+      "url": "https://developers.google.com/ads/blog/posts/2026/11/the-google-ads-developer-blog-is-moving",
+      "description": "Teknik duyuru RSS taşınması",
+      "copyright_note": "Bağlantı kaynak gösterimi içindir; uzun alıntı veya görsel kopyalanmadı."
+    }
+  ],
+  "copyright_notes": "Tüm analiz ve test planları özgün olarak yazılmıştır. Kaynakların kısa olgusal özetleri kullanılmış, metin veya görseller kopyalanmamıştır. Tarihler resmî duyuru/dokümantasyon tarihleridir. Önerilen testler doğrulanmış ürün etkisi değil, hipotezdir."
+}
