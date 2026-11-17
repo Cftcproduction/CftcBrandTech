@@ -113,35 +113,35 @@
     {
       "priority": "P1",
       "day": "Pazartesi",
-      "action": "Okay Zeytin ve ill mio bambino için GSC-GA4 ve platform siparişleri ölçüm farklarını denetle; test satın alımlarını ayrı işaretle.",
+      "action": "GSC–GA4 ve platform siparişleri: Ölçüm farklarını kontrol edin. Kendi sitenizde Search Console organik tıklamalarını GA4 google/organic oturumlarıyla aynı tarih aralığı ve açılış sayfasında karşılaştırın; bu iki metriğin birebir eşleşmesi beklenmez. Son yedi günün GA4 satın alma kayıtlarını e-ticaret platformunuzdaki gerçek siparişlerle, aynı saat dilimi ve işlem kimliği (transaction_id) üzerinden karşılaştırın. Eksik veya mükerrer kayıtları inceleyin; test siparişlerini ayrıca işaretleyerek gerçek satış analizinden ayırın.",
       "owner": "Analytics",
-      "kpi": "kaynak/medium sınıflama ve sipariş mutabakatı"
+      "kpi": "Gerçek siparişlerin GA4’te yakalanma oranı, mükerrer satın alma sayısı ve ciro farkı"
     },
     {
       "priority": "P1",
       "day": "Salı",
-      "action": "AB satış veya hedefleme yapan müşteri sitelerinde toplam fiyat, teslimat, influencer açıklaması ve dark-pattern taraması yap; düzeltmeleri etki ve riske göre sırala.",
+      "action": "AB tüketicilerine satış yapıyor veya reklamlarla ulaşıyorsanız sitenizde toplam fiyatı, teslimat bilgilerini, influencer iş birliği açıklamalarını ve yanıltıcı tasarım kalıplarını kontrol edin; düzeltmeleri etki ve riske göre sıralayın.",
       "owner": "UX/Compliance",
       "kpi": "kritik risk bulgusu ve checkout terk oranı"
     },
     {
       "priority": "P1",
       "day": "Çarşamba",
-      "action": "Shopify müşterileri varsa değişiklik günlüğünü kullanarak test indirim/tema olayı izle; diğer altyapılara Shopify özelliği atfetme.",
+      "action": "Shopify kullanıyorsanız test mağazanızda bir test indirimi veya tema değişikliğini değişiklik günlüğünden izleyin; farklı bir altyapı kullanıyorsanız kendi platformunuzun kayıt imkânlarını kontrol edin.",
       "owner": "E-ticaret operasyon",
       "kpi": "olay tespit/çözüm süresi"
     },
     {
       "priority": "P2",
       "day": "Perşembe",
-      "action": "Uygun Shopify mağazalarında müşteri hesabı önerileri ve kredi görünürlüğünü doğrula; karşılaştırmalı kohort ölçümü başlat.",
+      "action": "Uygun Shopify mağazanızda müşteri hesabı önerilerini ve mağaza kredisi görünürlüğünü doğrulayın; benzer müşteri gruplarının dönüşümünü karşılaştırarak etkisini ölçün.",
       "owner": "CRO",
       "kpi": "ilk satın alma CVR ve kredi kullanımı"
     },
     {
       "priority": "P3",
       "day": "Cuma",
-      "action": "Google Ads geliştirici RSS kaynağını değiştir; Meta Ads ve GA4 resmi değişiklik kanallarını gözlemlemeye devam et.",
+      "action": "Google Ads API duyurularını RSS ile takip ediyorsanız yeni kaynağa geçin; Meta Ads ve GA4 resmî değişiklik kanallarını da izlemeye devam edin.",
       "owner": "Otomasyon",
       "kpi": "RSS başarı oranı"
     }
