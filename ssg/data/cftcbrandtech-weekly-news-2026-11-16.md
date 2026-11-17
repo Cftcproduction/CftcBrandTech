@@ -85,11 +85,11 @@ Meta Ads için bu tarih aralığında, kampanya kurulumunu değiştirmeyi gerekt
 
 ## Önceliklendirilmiş haftalık aksiyon planı (16–20 Kasım)
 
-- **P1 · Pazartesi · Analytics:** Okay Zeytin ve ill mio bambino için GSC-GA4 ve platform siparişleri ölçüm farklarını denetle; test satın alımlarını ayrı işaretle. **KPI:** kaynak/medium sınıflama ve sipariş mutabakatı.
-- **P1 · Salı · UX/Compliance:** AB satış veya hedefleme yapan müşteri sitelerinde toplam fiyat, teslimat, influencer açıklaması ve dark-pattern taraması yap; düzeltmeleri etki ve riske göre sırala. **KPI:** kritik risk bulgusu ve checkout terk oranı.
-- **P1 · Çarşamba · E-ticaret operasyon:** Shopify müşterileri varsa değişiklik günlüğünü kullanarak test indirim/tema olayı izle; diğer altyapılara Shopify özelliği atfetme. **KPI:** olay tespit/çözüm süresi.
-- **P2 · Perşembe · CRO:** Uygun Shopify mağazalarında müşteri hesabı önerileri ve kredi görünürlüğünü doğrula; karşılaştırmalı kohort ölçümü başlat. **KPI:** ilk satın alma CVR ve kredi kullanımı.
-- **P3 · Cuma · Otomasyon:** Google Ads geliştirici RSS kaynağını değiştir; Meta Ads ve GA4 resmi değişiklik kanallarını gözlemlemeye devam et. **KPI:** RSS başarı oranı.
+- **P1 · Pazartesi · Analytics:** GSC–GA4 ve platform siparişleri: Ölçüm farklarını kontrol edin. Kendi sitenizde Search Console organik tıklamalarını GA4 google/organic oturumlarıyla aynı tarih aralığı ve açılış sayfasında karşılaştırın; bu iki metriğin birebir eşleşmesi beklenmez. Son yedi günün GA4 satın alma kayıtlarını e-ticaret platformunuzdaki gerçek siparişlerle, aynı saat dilimi ve işlem kimliği (transaction_id) üzerinden karşılaştırın. Eksik veya mükerrer kayıtları inceleyin; test siparişlerini ayrıca işaretleyerek gerçek satış analizinden ayırın. **KPI:** Gerçek siparişlerin GA4’te yakalanma oranı, mükerrer satın alma sayısı ve ciro farkı.
+- **P1 · Salı · UX/Compliance:** AB tüketicilerine satış yapıyor veya reklamlarla ulaşıyorsanız sitenizde toplam fiyatı, teslimat bilgilerini, influencer iş birliği açıklamalarını ve yanıltıcı tasarım kalıplarını kontrol edin; düzeltmeleri etki ve riske göre sıralayın. **KPI:** kritik risk bulgusu ve checkout terk oranı.
+- **P1 · Çarşamba · E-ticaret operasyon:** Shopify kullanıyorsanız test mağazanızda bir test indirimi veya tema değişikliğini değişiklik günlüğünden izleyin; farklı bir altyapı kullanıyorsanız kendi platformunuzun kayıt imkânlarını kontrol edin. **KPI:** olay tespit/çözüm süresi.
+- **P2 · Perşembe · CRO:** Uygun Shopify mağazanızda müşteri hesabı önerilerini ve mağaza kredisi görünürlüğünü doğrulayın; benzer müşteri gruplarının dönüşümünü karşılaştırarak etkisini ölçün. **KPI:** ilk satın alma CVR ve kredi kullanımı.
+- **P3 · Cuma · Otomasyon:** Google Ads API duyurularını RSS ile takip ediyorsanız yeni kaynağa geçin; Meta Ads ve GA4 resmî değişiklik kanallarını da izlemeye devam edin. **KPI:** RSS başarı oranı.
 
 ## Kaynaklar ve telif notları
 
