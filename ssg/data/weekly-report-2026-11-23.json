@@ -1,0 +1,20 @@
+{
+  "title": "CFTCbrandtech Haftalık Dijital Rapor",
+  "date": "2026-11-23",
+  "summary": "16–22 Kasım 2026 döneminde resmî kaynaklardan doğrulanan beş gelişme Shopify ölçümleme, otomasyon, ürün verisi görünürlüğü, özel uygulama güvenliği ve DV360 envanterleri etrafında toplandı.",
+  "insights": [
+    {"date":"2026-11-16","priority":"P1","change":"Shopify checkout bot trafiği ölçümünü iyileştirdi.","test":"Filtreli oturumları, siparişleri ve checkout CVR'yi karşılaştır.","kpis":["Checkout CVR","oturum farkı","sipariş sayısı"],"source_url":"https://help.shopify.com/en/manual/reports-and-analytics/discrepancies/session-measurement-update"},
+    {"date":"2026-11-20","priority":"P1","change":"Shopify Flow'a sekiz yeni güncelleme tetikleyicisi geldi.","test":"Adres değişikliği bildiriminde çift tetiklenme ve gecikmeyi ölç.","kpis":["akış başarı oranı","gecikme","çift bildirim"],"source_url":"https://help.shopify.com/en/manual/shopify-flow"},
+    {"date":"2026-11-17","priority":"P2","change":"Shopify Sidekick özel ürün alanlarını analiz edebiliyor.","test":"Sonuçları sipariş dışa aktarımıyla karşılaştır.","kpis":["veri tutarlılığı","rapor hazırlama süresi"],"source_url":"https://help.shopify.com/en/manual/shopify-magic/sidekick"},
+    {"date":"2026-11-17","priority":"P2","change":"Shopify özel uygulama güvenlik görünürlüğünü genişletti.","test":"API token izinlerini ve webhook hata kayıtlarını kontrol et.","kpis":["API hata oranı","eski token sayısı"],"source_url":"https://shopify.dev/docs/apps"},
+    {"date":"2026-11-18","priority":"P3","change":"Google Marketing Platform yeni DV360 envanterleri duyurdu.","test":"Yalnızca uygun DV360 müşterilerinde erişim karşılaştırması yap.","kpis":["artımlı erişim","benzersiz kullanıcı maliyeti","frekans"],"source_url":"https://marketingplatform.google.com/about/resources/"}
+  ],
+  "recommendations":[
+    {"priority":"P1","action":"Checkout ölçüm değişikliğinin oturum ve CVR serilerine etkisini belgeleyip sipariş/gelir verisiyle mutabakat yap.","kpi":"Checkout CVR ve veri farkı"},
+    {"priority":"P1","action":"Flow sipariş güncelleme otomasyonunu test ortamında çalıştır.","kpi":"Akış başarı oranı ve gecikme"},
+    {"priority":"P2","action":"Özel uygulama token izinlerini ve webhook loglarını gözden geçir.","kpi":"API hata oranı"},
+    {"priority":"P2","action":"Sidekick ürün alanı analizini sipariş raporuyla doğrula.","kpi":"Veri tutarlılığı"},
+    {"priority":"P2","action":"Okay Zeytin ve ill mio bambino için GA4 sipariş/gelir mutabakatını tamamla.","kpi":"Sipariş ve gelir farkı"}
+  ],
+  "slug":"2026-11-23"
+}
